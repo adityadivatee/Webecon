@@ -1,0 +1,1973 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webecon — Premium Icon Studio | Free for Commercial Use</title>
+    <meta name="description"
+        content="1,031+ animated, themeable icons for websites, apps, UI, and video editing. 100% free for commercial use. Powered by Aditya Divte Production.">
+    <meta name="author" content="Aditya Divte Production">
+    <meta name="generator" content="Webecon by Aditya Divte Production — adityadivte.com">
+    <meta name="copyright"
+        content="© 2026 Aditya Divte Production. Webecon is a product of adityadivte.com. Free for commercial use.">
+    <script src="https://adityadivatee.github.io/Webecon/dist/webicons.js"></script>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        /* --- Premium CSS Architecture --- */
+        :root {
+            --bg-base: #050505;
+            --bg-surface: #111111;
+            --bg-surface-hover: #1a1a1a;
+            --text-main: #ffffff;
+            --text-muted: #888888;
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.4);
+            --secondary: #ec4899;
+            --border: rgba(255, 255, 255, 0.08);
+            --glass-bg: rgba(17, 17, 17, 0.6);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image:
+                radial-gradient(circle at 15% 50%, rgba(99, 102, 241, 0.08), transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(236, 72, 153, 0.08), transparent 25%);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-base);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Typography */
+        .shimmer-text {
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 4s linear infinite;
+        }
+
+        @keyframes shimmer {
+            to {
+                background-position: 200% center;
+            }
+        }
+
+        /* Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(5, 5, 5, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        nav {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0.65rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+
+        .nav-logo img {
+            height: 36px;
+            width: auto;
+            border-radius: 8px;
+        }
+
+        .nav-logo-text {
+            font-size: 1.05rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: #fff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            font-size: 0.88rem;
+            font-weight: 500;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            transition: color 0.25s ease;
+            white-space: nowrap;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--text-main);
+        }
+
+        .nav-donate-btn {
+            display: inline-flex !important;
+            align-items: center;
+            gap: 0.35rem;
+            background: linear-gradient(135deg, #f59e0b, #ef4444) !important;
+            color: #fff !important;
+            font-weight: 700 !important;
+            padding: 0.45rem 1.1rem !important;
+            border-radius: 99px;
+            box-shadow: 0 4px 14px rgba(239, 68, 68, 0.3);
+            transition: all 0.25s ease !important;
+            white-space: nowrap;
+        }
+
+        .nav-donate-btn:hover {
+            transform: translateY(-2px) !important;
+            box-shadow: 0 6px 20px rgba(239, 68, 68, 0.5) !important;
+        }
+
+        /* SDK Engineering Hub Styles */
+        .sdk-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .sdk-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .sdk-icon {
+            font-size: 2.5rem;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .sdk-name {
+            font-weight: 700;
+            color: #fff;
+            font-size: 1rem;
+        }
+
+        .sdk-meta {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 2rem;
+            border-radius: 99px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 0 20px var(--primary-glow);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 30px var(--primary-glow);
+            background: #4f46e5;
+        }
+
+        .btn-outline {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            color: white;
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-2px);
+        }
+
+        /* Library Cards & Hover Downloads */
+        .icon-card {
+            position: relative;
+        }
+
+        .card-download-btn {
+            position: absolute;
+            top: 0.75rem;
+            right: 0.75rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            color: #fff;
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transform: translateY(5px);
+            transition: all 0.2s ease;
+            z-index: 10;
+        }
+
+        .icon-card:hover .card-download-btn {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .card-download-btn:hover {
+            background: var(--primary);
+            border-color: var(--primary);
+            box-shadow: 0 0 10px var(--primary-glow);
+        }
+
+        /* Modal System */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(10px);
+            z-index: 5000;
+            display: none;
+            /* Controlled by JS */
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .modal-container {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: 1.5rem;
+            width: 100%;
+            max-width: 500px;
+            padding: 2.5rem;
+            position: relative;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            animation: modalPop 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        @keyframes modalPop {
+            from {
+                transform: scale(0.9);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .modal-close:hover {
+            color: #fff;
+        }
+
+        .download-option {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 1.25rem;
+            margin-bottom: 0.75rem;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .download-option:hover {
+            background: rgba(255, 255, 255, 0.07);
+            border-color: var(--primary);
+            transform: translateX(5px);
+        }
+
+        .download-option .icon-box {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background: rgba(99, 102, 241, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+        }
+
+        /* App Container & Sections */
+        .app-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 80px;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            overflow: hidden;
+            border-radius: 99px;
+            border: 1px solid var(--border);
+            margin-bottom: 2.5rem;
+            background: var(--bg-surface);
+        }
+
+        .hero-title {
+            font-size: clamp(3.5rem, 8vw, 6.5rem);
+            line-height: 1;
+            letter-spacing: -0.04em;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 0 2rem 6rem;
+        }
+
+        .feature-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: 1.5rem;
+            padding: 3rem 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Library Section */
+        .search-container {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1.5rem 2rem;
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: 99px;
+            color: white;
+            font-size: 1.1rem;
+            font-family: inherit;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .search-input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 20px var(--primary-glow);
+        }
+
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .icon-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 2rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .icon-card:hover {
+            border-color: var(--primary);
+            background: var(--bg-surface-hover);
+            transform: scale(1.05);
+        }
+
+        /* Pagination System */
+        .pagination-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 3rem;
+            padding: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .page-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            min-width: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .page-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-main);
+            border-color: var(--primary);
+        }
+
+        .page-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            box-shadow: 0 0 15px var(--primary-glow);
+        }
+
+        .page-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        /* Detail View */
+        .detail-view {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 4rem;
+            padding: 4rem 2rem;
+            align-items: start;
+        }
+
+        .preview-main {
+            background: radial-gradient(circle at center, #222 0%, var(--bg-base) 100%);
+            border: 1px solid var(--border);
+            border-radius: 2rem;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .customizer-panel {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            position: sticky;
+            top: 100px;
+        }
+
+        .control-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .control-group label {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Custom Inputs */
+        input[type="range"] {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 6px;
+            background: var(--bg-base);
+            border-radius: 3px;
+            outline: none;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--text-main);
+            cursor: pointer;
+            transition: transform 0.1s;
+        }
+
+        input[type="range"]::-webkit-slider-thumb:hover {
+            transform: scale(1.2);
+        }
+
+        .select-wrapper {
+            position: relative;
+            width: 100%;
+        }
+
+        .select-wrapper::after {
+            content: '';
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 6px solid rgba(255, 255, 255, 0.5);
+            pointer-events: none;
+            transition: border-top-color 0.2s ease;
+        }
+
+        .select-wrapper:hover::after {
+            border-top-color: var(--primary);
+        }
+
+        select.custom-select {
+            width: 100%;
+            padding: 0.85rem 2.5rem 0.85rem 1rem;
+            background: var(--bg-base);
+            border: 1px solid var(--border);
+            color: white;
+            border-radius: 0.75rem;
+            font-family: inherit;
+            font-size: 0.9rem;
+            outline: none;
+            cursor: pointer;
+            appearance: none;
+            -webkit-appearance: none;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        select.custom-select:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px var(--primary-glow);
+        }
+
+        select.custom-select:hover {
+            border-color: rgba(255, 255, 255, 0.25);
+        }
+
+        select.custom-select option {
+            background: #1a1a1a;
+            color: white;
+            padding: 0.5rem;
+        }
+
+        .color-input-wrapper {
+            display: flex;
+            align-items: center;
+            background: var(--bg-base);
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            padding: 0.5rem;
+        }
+
+        input[type="color"] {
+            -webkit-appearance: none;
+            border: none;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            cursor: pointer;
+            background: none;
+        }
+
+        input[type="color"]::-webkit-color-swatch-wrapper {
+            padding: 0;
+        }
+
+        input[type="color"]::-webkit-color-swatch {
+            border: none;
+            border-radius: 50%;
+        }
+
+        .pill-label {
+            margin-left: 1rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Code Blocks */
+        .code-output {
+            margin-top: 2rem;
+        }
+
+        .code-container {
+            display: flex;
+            background: var(--bg-base);
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            overflow: hidden;
+            margin-top: 0.5rem;
+        }
+
+        .code-block {
+            padding: 1rem;
+            font-family: monospace;
+            font-size: 0.85rem;
+            color: #a5b4fc;
+            flex-grow: 1;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        .copy-btn {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: none;
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--primary);
+            width: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .copy-btn::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--primary);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 0;
+        }
+
+        .copy-btn:hover {
+            color: #000;
+        }
+
+        .copy-btn:hover::after {
+            opacity: 1;
+        }
+
+        .copy-btn webecon {
+            position: relative;
+            z-index: 1;
+            transform: scale(0.85);
+            transition: transform 0.2s ease;
+        }
+
+        .copy-btn:active webecon {
+            transform: scale(0.7);
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .toast {
+            position: fixed;
+            bottom: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--text-main);
+            color: var(--bg-base);
+            padding: 1rem 2rem;
+            border-radius: 99px;
+            font-weight: 600;
+            transition: bottom 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            z-index: 9999;
+        }
+
+        .toast.show {
+            bottom: 2rem;
+        }
+
+        @media (max-width: 900px) {
+            .detail-view {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-title {
+                font-size: 3.5rem;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body data-active-view="home">
+    <header>
+        <nav>
+            <a href="#home" class="nav-logo">
+                <img src="Webecon.png" alt="Webecon">
+                <div class="nav-logo-text">WEBECON</div>
+            </a>
+            <div class="nav-links">
+                <a href="docs.html" class="btn btn-primary">Get Started</a>
+                <a href="https://github.com/adityadivatee/Webecon" class="btn btn-outline">GitHub Repository</a>
+                <a href="docs.html">Docs</a>
+                <a href="https://adityadivte.com" target="_blank" style="color: var(--primary);">adityadivte.com</a>
+                <a href="https://rzp.io/rzp/webecon" target="_blank" class="nav-donate-btn">
+                    <webecon-icon name="heart" size="18" theme="solid" color="#fff" animation="pulse"></webecon-icon>
+                    Support
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="app-container">
+
+        <main id="app-router">
+            <section id="view-home" class="fade-in">
+
+                <div class="hero" style="padding: 7rem 2rem 3rem;">
+                    <div class="hero-badge">
+                        <div
+                            style="background: rgba(99,102,241,0.15); padding: 0.5rem 1.5rem; color: var(--primary); font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1rem; border-right: 1px solid var(--border);">
+                            Webecon</div>
+                        <div
+                            style="padding: 0.5rem 1.5rem; color: #fff; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1rem;">
+                            100% Free · Commercial Use</div>
+                    </div>
+
+                    <h1 class="hero-title"><span class="shimmer-text">Webecon</span> Premium</h1>
+
+                    <p class="hero-subtitle"
+                        style="font-size: 1.5rem; color: var(--text-muted); max-width: 800px; margin: 0 auto 3rem; font-weight: 400;">
+                        1,031+ high-performance, themeable, and animated SVG icons for elite interfaces.
+                        <br><span style="color: #fff; font-weight: 600;">Free for commercial use.</span>
+                    </p>
+
+                    <div
+                        style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 4rem;">
+                        <a href="#library" class="btn btn-primary">&#128269; Explore Icons</a>
+                        <button id="btn-open-sdk-hub" class="btn btn-outline">&#128229; Download SDKs</button>
+                        <a href="docs.html" class="btn btn-outline">&#128218; Documentation</a>
+                    </div>
+
+                    <div style="margin-bottom: 5rem;">
+                        <p
+                            style="text-transform: uppercase; letter-spacing: 2px; color: var(--text-muted); font-size: 0.75rem; margin-bottom: 1.5rem; font-weight: 600;">
+                            Works natively with every language &amp; platform</p>
+                        <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; opacity: 0.7;">
+                            <div style="display:flex;flex-direction:column;align-items:center;gap:0.4rem;">
+                                <webecon-icon name="logo-javascript" size="36" animation="float"></webecon-icon>
+                                <span
+                                    style="font-size:0.65rem;color:var(--text-muted);font-weight:600;">JavaScript</span>
+                            </div>
+                            <div style="display:flex;flex-direction:column;align-items:center;gap:0.4rem;">
+                                <webecon-icon name="logo-python" size="36" animation="float"></webecon-icon>
+                                <span style="font-size:0.65rem;color:var(--text-muted);font-weight:600;">Python</span>
+                            </div>
+                            <div style="display:flex;flex-direction:column;align-items:center;gap:0.4rem;">
+                                <webecon-icon name="logo-swift" size="36" animation="float"></webecon-icon>
+                                <span style="font-size:0.65rem;color:var(--text-muted);font-weight:600;">Swift</span>
+                            </div>
+                            <div style="display:flex;flex-direction:column;align-items:center;gap:0.4rem;">
+                                <webecon-icon name="logo-java" size="36" animation="float"></webecon-icon>
+                                <span style="font-size:0.65rem;color:var(--text-muted);font-weight:600;">Java</span>
+                            </div>
+                            <div style="display:flex;flex-direction:column;align-items:center;gap:0.4rem;">
+                                <webecon-icon name="logo-rust" size="36" animation="float"></webecon-icon>
+                                <span style="font-size:0.65rem;color:var(--text-muted);font-weight:600;">Rust</span>
+                            </div>
+                            <div style="display:flex;flex-direction:column;align-items:center;gap:0.4rem;">
+                                <webecon-icon name="logo-go" size="36" animation="float"></webecon-icon>
+                                <span style="font-size:0.65rem;color:var(--text-muted);font-weight:600;">Go</span>
+                            </div>
+                            <div style="display:flex;flex-direction:column;align-items:center;gap:0.4rem;">
+                                <webecon-icon name="logo-react" size="36" animation="spin-slow"></webecon-icon>
+                                <span style="font-size:0.65rem;color:var(--text-muted);font-weight:600;">React</span>
+                            </div>
+                            <div style="display:flex;flex-direction:column;align-items:center;gap:0.4rem;">
+                                <webecon-icon name="logo-unity" size="36" animation="float"></webecon-icon>
+                                <span style="font-size:0.65rem;color:var(--text-muted);font-weight:600;">Unity</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="features" style="padding: 0 2rem 5rem;">
+                    <div style="text-align:center; margin-bottom: 3rem;">
+                        <p
+                            style="text-transform:uppercase;letter-spacing:3px;color:var(--primary);font-size:0.75rem;font-weight:700;margin-bottom:0.75rem;">
+                            Where You Can Use It</p>
+                        <h2 style="font-size:2.4rem;font-weight:800;letter-spacing:-0.03em;">One Library. <span
+                                class="shimmer-text">Infinite Canvases.</span></h2>
+                    </div>
+                    <div
+                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;">
+                        <div class="feature-card" style="position:relative;overflow:hidden;">
+                            <div
+                                style="position:absolute;top:-20px;right:-20px;width:100px;height:100px;border-radius:50%;background:rgba(99,102,241,0.1);filter:blur(20px);">
+                            </div>
+                            <div style="font-size:2.2rem;margin-bottom:1rem;">&#127760;</div>
+                            <h3 style="font-size:1.15rem;margin-bottom:0.75rem;font-weight:700;">Websites &amp; Web Apps
+                            </h3>
+                            <p style="color:var(--text-muted);font-size:0.88rem;line-height:1.7;">Drop-in <code
+                                    style="color:var(--primary);font-size:0.8rem;">&lt;webecon&gt;</code> web
+                                component works in any HTML page, React, Vue, Angular, Svelte, or vanilla JS project
+                                with zero configuration.</p>
+                            <div style="margin-top:1.25rem;display:flex;gap:0.4rem;flex-wrap:wrap;">
+                                <span
+                                    style="background:rgba(99,102,241,0.12);color:var(--primary);font-size:0.68rem;font-weight:700;padding:0.2rem 0.6rem;border-radius:99px;">HTML</span>
+                                <span
+                                    style="background:rgba(99,102,241,0.12);color:var(--primary);font-size:0.68rem;font-weight:700;padding:0.2rem 0.6rem;border-radius:99px;">React</span>
+                                <span
+                                    style="background:rgba(99,102,241,0.12);color:var(--primary);font-size:0.68rem;font-weight:700;padding:0.2rem 0.6rem;border-radius:99px;">Vue</span>
+                                <span
+                                    style="background:rgba(99,102,241,0.12);color:var(--primary);font-size:0.68rem;font-weight:700;padding:0.2rem 0.6rem;border-radius:99px;">Svelte</span>
+                            </div>
+                        </div>
+                        <div class="feature-card" style="position:relative;overflow:hidden;">
+                            <div
+                                style="position:absolute;top:-20px;right:-20px;width:100px;height:100px;border-radius:50%;background:rgba(236,72,153,0.1);filter:blur(20px);">
+                            </div>
+                            <div style="font-size:2.2rem;margin-bottom:1rem;">&#128241;</div>
+                            <h3 style="font-size:1.15rem;margin-bottom:0.75rem;font-weight:700;">Mobile &amp; Desktop
+                                Apps</h3>
+                            <p style="color:var(--text-muted);font-size:0.88rem;line-height:1.7;">Native SDKs for Swift
+                                (iOS), Java/Kotlin (Android), Python (PySide / Tkinter), and C# (WPF / MAUI / Unity)
+                                make integration seamless across every native platform.</p>
+                            <div style="margin-top:1.25rem;display:flex;gap:0.4rem;flex-wrap:wrap;">
+                                <span
+                                    style="background:rgba(236,72,153,0.1);color:var(--secondary);font-size:0.68rem;font-weight:700;padding:0.2rem 0.6rem;border-radius:99px;">iOS</span>
+                                <span
+                                    style="background:rgba(236,72,153,0.1);color:var(--secondary);font-size:0.68rem;font-weight:700;padding:0.2rem 0.6rem;border-radius:99px;">Android</span>
+                                <span
+                                    style="background:rgba(236,72,153,0.1);color:var(--secondary);font-size:0.68rem;font-weight:700;padding:0.2rem 0.6rem;border-radius:99px;">MAUI</span>
+                                <span
+                                    style="background:rgba(236,72,153,0.1);color:var(--secondary);font-size:0.68rem;font-weight:700;padding:0.2rem 0.6rem;border-radius:99px;">Unity</span>
+                            </div>
+                        </div>
+                        <div class="feature-card" style="position:relative;overflow:hidden;">
+                            <div
+                                style="position:absolute;top:-20px;right:-20px;width:100px;height:100px;border-radius:50%;background:rgba(16,185,129,0.1);filter:blur(20px);">
+                            </div>
+                            <div style="font-size:2.2rem;margin-bottom:1rem;">&#127912;</div>
+                            <h3 style="font-size:1.15rem;margin-bottom:0.75rem;font-weight:700;">UI / UX Design Systems
+                            </h3>
+                            <p style="color:var(--text-muted);font-size:0.88rem;line-height:1.7;">Consistent stroke
+                                weights, adjustable sizes, and theme modes (Neon, Glass, 3D, Classic) make Webecon
+                                the
+                                perfect backbone for any design system or component library.</p>
+                            <div style="margin-top:1.25rem;display:flex;gap:0.4rem;flex-wrap:wrap;">
+                                <span
+                                    style="background:rgba(16,185,129,0.1);color:#10b981;font-size:0.68rem;font-weight:700;padding:0.2rem 0.6rem;border-radius:99px;">Figma</span>
+                                <span
+                                    style="background:rgba(16,185,129,0.1);color:#10b981;font-size:0.68rem;font-weight:700;padding:0.2rem 0.6rem;border-radius:99px;">Sketch</span>
+                                <span
+                                    style="background:rgba(16,185,129,0.1);color:#10b981;font-size:0.68rem;font-weight:700;padding:0.2rem 0.6rem;border-radius:99px;">Adobe
+                                    XD</span>
+                            </div>
+                        </div>
+                        <div class="feature-card" style="position:relative;overflow:hidden;">
+                            <div
+                                style="position:absolute;top:-20px;right:-20px;width:100px;height:100px;border-radius:50%;background:rgba(245,158,11,0.1);filter:blur(20px);">
+                            </div>
+                            <div style="font-size:2.2rem;margin-bottom:1rem;">&#127916;</div>
+                            <h3 style="font-size:1.15rem;margin-bottom:0.75rem;font-weight:700;">Video Editing &amp;
+                                Motion</h3>
+                            <p style="color:var(--text-muted);font-size:0.88rem;line-height:1.7;">Export as SVG or PNG
+                                at any resolution for use in After Effects, Premiere Pro, DaVinci Resolve, CapCut, and
+                                other editors as animated overlays and lower thirds.</p>
+                            <div style="margin-top:1.25rem;display:flex;gap:0.4rem;flex-wrap:wrap;">
+                                <span
+                                    style="background:rgba(245,158,11,0.1);color:#f59e0b;font-size:0.68rem;font-weight:700;padding:0.2rem 0.6rem;border-radius:99px;">After
+                                    Effects</span>
+                                <span
+                                    style="background:rgba(245,158,11,0.1);color:#f59e0b;font-size:0.68rem;font-weight:700;padding:0.2rem 0.6rem;border-radius:99px;">Premiere</span>
+                                <span
+                                    style="background:rgba(245,158,11,0.1);color:#f59e0b;font-size:0.68rem;font-weight:700;padding:0.2rem 0.6rem;border-radius:99px;">DaVinci</span>
+                                <span
+                                    style="background:rgba(245,158,11,0.1);color:#f59e0b;font-size:0.68rem;font-weight:700;padding:0.2rem 0.6rem;border-radius:99px;">CapCut</span>
+                            </div>
+                        </div>
+                        <div class="feature-card" style="position:relative;overflow:hidden;">
+                            <div
+                                style="position:absolute;top:-20px;right:-20px;width:100px;height:100px;border-radius:50%;background:rgba(6,182,212,0.1);filter:blur(20px);">
+                            </div>
+                            <div style="font-size:2.2rem;margin-bottom:1rem;">&#128444;&#65039;</div>
+                            <h3 style="font-size:1.15rem;margin-bottom:0.75rem;font-weight:700;">Print &amp; Social
+                                Media</h3>
+                            <p style="color:var(--text-muted);font-size:0.88rem;line-height:1.7;">Use in Canva,
+                                Photoshop, or Illustrator for thumbnails, social banners, presentations, and print.
+                                Scalable SVG — sharp at any size.</p>
+                            <div style="margin-top:1.25rem;display:flex;gap:0.4rem;flex-wrap:wrap;">
+                                <span
+                                    style="background:rgba(6,182,212,0.1);color:#06b6d4;font-size:0.68rem;font-weight:700;padding:0.2rem 0.6rem;border-radius:99px;">Photoshop</span>
+                                <span
+                                    style="background:rgba(6,182,212,0.1);color:#06b6d4;font-size:0.68rem;font-weight:700;padding:0.2rem 0.6rem;border-radius:99px;">Canva</span>
+                                <span
+                                    style="background:rgba(6,182,212,0.1);color:#06b6d4;font-size:0.68rem;font-weight:700;padding:0.2rem 0.6rem;border-radius:99px;">Illustrator</span>
+                            </div>
+                        </div>
+                        <div class="feature-card" style="position:relative;overflow:hidden;">
+                            <div
+                                style="position:absolute;top:-20px;right:-20px;width:100px;height:100px;border-radius:50%;background:rgba(139,92,246,0.1);filter:blur(20px);">
+                            </div>
+                            <div style="font-size:2.2rem;margin-bottom:1rem;">🕹️</div>
+                            <h3 style="font-size:1.15rem;margin-bottom:0.75rem;font-weight:700;">Game &amp; XR
+                                Engines</h3>
+                            <p style="color:var(--text-muted);font-size:0.88rem;line-height:1.7;">Optimized for Unity
+                                and Unreal Engine game UI, HUDs, menus, and Extended Reality (AR/VR) interfaces. Import
+                                directly via the C# or C++ SDK.</p>
+                            <div style="margin-top:1.25rem;display:flex;gap:0.4rem;flex-wrap:wrap;">
+                                <span
+                                    style="background:rgba(139,92,246,0.1);color:#8b5cf6;font-size:0.68rem;font-weight:700;padding:0.2rem 0.6rem;border-radius:99px;">Unity</span>
+                                <span
+                                    style="background:rgba(139,92,246,0.1);color:#8b5cf6;font-size:0.68rem;font-weight:700;padding:0.2rem 0.6rem;border-radius:99px;">Unreal</span>
+                                <span
+                                    style="background:rgba(139,92,246,0.1);color:#8b5cf6;font-size:0.68rem;font-weight:700;padding:0.2rem 0.6rem;border-radius:99px;">VR/AR</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="license" style="padding: 0 2rem 5rem;">
+                    <div
+                        style="background: linear-gradient(135deg, rgba(99,102,241,0.07), rgba(236,72,153,0.05)); border: 1px solid rgba(99,102,241,0.2); border-radius: 2rem; padding: 3.5rem; text-align:center; position:relative; overflow:hidden;">
+                        <div
+                            style="position:absolute;top:-60px;left:50%;transform:translateX(-50%);width:200px;height:200px;border-radius:50%;background:rgba(99,102,241,0.06);filter:blur(40px);">
+                        </div>
+                        <div style="font-size:2.8rem;margin-bottom:1rem;">&#9989;</div>
+                        <h2 style="font-size:2rem;font-weight:800;margin-bottom:1rem;">100% Free for <span
+                                class="shimmer-text">Commercial Use</span></h2>
+                        <p
+                            style="color:var(--text-muted);max-width:580px;margin:0 auto 2.5rem;line-height:1.8;font-size:0.95rem;">
+                            You can use Webecon icons in client projects, apps, products, and commercial work —
+                            completely free. No royalty, no attribution required. <strong style="color:#fff;">Credit is
+                                appreciated but never mandatory.</strong></p>
+                        <div
+                            style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1rem;max-width:720px;margin:0 auto 2.5rem;">
+                            <div
+                                style="background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.2);border-radius:1rem;padding:1.25rem;">
+                                <div style="font-size:1.4rem;margin-bottom:0.5rem;">&#10004;&#65039;</div>
+                                <div style="font-weight:700;font-size:0.88rem;margin-bottom:0.3rem;">Use Commercially
+                                </div>
+                                <div style="color:var(--text-muted);font-size:0.78rem;">In products, apps, client work
+                                </div>
+                            </div>
+                            <div
+                                style="background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.2);border-radius:1rem;padding:1.25rem;">
+                                <div style="font-size:1.4rem;margin-bottom:0.5rem;">&#10004;&#65039;</div>
+                                <div style="font-weight:700;font-size:0.88rem;margin-bottom:0.3rem;">Modify Freely</div>
+                                <div style="color:var(--text-muted);font-size:0.78rem;">Resize, recolor, restyle</div>
+                            </div>
+                            <div
+                                style="background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.2);border-radius:1rem;padding:1.25rem;">
+                                <div style="font-size:1.4rem;margin-bottom:0.5rem;">&#10004;&#65039;</div>
+                                <div style="font-weight:700;font-size:0.88rem;margin-bottom:0.3rem;">No Attribution
+                                </div>
+                                <div style="color:var(--text-muted);font-size:0.78rem;">Credit if you want, never
+                                    required</div>
+                            </div>
+                            <div
+                                style="background:rgba(239,68,68,0.07);border:1px solid rgba(239,68,68,0.2);border-radius:1rem;padding:1.25rem;">
+                                <div style="font-size:1.4rem;margin-bottom:0.5rem;">&#10060;</div>
+                                <div style="font-weight:700;font-size:0.88rem;margin-bottom:0.3rem;">Don't Resell As-Is
+                                </div>
+                                <div style="color:var(--text-muted);font-size:0.78rem;">Standalone icon resale
+                                    prohibited</div>
+                            </div>
+                        </div>
+                        <div style="margin-top: 2rem;">
+                            <a href="docs.html#licensing" class="btn btn-outline"
+                                style="font-size: 0.85rem; padding: 0.8rem 1.8rem; border-color: rgba(99,102,241,0.3);">
+                                &#128214; View Full Commercial Hub
+                            </a>
+                        </div>
+                        <div
+                            style="background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:0.75rem;padding:0.9rem 1.5rem;display:inline-block;font-family:monospace;font-size:0.82rem;color:#a5b4fc;letter-spacing:0.02em;margin-top:2.5rem;">
+                            Webecon by Aditya Divte Production &mdash; adityadivte.com</div>
+                    </div>
+                </div>
+
+                <div style="padding: 0 2rem 5rem;">
+                    <div style="text-align:center; margin-bottom: 3rem;">
+                        <h2 style="font-size:2.2rem;font-weight:800;letter-spacing:-0.03em;">Why <span
+                                class="shimmer-text">Webecon?</span></h2>
+                    </div>
+                    <div
+                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem;">
+                        <div class="feature-card">
+                            <webecon-icon name="zap" size="44" color="var(--primary)" animation="pulse"></webecon-icon>
+                            <h3 style="margin-top: 1.25rem; font-size: 1.15rem;">SDKs for 10+ Languages</h3>
+                            <p style="color: var(--text-muted); margin-top: 0.75rem; font-size:0.88rem;">Python,
+                                JavaScript, C#, Swift, Java, Go, Rust and more. Copy-paste ready code from the icon
+                                studio.</p>
+                        </div>
+                        <div class="feature-card">
+                            <webecon-icon name="settings" size="44" color="var(--secondary)" animation="spin-slow"></webecon-icon>
+                            <h3 style="margin-top: 1.25rem; font-size: 1.15rem;">20+ Motion Presets</h3>
+                            <p style="color: var(--text-muted); margin-top: 0.75rem; font-size:0.88rem;">Spin, pulse,
+                                bounce, heartbeat, jello, rubber-band — apply any animation in one click, then copy the
+                                code.</p>
+                        </div>
+                        <div class="feature-card">
+                            <webecon-icon name="layers" size="44" color="#10b981" animation="bounce"></webecon-icon>
+                            <h3 style="margin-top: 1.25rem; font-size: 1.15rem;">4 Visual Themes</h3>
+                            <p style="color: var(--text-muted); margin-top: 0.75rem; font-size:0.88rem;">Classic Line,
+                                Neon Glow, Glassmorphism, 3D Isometric — one icon library, four distinct visual
+                                identities.</p>
+                        </div>
+                        <div class="feature-card">
+                            <webecon-icon name="award" size="44" color="#f59e0b" animation="tada"></webecon-icon>
+                            <h3 style="margin-top: 1.25rem; font-size: 1.15rem;">1,031+ Unique Icons</h3>
+                            <p style="color: var(--text-muted); margin-top: 0.75rem; font-size:0.88rem;">Covering UI,
+                                tech logos, communication, objects, nature, and more — with new packs added regularly.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="padding: 0 2rem 4rem;">
+                    <div
+                        style="background: var(--bg-surface); border: 1px solid var(--border); border-radius: 1.5rem; padding: 2.5rem; display:flex; align-items:center; gap: 2rem; flex-wrap:wrap;">
+                        <img src="Webecon.png" alt="Webecon"
+                            style="height: 60px; width: auto; border-radius: 10px; flex-shrink:0;">
+                        <div style="flex:1;min-width:200px;">
+                            <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:0.5rem;">Give Credit <span
+                                    style="color:var(--text-muted);font-weight:400;font-size:0.85rem;">(Optional but
+                                    Appreciated)</span></h3>
+                            <p style="color:var(--text-muted);font-size:0.88rem;line-height:1.7;">Attribution is never
+                                required, but if you'd like to credit us: <em style="color:#fff;">&ldquo;Icons by
+                                    Webecon &mdash; adityadivte.com&rdquo;</em>. It helps us grow and keep this
+                                library free
+                                forever.</p>
+                        </div>
+                        <a href="https://adityadivte.com" target="_blank" class="btn btn-outline"
+                            style="flex-shrink:0;padding:0.75rem 1.5rem;">Visit adityadivte.com</a>
+                    </div>
+                </div>
+
+                <div id="donate" style="padding: 0 2rem 6rem;">
+                    <div
+                        style="background: linear-gradient(135deg, rgba(245,158,11,0.07), rgba(239,68,68,0.05)); border: 1px solid rgba(245,158,11,0.2); border-radius: 2rem; padding: 3.5rem; text-align:center; position:relative; overflow:hidden;">
+                        <div
+                            style="position:absolute;top:-60px;right:-40px;width:200px;height:200px;border-radius:50%;background:rgba(239,68,68,0.07);filter:blur(50px);">
+                        </div>
+                        <div style="font-size:2.8rem;margin-bottom:1rem;">&#10084;&#65039;</div>
+                        <h2 style="font-size:2rem;font-weight:800;margin-bottom:1rem;">Support Future <span
+                                style="background:linear-gradient(90deg,#f59e0b,#ef4444);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Development</span>
+                        </h2>
+                        <p
+                            style="color:var(--text-muted);max-width:540px;margin:0 auto 2rem;line-height:1.8;font-size:0.95rem;">
+                            Webecon is free for everyone, forever. If it saved you time or made your project shine,
+                            consider supporting us &mdash; it funds new icons, themes, SDKs, and tools on <strong
+                                style="color:#fff;">adityadivte.com</strong>.</p>
+                        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.5rem;">
+                            <a id="btn-razorpay-donate" href="https://rzp.io/rzp/webecon" target="_blank"
+                                class="btn"
+                                style="background:linear-gradient(135deg,#f59e0b,#ef4444);color:#fff;box-shadow:0 0 24px rgba(239,68,68,0.3);font-size:0.95rem;padding:0.9rem 2.2rem;">
+                                &#10084;&#65039; Donate via Razorpay
+                            </a>
+                        </div>
+                        <p style="color:var(--text-muted);font-size:0.75rem;opacity:0.55;">Every contribution goes
+                            directly into development. Thank you &#127799;</p>
+                    </div>
+                </div>
+
+            </section>
+
+            <section id="view-library" class="fade-in" style="display: none; padding: 2rem;">
+                <div style="text-align: center; margin-bottom: 4rem;">
+                    <h2 style="font-size: 3rem; margin-bottom: 1rem;">Icon <span class="shimmer-text">Explorer</span>
+                    </h2>
+                    <p style="color: var(--text-muted);">Search and customize 1,031+ premium animated assets.</p>
+                </div>
+
+                <div class="search-container">
+                    <input type="text" id="icon-search" class="search-input"
+                        placeholder="Search icons (e.g. 'home', 'user', 'zap')...">
+                    <div id="library-counter"
+                        style="position: absolute; right: 2rem; top: 1.6rem; color: var(--primary); font-size: 0.8rem; font-weight: 700;">
+                        Loading...</div>
+                </div>
+
+                <div id="main-icon-grid" class="icon-grid">
+                </div>
+
+                <div id="library-pagination" class="pagination-container">
+                </div>
+            </section>
+
+            <section id="view-detail" class="fade-in" style="display: none;">
+                <div class="detail-view">
+                    <div>
+                        <div class="preview-main">
+                            <webecon-icon id="detail-preview-icon" name="home" size="120" color="white" stroke="2"></webecon-icon>
+                        </div>
+
+                        <div>
+                            <h3 style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem;">
+                                <webecon-icon name="zap" size="20" color="var(--primary)"></webecon-icon> Motion Presets
+                            </h3>
+                            <div class="icon-grid" id="anim-grid"
+                                style="grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="customizer-panel">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 2rem;">Designer Engine</h3>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                            <div class="control-group">
+                                <label>Primary Color</label>
+                                <div class="color-input-wrapper">
+                                    <input type="color" id="ctrl-color" value="#6366f1">
+                                    <span id="color-hex" class="pill-label">#6366F1</span>
+                                </div>
+                            </div>
+                            <div class="control-group"
+                                style="background: rgba(255,255,255,0.03); padding: 1.5rem; border-radius: 1.5rem; border: 1px solid var(--border);">
+                                <div
+                                    style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                                    <label style="margin:0;">Secondary Fill</label>
+                                    <input type="checkbox" id="ctrl-fill-active" checked
+                                        style="accent-color: var(--primary); scale: 1.3; cursor: pointer;">
+                                </div>
+
+                                <div
+                                    style="display: grid; grid-template-columns: 60px 1fr; gap: 1rem; align-items: center;">
+                                    <input type="color" id="ctrl-secondary" value="#ffffff"
+                                        style="width: 100%; height: 50px; background: none; border: 1px solid var(--border); border-radius: 10px; cursor: pointer;">
+                                    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                                        <div
+                                            style="display: flex; justify-content: space-between; font-size: 0.7rem; font-weight: 700; color: var(--text-muted);">
+                                            <span>OPACITY</span>
+                                            <span id="secondary-opacity-val" style="color: var(--primary);">35%</span>
+                                        </div>
+                                        <input type="range" id="ctrl-secondary-opacity" min="0" max="100" value="35"
+                                            style="width: 100%; accent-color: var(--primary); cursor: pointer;"
+                                            oninput="document.getElementById('secondary-opacity-val').innerText = this.value + '%'">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                            <div class="control-group">
+                                <label>Stroke: <span id="stroke-val">2</span>px</label>
+                                <input type="range" id="ctrl-stroke" min="0.5" max="4" step="0.5" value="2">
+                            </div>
+                            <div class="control-group">
+                                <label>Size: <span id="size-val">64</span>px</label>
+                                <input type="range" id="ctrl-size" min="12" max="128" step="1" value="64">
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <label>Animation Style</label>
+                            <div class="select-wrapper">
+                                <select id="ctrl-anim" class="custom-select">
+                                    <option value="none">None</option>
+                                    <option value="spin">Spin</option>
+                                    <option value="spin-slow">Spin Slow</option>
+                                    <option value="pulse">Pulse</option>
+                                    <option value="bounce">Bounce</option>
+                                    <option value="float">Float</option>
+                                    <option value="heartbeat">Heartbeat</option>
+                                    <option value="shake">Shake</option>
+                                    <option value="ring">Ring</option>
+                                    <option value="swing">Swing</option>
+                                    <option value="flash">Flash</option>
+                                    <option value="rubber-band">Rubber Band</option>
+                                    <option value="tada">Tada</option>
+                                    <option value="jello">Jello</option>
+                                    <option value="fade">Fade</option>
+                                    <option value="flip">Flip</option>
+                                    <option value="flip-v">Flip Vertical</option>
+                                    <option value="rotate-90">Rotate 90</option>
+                                    <option value="zoom-in">Zoom In</option>
+                                    <option value="zoom-out">Zoom Out</option>
+                                    <option value="slide-up">Slide Up</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <label>Interaction Trigger</label>
+                            <div class="select-wrapper">
+                                <select id="ctrl-mode" class="custom-select">
+                                    <option value="infinite">Infinite Loop</option>
+                                    <option value="hover">On Hover</option>
+                                    <option value="click">On Click</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <label>Render Theme</label>
+                            <div class="select-wrapper">
+                                <select id="ctrl-theme" class="custom-select">
+                                    <option value="line">Line (Default)</option>
+                                    <option value="shine">Shine (Premium)</option>
+                                    <option value="neon">Neon Glow</option>
+                                    <option value="duo">Duo Tone</option>
+                                    <option value="glass">Glassmorphism</option>
+                                    <option value="solid">Solid Fill</option>
+                                    <option value="3d">3D Isometric</option>
+                                    <option value="cyberpunk">Cyberpunk Glitch</option>
+                                    <option value="halo">Halo Pulse</option>
+                                    <option value="blob">Blob Swell</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <label>Engineering Platform</label>
+                            <div class="select-wrapper">
+                                <select id="ctrl-platform" class="custom-select">
+                                    <option value="web">JavaScript (Web Component)</option>
+                                    <option value="react">React / Next.js</option>
+                                    <option value="python">Python (PySide/SVG)</option>
+                                    <option value="swift">Swift (SwiftUI/iOS)</option>
+                                    <option value="java">Java (Maven/Gradle)</option>
+                                    <option value="rust">Rust (Cargo/Slint)</option>
+                                    <option value="go">Go (Native SVG)</option>
+                                    <option value="flutter">Flutter (Dart)</option>
+                                    <option value="unity">Unity (C#)</option>
+                                    <option value="unreal">Unreal (C++)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="code-output">
+                            <label>Professional Implementation</label>
+                            <div class="code-container"
+                                style="display: grid; grid-template-columns: 1fr 50px; min-height: 50px; border: 1px solid var(--border); border-radius: 0.75rem; overflow: hidden; background: rgba(0,0,0,0.2);">
+                                <div class="code-block" id="code-full"
+                                    style="padding: 1rem; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: #cbd5e1; overflow-x: auto;">
+                                    // Selecting platform...</div>
+                                <button class="copy-btn" id="btn-copy-full" title="Copy Code"
+                                    style="display: flex; flex-direction: column; gap: 4px; padding: 0;">
+                                    <webecon-icon name="copy" size="20" color="currentColor"></webecon-icon>
+                                    <webecon-icon name="code" size="14" color="currentColor" style="opacity: 0.5;"></webecon-icon>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="code-output">
+                            <label>Static Web Usage</label>
+                            <div class="code-container"
+                                style="display: grid; grid-template-columns: 1fr 50px; min-height: 50px; border: 1px solid var(--border); border-radius: 0.75rem; overflow: hidden; background: rgba(0,0,0,0.2);">
+                                <div class="code-block" id="code-simple"
+                                    style="padding: 1rem; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: #cbd5e1; overflow-x: auto;">
+                                    &lt;webecon name="..."&gt;&lt;/webecon&gt;
+                                </div>
+                                <button class="copy-btn" id="btn-copy-simple" title="Copy Code"
+                                    style="display: flex; flex-direction: column; gap: 4px; padding: 0;">
+                                    <webecon-icon name="copy" size="20" color="currentColor"></webecon-icon>
+                                    <webecon-icon name="code" size="14" color="currentColor" style="opacity: 0.5;"></webecon-icon>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--border);">
+                            <button id="btn-main-download" class="btn btn-primary" style="width: 100%; gap: 0.75rem;">
+                                <webecon-icon name="download" size="20"></webecon-icon> Download & Export Assets
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <img src="https://adityadivte.com/image/Main_Branch_png_logo.png" alt="Webecon by Aditya Divte Production"
+                style="height: 40px; filter: brightness(0) invert(1); opacity: 0.5; margin-bottom: 1.5rem;">
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 2rem;">
+                © 2026 Webecon by Aditya Divte Production. Distributed by <a href="https://adityadivte.com"
+                    style="color: var(--primary); font-weight: 600;">adityadivte.com</a> | <a href="mailto:support@adityadivte.com" style="color: var(--text-muted); text-decoration: none;">support@adityadivte.com</a> | <a href="https://rzp.io/rzp/webecon" target="_blank" style="color: #ef4444; font-weight: 600;">Donate ❤️</a>
+            </p>
+        </footer>
+    </div>
+
+    <div id="toast" class="toast">Copied to clipboard!</div>
+
+    <div id="download-modal" class="modal-overlay">
+        <div class="modal-container">
+            <div class="modal-close" id="modal-close">&times;</div>
+            <h3 style="font-size: 1.5rem; margin-bottom: 2rem;">Export <span id="modal-icon-name"
+                    class="shimmer-text">...</span></h3>
+
+            <div class="download-option" id="opt-download-svg">
+                <div class="icon-box">
+                    <webecon-icon name="image" size="24"></webecon-icon>
+                </div>
+                <div style="flex:1;">
+                    <div style="font-weight: 700;">Download SVG</div>
+                    <div style="font-size: 0.8rem; color: var(--text-muted);">Vector format, infinitely scalable</div>
+                </div>
+                <webecon-icon name="chevron-right" size="18" color="var(--text-muted)"></webecon-icon>
+            </div>
+
+            <div class="download-option" id="opt-download-png">
+                <div class="icon-box">
+                    <webecon-icon name="image" size="24" theme="solid"></webecon-icon>
+                </div>
+                <div style="flex:1;">
+                    <div style="font-weight: 700;">Download PNG</div>
+                    <div style="font-size: 0.8rem; color: var(--text-muted);">Raster image, high resolution</div>
+                </div>
+                <webecon-icon name="chevron-right" size="18" color="var(--text-muted)"></webecon-icon>
+            </div>
+
+            <div class="download-option" id="opt-copy-link">
+                <div class="icon-box">
+                    <webecon-icon name="external-link" size="24"></webecon-icon>
+                </div>
+                <div style="flex:1;">
+                    <div style="font-weight: 700;">Copy Network Link</div>
+                    <div style="font-size: 0.8rem; color: var(--text-muted);">Direct CDN/Asset URL</div>
+                </div>
+                <webecon-icon name="chevron-right" size="18" color="var(--text-muted)"></webecon-icon>
+            </div>
+        </div>
+    </div>
+
+    <div id="sdk-modal" class="modal-overlay">
+        <div class="modal-container" style="max-width: 800px;">
+            <div class="modal-close" id="sdk-modal-close">&times;</div>
+            <h2 style="font-size: 2rem; margin-bottom: 0.5rem; text-align: center;">Engineering <span
+                    class="shimmer-text">Hub</span></h2>
+            <p style="text-align: center; color: var(--text-muted); margin-bottom: 2.5rem;">Pick your platform to
+                download the optimized SDK library.</p>
+
+            <div class="sdk-grid"
+                style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1rem; max-height: 60vh; overflow-y: auto; padding-right: 0.5rem;">
+                <a href="dist/sdks/webecon-react.zip" class="sdk-card" download="webecon-react.zip">
+                    <div class="sdk-icon" style="background: rgba(97, 218, 251, 0.1); color: #61dafb;">
+                        <webecon-icon name="logo-react" size="24"></webecon-icon>
+                    </div>
+                    <div class="sdk-name">React / Next.js</div>
+                    <div class="sdk-meta">Modern Web</div>
+                </a>
+                <a href="dist/sdks/webecon-dart.zip" class="sdk-card" download="webecon-flutter.zip">
+                    <div class="sdk-icon" style="background: rgba(2, 125, 253, 0.1); color: #027dfd;">
+                        <webecon-icon name="logo-flutter" size="24"></webecon-icon>
+                    </div>
+                    <div class="sdk-name">Flutter (Dart)</div>
+                    <div class="sdk-meta">Cross-Platform</div>
+                </a>
+                <a href="dist/sdks/webecon-python.zip" class="sdk-card" download="webecon-python.zip">
+                    <div class="sdk-icon" style="background: rgba(55, 118, 171, 0.1); color: #3776ab;">
+                        <webecon-icon name="logo-python" size="24"></webecon-icon>
+                    </div>
+                    <div class="sdk-name">Python</div>
+                    <div class="sdk-meta">AI / Automation</div>
+                </a>
+                <a href="dist/sdks/webecon-rust.zip" class="sdk-card" download="webecon-rust.zip">
+                    <div class="sdk-icon" style="background: rgba(240, 81, 56, 0.1); color: #f05138;">
+                        <webecon-icon name="logo-rust" size="24"></webecon-icon>
+                    </div>
+                    <div class="sdk-name">Rust (Cargo)</div>
+                    <div class="sdk-meta">High Performance</div>
+                </a>
+                <a href="dist/sdks/webecon-go.zip" class="sdk-card" download="webecon-go.zip">
+                    <div class="sdk-icon" style="background: rgba(0, 173, 216, 0.1); color: #00add8;">
+                        <webecon-icon name="logo-go" size="24"></webecon-icon>
+                    </div>
+                    <div class="sdk-name">Go (Golang)</div>
+                    <div class="sdk-meta">Cloud Native</div>
+                </a>
+                <a href="dist/sdks/webecon-java.zip" class="sdk-card" download="webecon-java.zip">
+                    <div class="sdk-icon" style="background: rgba(237, 28, 36, 0.1); color: #ed1c24;">
+                        <webecon-icon name="logo-java" size="24"></webecon-icon>
+                    </div>
+                    <div class="sdk-name">Java (Maven)</div>
+                    <div class="sdk-meta">Enterprise</div>
+                </a>
+                <a href="dist/sdks/webecon-kotlin.zip" class="sdk-card" download="webecon-android.zip">
+                    <div class="sdk-icon" style="background: rgba(127, 82, 255, 0.1); color: #7f52ff;">
+                        <webecon-icon name="logo-kotlin" size="24"></webecon-icon>
+                    </div>
+                    <div class="sdk-name">Kotlin / Android</div>
+                    <div class="sdk-meta">Mobile Native</div>
+                </a>
+                <a href="dist/sdks/webecon-swift.zip" class="sdk-card" download="webecon-ios.zip">
+                    <div class="sdk-icon" style="background: rgba(240, 81, 56, 0.1); color: #f05138;">
+                        <webecon-icon name="logo-swift" size="24"></webecon-icon>
+                    </div>
+                    <div class="sdk-name">Swift / iOS</div>
+                    <div class="sdk-meta">Apple Native</div>
+                </a>
+                <a href="dist/sdks/webecon-csharp.zip" class="sdk-card" download="webecon-unity.zip">
+                    <div class="sdk-icon" style="background: rgba(155, 73, 204, 0.1); color: #9b49cc;">
+                        <webecon-icon name="logo-csharp" size="24"></webecon-icon>
+                    </div>
+                    <div class="sdk-name">C# (Unity)</div>
+                    <div class="sdk-meta">Game Engine</div>
+                </a>
+                <a href="dist/sdks/webecon-cpp.zip" class="sdk-card" download="webecon-unreal.zip">
+                    <div class="sdk-icon" style="background: rgba(0, 89, 156, 0.1); color: #00599c;">
+                        <webecon-icon name="logo-cpp" size="24"></webecon-icon>
+                    </div>
+                    <div class="sdk-name">C++ (Unreal)</div>
+                    <div class="sdk-meta">Pro Gaming</div>
+                </a>
+                <a href="dist/sdks/webecon-vscode.zip" class="sdk-card" download="webecon-vscode.zip">
+                    <div class="sdk-icon" style="background: rgba(0, 122, 204, 0.1); color: #007acc;">
+                        <webecon-icon name="logo-vscode" size="24"></webecon-icon>
+                    </div>
+                    <div class="sdk-name">VS Code Pack</div>
+                    <div class="sdk-meta">IDE Extension</div>
+                </a>
+                <a href="dist/sdks/webecon-typescript.zip" class="sdk-card" download="webecon-typescript.zip">
+                    <div class="sdk-icon" style="background: rgba(49, 120, 198, 0.1); color: #3178c6;">
+                        <webecon-icon name="logo-typescript" size="24"></webecon-icon>
+                    </div>
+                    <div class="sdk-name">TypeScript</div>
+                    <div class="sdk-meta">Web / Node.js</div>
+                </a>
+                <a href="dist/sdks/webecon-ruby.zip" class="sdk-card" download="webecon-ruby.zip">
+                    <div class="sdk-icon" style="background: rgba(170, 16, 1, 0.1); color: #aa1001;">
+                        <webecon-icon name="logo-ruby" size="24"></webecon-icon>
+                    </div>
+                    <div class="sdk-name">Ruby</div>
+                    <div class="sdk-meta">Web Backend</div>
+                </a>
+                <a href="dist/sdks/webecon-c.zip" class="sdk-card" download="webecon-c.zip">
+                    <div class="sdk-icon" style="background: rgba(85, 85, 85, 0.1); color: #555555;">
+                        <webecon-icon name="logo-javascript" size="24"></webecon-icon>
+                    </div>
+                    <div class="sdk-name">Pure C</div>
+                    <div class="sdk-meta">Embedded / IoT</div>
+                </a>
+                <a href="dist/sdks/webecon-html.zip" class="sdk-card" download="webecon-html.zip">
+                    <div class="sdk-icon" style="background: rgba(227, 79, 38, 0.1); color: #e34f26;">
+                        <webecon-icon name="logo-html5" size="24"></webecon-icon>
+                    </div>
+                    <div class="sdk-name">Pure HTML5</div>
+                    <div class="sdk-meta">Static Asset</div>
+                </a>
+            </div>
+
+            <div
+                style="margin-top: 2.5rem; text-align: center; border-top: 1px solid var(--border); padding-top: 1.5rem;">
+                <p style="font-size: 0.85rem; color: var(--text-muted);">Explore the future of iconography with Webecon
+                    High-Performance SDKs.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const icons = window.webecon_all_icons || {};
+
+        const mainGrid = document.getElementById('main-icon-grid');
+        const animGrid = document.getElementById('anim-grid');
+        const searchInput = document.getElementById('icon-search');
+        const libraryCounter = document.getElementById('library-counter');
+        const toast = document.getElementById('toast');
+        const downloadModal = document.getElementById('download-modal');
+        const modalIconName = document.getElementById('modal-icon-name');
+        const body = document.body;
+
+        let activeIconForDownload = 'home';
+        let activeConfigForDownload = { color: '#ffffff', stroke: '2', size: '128' };
+
+        let currentPage = 1;
+        const ITEMS_PER_PAGE = 50;
+
+        function router() {
+            const hash = window.location.hash || '#home';
+
+            // Internal anchors handling
+            if (hash === '#donate' || hash === '#features' || hash === '#license') {
+                if (body.getAttribute('data-active-view') !== 'home') {
+                    // Switch to home view first if needed
+                    document.querySelectorAll('section').forEach(s => s.style.display = 'none');
+                    document.getElementById('view-home').style.display = 'block';
+                    body.setAttribute('data-active-view', 'home');
+                    // Give DOM a moment to settle before scrolling
+                    setTimeout(() => {
+                        const el = document.getElementById(hash.substring(1));
+                        if (el) el.scrollIntoView({ behavior: 'smooth' });
+                    }, 50);
+                } else {
+                    const el = document.getElementById(hash.substring(1));
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                }
+            } else {
+                document.querySelectorAll('section').forEach(s => s.style.display = 'none');
+
+                if (hash === '#home') {
+                    body.setAttribute('data-active-view', 'home');
+                    document.getElementById('view-home').style.display = 'block';
+                    window.scrollTo(0, 0);
+                } else if (hash === '#library') {
+                    body.setAttribute('data-active-view', 'library');
+                    document.getElementById('view-library').style.display = 'block';
+                    currentPage = 1; // Reset to page 1 when visiting library
+                    renderLibrary();
+                    window.scrollTo(0, 0);
+                } else if (hash.startsWith('#icon/')) {
+                    const iconName = hash.split('/')[1];
+                    body.setAttribute('data-active-view', 'detail');
+                    document.getElementById('view-detail').style.display = 'block';
+                    setupDetailPage(iconName);
+                    window.scrollTo(0, 0);
+                } else {
+                    // Fallback to prevent blank page for invalid hashes
+                    body.setAttribute('data-active-view', 'home');
+                    document.getElementById('view-home').style.display = 'block';
+                    window.scrollTo(0, 0);
+                }
+            }
+
+            // Fixed Active Link States 
+            document.querySelectorAll('.nav-links a').forEach(a => {
+                const linkHash = a.getAttribute('href');
+                const targetHash = linkHash.includes('#') ? '#' + linkHash.split('#')[1] : null;
+                if (targetHash) {
+                    let isActive = targetHash === hash;
+                    // Keep 'Icon Library' active when inside an individual icon detail page
+                    if (hash.startsWith('#icon/') && targetHash === '#library') {
+                        isActive = true;
+                    }
+                    // Keep 'Home' active when scrolling to sub-sections inside the home view
+                    if ((hash === '#donate' || hash === '#features' || hash === '#license') && targetHash === '#home') {
+                        isActive = true;
+                    }
+                    a.classList.toggle('active', isActive);
+                }
+            });
+        }
+
+        window.addEventListener('hashchange', router);
+        window.addEventListener('load', router);
+
+        const showToast = (msg) => {
+            toast.innerText = msg;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 2000);
+        };
+
+        const openDownloadModal = (name, config = null) => {
+            activeIconForDownload = name;
+            modalIconName.innerText = name.replace(/-/g, ' ').toUpperCase();
+
+            // If config is null (from library), use defaults
+            activeConfigForDownload = config || {
+                color: '#ffffff',
+                stroke: '2',
+                size: '128'
+            };
+
+            downloadModal.style.display = 'flex';
+        };
+
+        document.getElementById('modal-close').onclick = () => downloadModal.style.display = 'none';
+
+        function renderLibrary(filter = '') {
+            mainGrid.innerHTML = '';
+            const allIcons = window.webecon_all_icons || icons || {};
+            const allKeys = Object.keys(allIcons).filter(k => k.toLowerCase().includes(filter.toLowerCase()));
+
+            const totalPages = Math.ceil(allKeys.length / ITEMS_PER_PAGE);
+            if (currentPage > totalPages) currentPage = totalPages || 1;
+            if (currentPage < 1) currentPage = 1;
+
+            const start = (currentPage - 1) * ITEMS_PER_PAGE;
+            const displayKeys = allKeys.slice(start, start + ITEMS_PER_PAGE);
+
+            displayKeys.forEach(name => {
+                const card = document.createElement('div');
+                card.className = 'icon-card';
+                card.innerHTML = `
+                    <button class="card-download-btn" title="Download">
+                        <webecon-icon name="download" size="16"></webecon-icon>
+                    </button>
+                    <webecon-icon name="${name}" size="32" color="white" theme="line"></webecon-icon>
+                    <div class="name" style="font-size: 0.75rem; margin-top: 0.75rem; color: var(--text-muted); font-weight: 500; text-align: center; width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${name}</div>
+                `;
+
+                card.onclick = (e) => {
+                    if (e.target.closest('.card-download-btn')) {
+                        openDownloadModal(name);
+                        return;
+                    }
+                    window.location.hash = `#icon/${name}`;
+                };
+
+                mainGrid.appendChild(card);
+            });
+
+            libraryCounter.textContent = `${allKeys.length} ICONS`;
+            renderPagination(totalPages, filter);
+        }
+
+        function renderPagination(totalPages, filter) {
+            const container = document.getElementById('library-pagination');
+            container.innerHTML = '';
+            if (totalPages <= 1) return;
+
+            const createBtn = (label, page, active = false, disabled = false) => {
+                const btn = document.createElement('button');
+                btn.className = `page-btn ${active ? 'active' : ''}`;
+                btn.innerText = label;
+                btn.disabled = disabled;
+                btn.onclick = () => {
+                    currentPage = page;
+                    renderLibrary(filter);
+                    document.getElementById('view-library').scrollIntoView();
+                };
+                return btn;
+            };
+
+            container.appendChild(createBtn('←', currentPage - 1, false, currentPage === 1));
+
+            let start = Math.max(1, currentPage - 2);
+            let end = Math.min(totalPages, start + 4);
+            if (end - start < 4) start = Math.max(1, end - 4);
+
+            for (let i = start; i <= end; i++) {
+                container.appendChild(createBtn(i, i, i === currentPage));
+            }
+
+            container.appendChild(createBtn('→', currentPage + 1, false, currentPage === totalPages));
+        }
+
+        searchInput.oninput = (e) => {
+            currentPage = 1;
+            renderLibrary(e.target.value);
+        };
+
+        function setupDetailPage(iconName) {
+            const preview = document.getElementById('detail-preview-icon');
+            preview.setAttribute('name', iconName);
+
+            const controls = {
+                color: document.getElementById('ctrl-color'),
+                secondary: document.getElementById('ctrl-secondary'),
+                fillActive: document.getElementById('ctrl-fill-active'),
+                secondaryOpacity: document.getElementById('ctrl-secondary-opacity'),
+                stroke: document.getElementById('ctrl-stroke'),
+                size: document.getElementById('ctrl-size'),
+                anim: document.getElementById('ctrl-anim'),
+                mode: document.getElementById('ctrl-mode'),
+                theme: document.getElementById('ctrl-theme'),
+                platform: document.getElementById('ctrl-platform')
+            };
+
+            const generateCode = (platform, config) => {
+                const nameCap = iconName.split('-').map(w => w[0].toUpperCase() + w.slice(1)).join('');
+
+                switch (platform) {
+                    case 'react':
+                        return `import { Webecon } from 'webecon-react';\n\n<webecon-icon \n  name="${iconName}" \n  size={${config.size}} \n  stroke={${config.stroke}} \n  theme="${config.theme}" \n  color="${config.color}" \n  secondaryColor="${config.secondary}" \n  secondaryOpacity={${config.secondaryOpacity}} \n  animation="${config.anim}" \n/>`;
+                    case 'python':
+                        return `import webecon\n\nsvg = webecon.get_svg("${iconName}", size=${config.size}, color="${config.color}", secondary_color="${config.secondary}", secondary_opacity=${config.secondaryOpacity}, theme="${config.theme}", animation="${config.anim}")`;
+                    case 'swift':
+                        return `Webecon.getSVG(name: "${iconName}", size: ${config.size}, color: "${config.color}", secondaryColor: "${config.secondary}", secondaryOpacity: ${config.secondaryOpacity}, theme: "${config.theme}", animation: "${config.anim}")`;
+                    case 'java':
+                        return `Webecon.getSVG("${iconName}", ${config.size}, "${config.color}", "${config.secondary}", "${config.secondaryOpacity}", "${config.theme}", "${config.anim}")`;
+                    case 'go':
+                        return `webecon.New("${iconName}").SetSize(${config.size}).SetSecondaryColor("${config.secondary}").SetSecondaryOpacity(${config.secondaryOpacity}).SetTheme("${config.theme}").SVG()`;
+                    case 'rust':
+                        return `use webecon;\n\nlet svg = webecon::get_svg("${iconName}", ${config.size}, "${config.color}", "${config.secondary}", ${config.secondaryOpacity}, "${config.theme}", "${config.anim}");`;
+                    case 'flutter':
+                        return `import 'package:webecon/webecon.dart';\n\nString svg = WebeconIcons.getSVG(name: "${iconName}", size: ${config.size}, color: "${config.color}", secondaryColor: "${config.secondary}", secondaryOpacity: ${config.secondaryOpacity}, theme: "${config.theme}", animation: "${config.anim}");`;
+                    case 'unity':
+                        return `using Webecon.Icon;\n\nstring svg = Webecon.GetSVG("${iconName}", ${config.size}, "${config.color}", "${config.secondary}", ${config.secondaryOpacity}f, "${config.theme}", "${config.anim}");`;
+                    case 'unreal':
+                        return `#include "webecon.hpp"\n\nFString svg = webecon::Webecon::GetSVG("${iconName}", ${config.size}, "${config.color}", "${config.secondary}", ${config.secondaryOpacity}f, "${config.theme}", "${config.anim}");`;
+                    case 'ruby':
+                        return `require 'webecon'\n\nsvg = Webecon.get_svg("${iconName}", size: ${config.size}, color: "${config.color}", secondary_color: "${config.secondary}", secondary_opacity: ${config.secondaryOpacity}, theme: "${config.theme}", animation: "${config.anim}")`;
+                    default:
+                        return `<webecon-icon \n  name="${iconName}" \n  size="${config.size}" \n  stroke="${config.stroke}" \n  theme="${config.theme}" \n  color="${config.color}" \n  secondary-color="${config.secondary}" \n  secondary-opacity="${config.secondaryOpacity}" \n  animation="${config.anim}" \n  animation-mode="${config.mode}"\n></webecon-icon>`;
+                }
+            };
+
+            const update = () => {
+                const config = {
+                    size: controls.size.value,
+                    stroke: controls.stroke.value,
+                    color: controls.color.value,
+                    secondary: controls.fillActive.checked ? controls.secondary.value : 'none',
+                    secondaryOpacity: controls.secondaryOpacity.value / 100,
+                    theme: controls.theme.value,
+                    anim: controls.anim.value,
+                    mode: controls.mode.value,
+                    platform: controls.platform.value
+                };
+
+                preview.setAttribute('color', config.color);
+                preview.setAttribute('secondary-color', config.secondary);
+                preview.setAttribute('secondary-opacity', config.secondaryOpacity);
+                preview.setAttribute('stroke', config.stroke);
+                preview.setAttribute('size', config.size);
+                preview.setAttribute('animation', config.anim);
+                preview.setAttribute('animation-mode', config.mode);
+                preview.setAttribute('theme', config.theme);
+
+                document.getElementById('color-hex').innerText = config.color.toUpperCase();
+                document.getElementById('stroke-val').innerText = config.stroke;
+                document.getElementById('size-val').innerText = config.size;
+
+                document.getElementById('code-simple').innerText = `<webecon-icon name="${iconName}"></webecon-icon>`;
+                document.getElementById('code-full').innerText = generateCode(config.platform, config);
+
+                document.querySelectorAll('.anim-card').forEach(card => {
+                    const cardAnim = card.getAttribute('data-anim');
+                    card.classList.toggle('active', cardAnim === config.anim);
+                });
+            };
+
+            Object.values(controls).forEach(c => c.oninput = update);
+            controls.theme.onchange = update;
+            controls.platform.onchange = update;
+
+            animGrid.innerHTML = '';
+            const animations = ["none", "spin", "spin-slow", "pulse", "bounce", "float", "heartbeat", "shake", "ring", "swing", "flash", "rubber-band", "tada", "jello", "fade", "flip", "flip-v", "rotate-90", "zoom-in", "zoom-out", "slide-up"];
+            animations.forEach(anim => {
+                const card = document.createElement('div');
+                card.className = 'anim-card';
+                card.setAttribute('data-anim', anim);
+                const cardIcon = document.createElement('webecon-icon');
+                cardIcon.setAttribute('name', iconName);
+                cardIcon.setAttribute('size', '20');
+                cardIcon.setAttribute('animation', anim);
+                card.appendChild(cardIcon);
+
+                const nameDiv = document.createElement('div');
+                nameDiv.style.fontSize = '0.7rem';
+                nameDiv.style.marginTop = '5px';
+                nameDiv.innerText = anim;
+                card.appendChild(nameDiv);
+                card.onclick = () => {
+                    // Sync dropdown
+                    controls.anim.value = anim;
+                    // Directly apply animation to the big preview icon
+                    preview.setAttribute('animation', anim);
+                    // Highlight active preset card
+                    document.querySelectorAll('.anim-card').forEach(c => c.classList.remove('active'));
+                    card.classList.add('active');
+                    // Regenerate code output
+                    update();
+                };
+                animGrid.appendChild(card);
+            });
+
+            update();
+
+            document.getElementById('btn-main-download').onclick = () => {
+                const currentConfig = {
+                    color: controls.color.value,
+                    stroke: controls.stroke.value,
+                    size: controls.size.value
+                };
+                openDownloadModal(iconName, currentConfig);
+            };
+        }
+
+        async function downloadSVG() {
+            const name = activeIconForDownload;
+            const cfg = activeConfigForDownload;
+            const svgContent = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="${cfg.size}" height="${cfg.size}" fill="none" stroke="${cfg.color}" stroke-width="${cfg.stroke}" stroke-linecap="round" stroke-linejoin="round">${icons[name]}</svg>`;
+
+            const blob = new Blob([svgContent], { type: 'image/svg+xml' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `webecon-${name}.svg`;
+            a.click();
+            URL.revokeObjectURL(url);
+            downloadModal.style.display = 'none';
+        }
+
+        async function downloadPNG() {
+            const name = activeIconForDownload;
+            const cfg = activeConfigForDownload;
+            const size = parseInt(cfg.size) * 2; // High DPI
+
+            const canvas = document.createElement('canvas');
+            canvas.width = size;
+            canvas.height = size;
+            const ctx = canvas.getContext('2d');
+
+            const svgContent = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="${size}" height="${size}" fill="none" stroke="${cfg.color}" stroke-width="${cfg.stroke}" stroke-linecap="round" stroke-linejoin="round">${icons[name]}</svg>`;
+
+            const img = new Image();
+            const svgBlob = new Blob([svgContent], { type: 'image/svg+xml;charset=utf-8' });
+            const url = URL.createObjectURL(svgBlob);
+
+            img.onload = () => {
+                ctx.drawImage(img, 0, 0);
+                const pngUrl = canvas.toDataURL('image/png');
+                const a = document.createElement('a');
+                a.href = pngUrl;
+                a.download = `webecon-${name}.png`;
+                a.click();
+                URL.revokeObjectURL(url);
+                downloadModal.style.display = 'none';
+            };
+            img.src = url;
+        }
+
+        function copyLink() {
+            const name = activeIconForDownload;
+            const link = `https://adityadivte.com/icons/svg/${name}.svg`;
+            navigator.clipboard.writeText(link);
+            showToast('Direct link copied!');
+            downloadModal.style.display = 'none';
+        }
+
+        document.getElementById('opt-download-svg').onclick = downloadSVG;
+        document.getElementById('opt-download-png').onclick = downloadPNG;
+        document.getElementById('opt-copy-link').onclick = copyLink;
+
+        function copyCode(id) {
+            const text = document.getElementById(id).innerText;
+            navigator.clipboard.writeText(text);
+            showToast('Copied to clipboard!');
+        }
+        document.getElementById('btn-copy-simple').onclick = () => copyCode('code-simple');
+        document.getElementById('btn-copy-full').onclick = () => copyCode('code-full');
+
+        // SDK Modal Logic
+        const sdkModal = document.getElementById('sdk-modal');
+        const btnOpenSDK = document.getElementById('btn-open-sdk-hub');
+        const btnCloseSDK = document.getElementById('sdk-modal-close');
+
+        btnOpenSDK.onclick = () => {
+            sdkModal.style.display = 'flex';
+            body.style.overflow = 'hidden';
+        };
+
+        btnCloseSDK.onclick = () => {
+            sdkModal.style.display = 'none';
+            body.style.overflow = 'auto';
+        };
+
+        // Unified click listener for modals
+        window.onclick = (e) => {
+            if (e.target === downloadModal) {
+                downloadModal.style.display = 'none';
+                body.style.overflow = 'auto';
+            }
+            if (e.target === sdkModal) {
+                sdkModal.style.display = 'none';
+                body.style.overflow = 'auto';
+            }
+        };
+
+        // Fix for clicking nav links when already on the same page/hash 
+        // (Forces scroll to top since hashchange doesn't fire naturally)
+        document.querySelectorAll('.nav-links a, .nav-logo').forEach(link => {
+            link.addEventListener('click', (e) => {
+                const href = link.getAttribute('href');
+                if (window.location.hash === href && (href === '#home' || href === '#library')) {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>
