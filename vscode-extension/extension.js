@@ -17,11 +17,16 @@ function activate(context) {
     }
 
     const provider = vscode.languages.registerCompletionItemProvider(
-        ['html', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'svelte'],
+        ['html', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'svelte', 'python', 'java', 'kotlin', 'rust', 'go', 'swift', 'dart', 'cpp', 'csharp', 'ruby', 'php', 'c'],
         {
             provideCompletionItems(document, position) {
                 const linePrefix = document.lineAt(position).text.substr(0, position.character);
-                if (!linePrefix.includes('<webecon-icon')) {
+                
+                // Match both <webecon-icon name="..." and Webecon.icon("...") or Webecon("...")
+                const isWebTag = linePrefix.includes('<webecon-icon');
+                const isSDKCall = linePrefix.match(/Webecon(\.icon)?\s*\(['"]?$/i);
+
+                if (!isWebTag && !isSDKCall) {
                     return undefined;
                 }
 

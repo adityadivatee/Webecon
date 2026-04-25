@@ -1,4 +1,4 @@
-# Webecon Kotlin SDK
+# Webecon Kotlin SDK (v17.2.4 PRO)
 
 ## 🚀 Installation
 Include `com\adityadivte\webecon\Webecon.kt` in your project's source directory.

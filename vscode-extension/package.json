@@ -18,7 +18,19 @@
         "onLanguage:html",
         "onLanguage:javascript",
         "onLanguage:javascriptreact",
-        "onLanguage:typescriptreact"
+        "onLanguage:typescriptreact",
+        "onLanguage:python",
+        "onLanguage:java",
+        "onLanguage:kotlin",
+        "onLanguage:rust",
+        "onLanguage:go",
+        "onLanguage:swift",
+        "onLanguage:dart",
+        "onLanguage:cpp",
+        "onLanguage:csharp",
+        "onLanguage:ruby",
+        "onLanguage:php",
+        "onLanguage:c"
     ],
     "categories": [
         "Snippets",
@@ -34,22 +46,22 @@
     ],
     "contributes": {
         "snippets": [
-            {
-                "language": "html",
-                "path": "./snippets/webecon.json"
-            },
-            {
-                "language": "javascript",
-                "path": "./snippets/webecon.json"
-            },
-            {
-                "language": "javascriptreact",
-                "path": "./snippets/webecon.json"
-            },
-            {
-                "language": "typescriptreact",
-                "path": "./snippets/webecon.json"
-            }
+            { "language": "html", "path": "./snippets/webecon.json" },
+            { "language": "javascript", "path": "./snippets/webecon.json" },
+            { "language": "javascriptreact", "path": "./snippets/webecon.json" },
+            { "language": "typescriptreact", "path": "./snippets/webecon.json" },
+            { "language": "python", "path": "./snippets/webecon.json" },
+            { "language": "java", "path": "./snippets/webecon.json" },
+            { "language": "kotlin", "path": "./snippets/webecon.json" },
+            { "language": "rust", "path": "./snippets/webecon.json" },
+            { "language": "go", "path": "./snippets/webecon.json" },
+            { "language": "swift", "path": "./snippets/webecon.json" },
+            { "language": "dart", "path": "./snippets/webecon.json" },
+            { "language": "cpp", "path": "./snippets/webecon.json" },
+            { "language": "csharp", "path": "./snippets/webecon.json" },
+            { "language": "ruby", "path": "./snippets/webecon.json" },
+            { "language": "php", "path": "./snippets/webecon.json" },
+            { "language": "c", "path": "./snippets/webecon.json" }
         ]
     }
 }

@@ -1,4 +1,4 @@
-# Webecon Rust SDK
+# Webecon Rust SDK (v17.2.4 PRO)
 
 ## 🚀 Installation
 Include `webecon.rs` in your project's source directory.

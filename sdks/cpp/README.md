@@ -1,4 +1,4 @@
-# Webecon C++ SDK
+# Webecon C++ SDK (v17.2.4 PRO)
 
 ## 🚀 Installation
 Include `webecon.hpp` in your project's source directory.
