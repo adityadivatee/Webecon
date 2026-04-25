@@ -1,0 +1,29 @@
+# System Files
+.DS_Store
+Thumbs.db
+
+# Build Artifacts
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Temporary / Test Files
+test/
+*.exe
+*.obj
+*.class
+*.pyc
+__pycache__/
+
+# IDE Config
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Project Specific
+dist/icons/
+dist/sdks/*.zip
+!dist/webicons.js
+!dist/sdks/
