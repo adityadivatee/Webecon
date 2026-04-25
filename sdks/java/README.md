@@ -1,4 +1,4 @@
-# Webecon Java SDK (v17.2.5 PRO)
+# Webecon Java SDK (v17.2.6 PRO)
 
 ## 🚀 Installation
 Include `com\adityadivatee\Webecon\Webecon.java` in your project's source directory.

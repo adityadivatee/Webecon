@@ -1,4 +1,4 @@
-# Webecon Dart SDK (v17.2.5 PRO)
+# Webecon Dart SDK (v17.2.6 PRO)
 
 ## 🚀 Installation
 Include `webecon.dart` in your project's source directory.

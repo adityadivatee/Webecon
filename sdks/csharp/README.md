@@ -1,4 +1,4 @@
-# Webecon C# SDK (v17.2.5 PRO)
+# Webecon C# SDK (v17.2.6 PRO)
 
 ## 🚀 Installation
 Include `Webecon.cs` in your project's source directory.

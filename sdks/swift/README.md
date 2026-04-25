@@ -1,4 +1,4 @@
-# Webecon Swift SDK (v17.2.5 PRO)
+# Webecon Swift SDK (v17.2.6 PRO)
 
 ## 🚀 Installation
 Include `Webecon.swift` in your project's source directory.

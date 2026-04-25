@@ -24,20 +24,22 @@ function activate(context) {
             provideCompletionItems(document, position) {
                 const linePrefix = document.lineAt(position).text.substr(0, position.character);
                 
-                // Flexible matching:
-                // 1. Inside name attribute: name="...
-                // 2. Webecon function: .icon("...
-                // 3. Just typing webecon or web
+                // Flexible matching for ALL languages:
+                // 1. HTML: <webecon-icon name="...
+                // 2. React: <Webecon name="...
+                // 3. SDKs: Webecon.icon("... or Webecon("... or Webecon(name: "...
                 const isInsideTag = linePrefix.match(/<webecon-icon[^>]*name=['"]$/i);
+                const isReactTag = linePrefix.match(/<Webecon[^>]*name=['"]$/i);
                 const isSDKCall = linePrefix.match(/Webecon(\.icon)?\s*\(['"]?$/i);
+                const isFlutterCall = linePrefix.match(/Webecon\(\s*name\s*:\s*['"]?$/i);
                 const isTypingPrefix = linePrefix.match(/web[econ-]*$/i);
 
-                if (!isInsideTag && !isSDKCall && !isTypingPrefix) {
+                if (!isInsideTag && !isReactTag && !isSDKCall && !isFlutterCall && !isTypingPrefix) {
                     return undefined;
                 }
 
                 return icons.map(name => {
-                    const item = new vscode.CompletionItem(`webecon-${name}`, vscode.CompletionItemKind.File);
+                    const item = new vscode.CompletionItem(name, vscode.CompletionItemKind.File);
                     item.detail = `Webecon Icon: ${name}`;
                     
                     const iconPath = path.join(context.extensionPath, 'icons', `${name}.svg`);
@@ -50,22 +52,21 @@ function activate(context) {
                         item.documentation = markdown;
                     } catch (err) {}
 
-                    if (isTypingPrefix && !isInsideTag && !isSDKCall) {
-                        // Replace the typed prefix with the full tag
+                    if (isTypingPrefix && !isInsideTag && !isReactTag && !isSDKCall && !isFlutterCall) {
+                        item.label = `webecon-${name}`;
                         const match = linePrefix.match(/web[econ-]*$/i);
                         const start = position.translate(0, -match[0].length);
                         item.range = new vscode.Range(start, position);
                         item.insertText = new vscode.SnippetString(`<webecon-icon name="${name}" size="24" theme="line" animation="none"></webecon-icon>`);
                     } else {
                         item.insertText = name;
-                        item.label = name; // Just the name if inside attributes
+                        item.label = name; 
                     }
                     
                     return item;
                 });
             }
         }
-        // No trigger characters - let it trigger on every keystroke for better experience
     );
 
     context.subscriptions.push(provider);

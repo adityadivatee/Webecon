@@ -1,4 +1,4 @@
-# Webecon Python SDK (v17.2.5 PRO)
+# Webecon Python SDK (v17.2.6 PRO)
 
 ## 🚀 Installation
 Include `webecon.py` in your project's source directory.
