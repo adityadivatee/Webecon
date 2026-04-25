@@ -287,6 +287,6 @@ class Webecon extends HTMLElement {
     }
 }
 if (!customElements.get('webecon-icon')) { 
-    console.log('[Webecon] Registering custom element...');
+    console.log('[Webecon] Registering custom element <webecon-icon>...');
     customElements.define('webecon-icon', Webecon); 
 }

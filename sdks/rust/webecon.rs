@@ -1,5 +1,5 @@
 /**
- * Webecon Rust SDK - v17.2.1 PRO
+ * Webecon Rust SDK - v17.2.4 PRO
  * Developed by Aditya Divte Production (aka Aditya Diwate)
  * Website: https://adityadivte.com
  * Visit https://webecon.adityadivte.com for more info.

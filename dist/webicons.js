@@ -1,5 +1,5 @@
 /**
- * Webecon - Premium Animated Icon Engine v17.2.1 PRO
+ * Webecon - Premium Animated Icon Engine v17.2.4 PRO
  * Developed by Aditya Divte Production (aka Aditya Diwate)
  * Website: https://adityadivte.com
  * Project Hub: https://webecon.adityadivte.com
@@ -1510,7 +1510,7 @@ class Webecon extends HTMLElement {
     }
 }
 if (!customElements.get('webecon-icon')) { 
-    console.log('[Webecon] Registering custom element...');
+    console.log('[Webecon] Registering custom element <webecon-icon>...');
     customElements.define('webecon-icon', Webecon); 
 }
 

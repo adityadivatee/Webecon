@@ -1,64 +1,85 @@
-# 🚀 Webecon v17.2.1 PRO
-### Premium Animated Icon Engine for the Modern Developer
-**Developed by Aditya Divte Production (aka Aditya Diwate)**
+# Webecon — Universal Animated Icon Engine (v17.2 PRO)
+
+![Webecons Hero Banner](webecons_hero_banner_1776602228561.png)
+
+### **1,031+ Premium Animated Icons | 15+ Native SDKs | 100% Free for Commercial Use**
+
+**Webecon** is a professional-grade iconography ecosystem designed for elite developers and designers. It combines a massive library of themeable, animated icons with a universal rendering engine that works natively across Web, Mobile, Desktop, and Game Engines.
+
+[🚀 Explore Icons](https://adityadivte.com) | [📚 Documentation](docs.html) | [❤️ Support Development](https://rzp.io/rzp/webecon)
 
 ---
 
-[![License: Commercial](https://img.shields.io/badge/License-Commercial_Free-brightgreen.svg)](LICENSE.md)
-[![Icons](https://img.shields.io/badge/Icons-1031+-blue.svg)](docs.html)
-[![Animations](https://img.shields.io/badge/Animations-15+-pink.svg)](docs.html)
-[![Themes](https://img.shields.io/badge/Themes-11_Premium-orange.svg)](docs.html)
+## 🌟 Key Features
 
-**Webecon** is the world's most versatile, high-performance animated icon ecosystem. Visit the [Project Hub](https://webecon.adityadivte.com) for a live customizer. With 1,031+ cinematically rendered assets and a unified **Fluent Builder API**, Webecon provides a "Zero-Search" developer experience across 14+ programming languages.
-
----
-
-## ✨ Key Features
-- 🎨 **11 Premium Themes**: Neon, Glass, 3D, Cyberpunk, Duo-Tone, and more.
-- ⚡ **15+ High-Fidelity Animations**: Pulse, Heartbeat, Ring, Swing, Glitch, etc.
-- 🖱️ **Interaction Triggers**: Native support for `Hover`, `Click`, and `Infinite` modes.
-- 🌐 **14+ Native SDKs**: Java, Python, C#, Rust, Go, Swift, Dart, Ruby, PHP, and C++.
-- 🚀 **Hardware Accelerated**: Optimized SVGs with minimal DOM footprint.
-- 📜 **Safe Legal Shield**: Commercial-friendly license with explicit author protection.
+- **🦾 Multi-Platform Native**: Native SDKs for React, Flutter, Swift, Java, Kotlin, Python, Go, Rust, Unity, Unreal Engine, Ruby, Pure C, and TypeScript.
+- **✨ Professional Themes**: Switch between **Shine (Glossy)**, **Duo Tone**, **Glitch**, **Neon**, and **Glassmorphism** with a single attribute.
+- **🎨 Dual-Color System**: Every icon supports a Primary and Secondary color for deep branding integration.
+- **🎬 20+ Motion Presets**: High-performance CSS and hardware-accelerated animations (Pulse, Spin, Jello, Rubber-Band, etc.).
+- **📐 Infinite Scalability**: Pure SVG-based rendering ensures your icons are sharp at any resolution, from 12px to 4K.
 
 ---
 
-## 🛠️ Unified Fluent API
-Type your icons directly in your favorite language. No more manual SVG copying.
+## 🛠️ Quick Start
 
-### **Python**
-```python
-import webecon
-icon = webecon.Webecon("zap").size(64).theme("neon").trigger("hover")
-print(icon)
+### Web (CDN)
+The fastest way to get started in any HTML project:
+```html
+<script src="https://cdn.adityadivte.com/webecon.js"></script>
+<webecon-icon name="rocket" theme="shine" animation="pulse"></webecon-icon>
 ```
 
-### **Java / Kotlin**
-```java
-String tag = Webecon.icon("shield").size(48).theme("glass").build();
+### React / Next.js
+```bash
+npm install webecon-react
+```
+```jsx
+import { Webecon } from 'webecon-react';
+
+<Webecon name="zap" theme="duo" color="#6366f1" secondaryColor="#fff" animation="pulse" />
 ```
 
-### **C# (Unity / .NET)**
-```csharp
-var tag = Webecon.icon("heart").size(128).theme("shine").trigger("click").build();
+### Flutter (Dart)
+```yaml
+dependencies:
+  webecon: ^17.2.0
+```
+```dart
+Webecon(
+  name: 'shield-check',
+  theme: WebeconTheme.shine,
+  color: Colors.blue,
+  animation: 'heartbeat',
+)
 ```
 
 ---
 
-## 📦 Installation & SDKs
-1. **Web**: Add `<script src="https://cdn.adityadivte.com/webecon.js"></script>` to your HTML.
-2. **Native**: Download the optimized ZIP for your language from the [Project Hub](https://webecon.adityadivte.com).
+## 🎭 Visual Themes
+
+Webecon isn't just a library; it's an engine. Change the entire look of your app by switching themes globally or per icon:
+
+- **Shine**: High-end glossy highlights that react to user interaction.
+- **Duo Tone**: Complex, layered icons using two distinct colors.
+- **Glitch**: A sharp, cyberpunk aesthetic for modern interfaces.
+- **Classic**: Minimalist, clean line icons for corporate and utility use.
 
 ---
 
-## 📜 License & Legal
-Webecon is **100% FREE** for both personal and commercial use (apps, websites, games).
-- **Resale**: Standalone resale of icon assets or SDKs is strictly prohibited.
-- **Liability**: This software is in a **Development Phase** and is provided "AS IS". Aditya Divte Production holds zero liability for project-wide issues.
-- **Branding**: The watermark `Webecon by Aditya Divte Production` must remain in the source code.
+## 📝 Commercial License
+
+Webecon is published under the **Webecon Open-Brand License**.
+- ✅ **100% Free** for commercial projects, apps, games, and client work.
+- ✅ No attribution required (though appreciated).
+- ❌ Reselling icons as standalone assets or competing libraries is prohibited.
+- ❌ Removal of invisible metadata watermarks (`<!-- Webecon by Aditya Divte Production — adityadivte.com -->`) is prohibited.
 
 ---
-**Official Website**: [adityadivte.com](https://adityadivte.com)  
-**Project Hub**: [webecon.adityadivte.com](https://webecon.adityadivte.com)  
-**Support**: [support@adityadivte.com](mailto:support@adityadivte.com)  
-**Donate**: [Support the Project](https://rzp.io/rzp/webecon)
+
+## 🏗️ Technical Provenance
+Produced and Maintained by **Webecon by Aditya Divte Production**.  
+Official Website: **[adityadivte.com](https://adityadivte.com)**  
+Support Email: **[support@adityadivte.com](mailto:support@adityadivte.com)**
+
+**Visit [adityadivte.com](https://adityadivte.com) for more professional tools and elite UI assets for free.**  
+**Visit [adityadivte.com](https://adityadivte.com) for the full library and live customizer.**

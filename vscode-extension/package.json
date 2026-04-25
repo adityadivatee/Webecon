@@ -1,19 +1,29 @@
 {
     "name": "webecon-snippets",
-    "displayName": "Webecon (adityadivte.com)",
-    "description": "Professional 1,031+ animated icons for elite developers. Powered by adityadivte.com.",
-    "version": "17.2.1",
-    "publisher": "Aditya Divte Production",
+    "displayName": "Webecon: 1,031+ Animated Icons",
+    "description": "Instant snippets for 1,031+ professional animated icons. The ultimate UI/UX tool for modern web developers. Powered by adityadivte.com.",
+    "version": "17.2.4",
+    "publisher": "AdityaDivteProduction",
     "homepage": "https://webecon.adityadivte.com",
+    "icon": "webecon128.png",
     "repository": {
         "type": "git",
-        "url": "https://github.com/adityadivatee/Webecon.git"
+        "url": "https://github.com/adityadivte/webecon"
     },
     "engines": {
         "vscode": "^1.60.0"
     },
+    "main": "./extension.js",
+    "activationEvents": [
+        "onLanguage:html",
+        "onLanguage:javascript",
+        "onLanguage:javascriptreact",
+        "onLanguage:typescriptreact"
+    ],
     "categories": [
-        "Snippets"
+        "Snippets",
+        "Programming Languages",
+        "Visualization"
     ],
     "keywords": [
         "icons",
