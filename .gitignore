@@ -1,29 +1,20 @@
-# System Files
+# Dependencies
+node_modules/
+.npm
+npm-debug.log*
+
+# Build Outputs (Optional: Remove 'dist/' if you want to rebuild on CI)
+# dist/
+
+# System / IDE
 .DS_Store
 Thumbs.db
-
-# Build Artifacts
-node_modules/
-npm-debug.log
-yarn-debug.log
-yarn-error.log
-
-# Temporary / Test Files
-test/
-*.exe
-*.obj
-*.class
-*.pyc
-__pycache__/
-
-# IDE Config
 .vscode/
 .idea/
-*.swp
-*.swo
 
-# Project Specific
-dist/icons/
-!dist/webicons.js
-!dist/sdks/
-!dist/sdks/*.zip
+# AI Workflow Artifacts (Internal)
+implementation_plan.md
+task.md
+walkthrough.md
+scratch/
+.system_generated/

@@ -1,0 +1,16 @@
+{
+  "name": "webecon",
+  "version": "17.2.4",
+  "description": "Webecon by Aditya Divte Production — adityadivte.com. 1,031+ premium animated, themeable SVG icons. Free for commercial use.",
+  "type": "module",
+  "homepage": "https://adityadivte.com",
+  "keywords": ["webecon", "icons", "animated-icons", "svg", "webcomponent", "adityadivte", "ui"],
+  "scripts": {
+    "build": "node build.js",
+    "snippets": "node generate-snippets.js",
+    "dev": "npx serve .",
+    "all": "npm run build && npm run snippets"
+  },
+  "author": "Aditya Divte Production <support@adityadivte.com> (https://adityadivte.com)",
+  "license": "MIT"
+}

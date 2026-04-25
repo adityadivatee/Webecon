@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Showcase | Webecon v17.2 PRO</title>
+    <script src="../../dist/webicons.js"></script>
+    <style>
+        :root {
+            --bg: #05070a;
+            --card: #0d1117;
+            --primary: #6366f1;
+            --text: #f8fafc;
+        }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            margin: 0;
+            padding: 4rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .header { text-align: center; margin-bottom: 4rem; }
+        .header h1 { font-size: 3rem; margin-bottom: 0.5rem; background: linear-gradient(to right, #6366f1, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 2rem;
+            width: 100%;
+            max-width: 1200px;
+        }
+        .card {
+            background: var(--card);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card:hover { border-color: var(--primary); transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .card span { font-size: 0.8rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; }
+
+        .label { margin-top: auto; font-weight: 600; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Webecon <span>Showcase</span></h1>
+        <p>Live testing for Themes, Animations, and Triggers</p>
+    </div>
+
+    <div class="grid">
+        <!-- THEME TESTS -->
+        <div class="card">
+            <span>Theme: Neon</span>
+            <webecon-icon name="zap" size="64" theme="neon" color="#6366f1" animation="pulse"></webecon-icon>
+            <div class="label">Neon Pulse</div>
+        </div>
+
+        <div class="card">
+            <span>Theme: Glass</span>
+            <webecon-icon name="shield" size="64" theme="glass" color="#10b981" animation="float"></webecon-icon>
+            <div class="label">Glass Float</div>
+        </div>
+
+        <div class="card">
+            <span>Theme: Cyberpunk</span>
+            <webecon-icon name="cpu" size="64" theme="cyberpunk" color="#f43f5e"></webecon-icon>
+            <div class="label">Cyberpunk Glitch</div>
+        </div>
+
+        <div class="card">
+            <span>Theme: 3D</span>
+            <webecon-icon name="box" size="64" theme="3d" color="#f59e0b" animation="spin"></webecon-icon>
+            <div class="label">3D Spin</div>
+        </div>
+
+        <!-- TRIGGER TESTS -->
+        <div class="card">
+            <span>Trigger: Hover</span>
+            <webecon-icon name="heart" size="64" theme="neon" color="#ff4d4d" animation="heartbeat" animation-mode="hover"></webecon-icon>
+            <div class="label">Hover to Beat</div>
+        </div>
+
+        <div class="card">
+            <span>Trigger: Click</span>
+            <webecon-icon name="bell" size="64" theme="halo" color="#fbbf24" animation="ring" animation-mode="click"></webecon-icon>
+            <div class="label">Click to Ring</div>
+        </div>
+
+        <!-- STROKE & SIZE TESTS -->
+        <div class="card">
+            <span>Stroke: 1.0</span>
+            <webecon-icon name="settings" size="64" stroke="1.0" color="#94a3b8" animation="spin-slow"></webecon-icon>
+            <div class="label">Minimalist</div>
+        </div>
+
+        <div class="card">
+            <span>Theme: Solid</span>
+            <webecon-icon name="star" size="64" theme="solid" color="#facc15" animation="rubber-band" animation-mode="hover"></webecon-icon>
+            <div class="label">Solid Hover</div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Webecon Icon Showcase - Web Integration</title>
+    <script src="../../dist/webicons.js"></script>
+    <style>
+        body { background: #050505; color: white; font-family: sans-serif; display: flex; flex-direction: column; align-items: center; padding: 50px; }
+        .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 40px; }
+        .card { background: #111; padding: 30px; border-radius: 20px; border: 1px solid #333; text-align: center; }
+        .title { font-size: 2rem; font-weight: bold; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <div class="title">Web Showcase</div>
+    <p>Testing secondary vibrancy and themes.</p>
+    
+    <div class="grid">
+        <!-- Solid Fill Test (100% Opacity) -->
+        <div class="card">
+            <webecon name="heart" size="64" color="#ef4444" secondary-color="#7f1d1d" secondary-opacity="1.0" animation="pulse"></webecon>
+            <p>Solid Fill (1.0)</p>
+        </div>
+        
+        <!-- Glass Theme Test -->
+        <div class="card">
+            <webecon name="activity" size="64" color="#00f2fe" theme="glass" animation="float"></webecon>
+            <p>Glass Theme</p>
+        </div>
+        
+        <!-- Neon Theme Test -->
+        <div class="card">
+            <webecon name="zap" size="64" color="#f59e0b" theme="neon" animation="flash"></webecon>
+            <p>Neon Theme</p>
+        </div>
+    </div>
+</body>
+</html>
