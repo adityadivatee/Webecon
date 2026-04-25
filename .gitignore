@@ -24,6 +24,6 @@ __pycache__/
 
 # Project Specific
 dist/icons/
-dist/sdks/*.zip
 !dist/webicons.js
 !dist/sdks/
+!dist/sdks/*.zip
