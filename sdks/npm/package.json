@@ -1,0 +1,47 @@
+{
+  "name": "webecon",
+  "version": "17.2.6",
+  "description": "Premium Universal Animated Icon Engine. 1,031+ professional, themeable animated icons for high-performance web applications.",
+  "main": "index.js",
+  "module": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./react": "./react.jsx",
+    "./icons/*": "./icons/*"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adityadivatee/Webecon.git"
+  },
+  "keywords": [
+    "icons",
+    "animated-icons",
+    "svg",
+    "react",
+    "web-components",
+    "icon-engine",
+    "webecon",
+    "adityadivte"
+  ],
+  "author": "Aditya Divte (https://adityadivte.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/adityadivatee/Webecon/issues"
+  },
+  "homepage": "https://webecon.adityadivte.com",
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    }
+  }
+}
