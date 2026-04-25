@@ -1,0 +1,24 @@
+name: webecon
+description: "Premium Universal Animated Icon Engine. 1,031+ professional, themeable animated icons for high-performance Flutter apps. Powered by adityadivte.com."
+version: 17.2.6
+repository: https://github.com/adityadivatee/Webecon
+homepage: https://webecon.adityadivte.com
+issue_tracker: https://github.com/adityadivatee/Webecon/issues
+
+environment:
+  sdk: ^3.11.0
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_svg: ^2.2.4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  assets:
+    - assets/icons/

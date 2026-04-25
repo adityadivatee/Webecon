@@ -80,7 +80,7 @@ class _IconBrowserPageState extends State<IconBrowserPage> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          WebeconIcon(
+                          Webecon(
                             name: name,
                             size: 40,
                             color: Colors.indigoAccent,
