@@ -1,4 +1,4 @@
-# Webecon Ruby SDK (v17.2.4 PRO)
+# Webecon Ruby SDK (v17.2.5 PRO)
 
 ## 🚀 Installation
 Include `webecon.rb` in your project's source directory.

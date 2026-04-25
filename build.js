@@ -57,7 +57,7 @@ async function build() {
     const toScreaming = (str) => sanitize(str.replace(/-/g, '_').toUpperCase());
 
     // --- 1. Generate Universal Web Formats ---
-    const VERSION = '17.2.4';
+    const VERSION = '17.2.5';
     const GITHUB_REPO = 'adityadivte/webecon';
     const jsHeader = `/**\n * Webecon - Premium Animated Icon Engine v${VERSION} PRO\n * Developed by Aditya Divte Production (aka Aditya Diwate)\n * Website: https://adityadivte.com\n * Project Hub: https://webecon.adityadivte.com\n * \n * Free for commercial use. Resale and branding removal forbidden.\n */\n`;
     let componentContent = fs.readFileSync(WEB_COMPONENT_FILE, 'utf8');

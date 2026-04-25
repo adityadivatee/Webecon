@@ -1,5 +1,5 @@
 #######################################################################
-# Webecon Python SDK - v17.2.4 PRO
+# Webecon Python SDK - v17.2.5 PRO
 # Developed by Aditya Divte Production (aka Aditya Diwate)
 # Website: https://adityadivte.com
 # Visit https://webecon.adityadivte.com for more info.
@@ -16,8 +16,8 @@ def check_updates():
         with urllib.request.urlopen("https://api.github.com/repos/adityadivte/webecon/releases/latest", timeout=2) as r:
             data = json.loads(r.read().decode())
             latest = data['tag_name'].replace('v', '')
-            if latest > "17.2.4":
-                print(f"\n\033[96m🚀 New Webecon version available: v{latest} (Current: v17.2.4)\033[0m")
+            if latest > "17.2.5":
+                print(f"\n\033[96m🚀 New Webecon version available: v{latest} (Current: v17.2.5)\033[0m")
                 print(f"\033[94m👉 Update now: https://github.com/adityadivte/webecon\033[0m\n")
     except: pass
 

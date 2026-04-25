@@ -6,14 +6,16 @@ const path = require('path');
  * @param {vscode.ExtensionContext} context
  */
 function activate(context) {
-    console.log('Webecon extension is now active!');
+    const channel = vscode.window.createOutputChannel("Webecon");
+    channel.appendLine('Webecon extension is now active!');
 
     const iconsJsonPath = path.join(context.extensionPath, 'icons.json');
     let icons = [];
     try {
         icons = JSON.parse(fs.readFileSync(iconsJsonPath, 'utf8'));
+        channel.appendLine(`Loaded ${icons.length} icons successfully.`);
     } catch (e) {
-        console.error('Failed to load icons.json', e);
+        channel.appendLine(`Error loading icons.json: ${e.message}`);
     }
 
     const provider = vscode.languages.registerCompletionItemProvider(
@@ -22,40 +24,48 @@ function activate(context) {
             provideCompletionItems(document, position) {
                 const linePrefix = document.lineAt(position).text.substr(0, position.character);
                 
-                // Match both <webecon-icon name="..." and Webecon.icon("...") or Webecon("...")
-                const isWebTag = linePrefix.includes('<webecon-icon');
+                // Flexible matching:
+                // 1. Inside name attribute: name="...
+                // 2. Webecon function: .icon("...
+                // 3. Just typing webecon or web
+                const isInsideTag = linePrefix.match(/<webecon-icon[^>]*name=['"]$/i);
                 const isSDKCall = linePrefix.match(/Webecon(\.icon)?\s*\(['"]?$/i);
+                const isTypingPrefix = linePrefix.match(/web[econ-]*$/i);
 
-                if (!isWebTag && !isSDKCall) {
+                if (!isInsideTag && !isSDKCall && !isTypingPrefix) {
                     return undefined;
                 }
 
                 return icons.map(name => {
-                    const item = new vscode.CompletionItem(name, vscode.CompletionItemKind.File);
+                    const item = new vscode.CompletionItem(`webecon-${name}`, vscode.CompletionItemKind.File);
                     item.detail = `Webecon Icon: ${name}`;
                     
-                    // Documentation with preview
                     const iconPath = path.join(context.extensionPath, 'icons', `${name}.svg`);
-                    let svgContent = '';
                     try {
-                        svgContent = fs.readFileSync(iconPath, 'utf8');
-                        // Basic cleanup for markdown
+                        const svgContent = fs.readFileSync(iconPath, 'utf8');
                         const base64 = Buffer.from(svgContent).toString('base64');
                         const dataUri = `data:image/svg+xml;base64,${base64}`;
-                        
                         const markdown = new vscode.MarkdownString(`### ${name}\n\n![${name}](${dataUri})`);
                         markdown.supportHtml = true;
                         item.documentation = markdown;
-                    } catch (err) {
-                        item.documentation = `Icon: ${name}`;
-                    }
+                    } catch (err) {}
 
-                    item.insertText = name;
+                    if (isTypingPrefix && !isInsideTag && !isSDKCall) {
+                        // Replace the typed prefix with the full tag
+                        const match = linePrefix.match(/web[econ-]*$/i);
+                        const start = position.translate(0, -match[0].length);
+                        item.range = new vscode.Range(start, position);
+                        item.insertText = new vscode.SnippetString(`<webecon-icon name="${name}" size="24" theme="line" animation="none"></webecon-icon>`);
+                    } else {
+                        item.insertText = name;
+                        item.label = name; // Just the name if inside attributes
+                    }
+                    
                     return item;
                 });
             }
-        },
-        ' ' // trigger on space
+        }
+        // No trigger characters - let it trigger on every keystroke for better experience
     );
 
     context.subscriptions.push(provider);

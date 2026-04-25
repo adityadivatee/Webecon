@@ -1,4 +1,4 @@
-# Webecon PHP SDK (v17.2.4 PRO)
+# Webecon PHP SDK (v17.2.5 PRO)
 
 ## 🚀 Installation
 Include `Webecon.php` in your project's source directory.

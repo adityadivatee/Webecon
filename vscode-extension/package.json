@@ -2,7 +2,7 @@
     "name": "webecon-snippets",
     "displayName": "Webecon: 1,031+ Animated Icons",
     "description": "Instant snippets for 1,031+ professional animated icons. The ultimate UI/UX tool for modern web developers. Powered by adityadivte.com.",
-    "version": "17.2.4",
+    "version": "17.2.5",
     "publisher": "AdityaDivteProduction",
     "homepage": "https://webecon.adityadivte.com",
     "icon": "webecon128.png",
@@ -44,24 +44,5 @@
         "adityadivte",
         "professional"
     ],
-    "contributes": {
-        "snippets": [
-            { "language": "html", "path": "./snippets/webecon.json" },
-            { "language": "javascript", "path": "./snippets/webecon.json" },
-            { "language": "javascriptreact", "path": "./snippets/webecon.json" },
-            { "language": "typescriptreact", "path": "./snippets/webecon.json" },
-            { "language": "python", "path": "./snippets/webecon.json" },
-            { "language": "java", "path": "./snippets/webecon.json" },
-            { "language": "kotlin", "path": "./snippets/webecon.json" },
-            { "language": "rust", "path": "./snippets/webecon.json" },
-            { "language": "go", "path": "./snippets/webecon.json" },
-            { "language": "swift", "path": "./snippets/webecon.json" },
-            { "language": "dart", "path": "./snippets/webecon.json" },
-            { "language": "cpp", "path": "./snippets/webecon.json" },
-            { "language": "csharp", "path": "./snippets/webecon.json" },
-            { "language": "ruby", "path": "./snippets/webecon.json" },
-            { "language": "php", "path": "./snippets/webecon.json" },
-            { "language": "c", "path": "./snippets/webecon.json" }
-        ]
-    }
+    "contributes": {}
 }

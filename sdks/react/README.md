@@ -1,4 +1,4 @@
-# Webecon React SDK (v17.2.4 PRO)
+# Webecon React SDK (v17.2.5 PRO)
 
 ## 🚀 Installation
 Include `Webecon.jsx` in your project's source directory.

@@ -1,4 +1,4 @@
-# Webecon HTML Reference SDK (v17.2.4 PRO)
+# Webecon HTML Reference SDK (v17.2.5 PRO)
 
 ## 🚀 Installation
 Include `index.html` in your project's source directory.
