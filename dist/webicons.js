@@ -1,3 +1,11 @@
+/**
+ * Webecon - Premium Animated Icon Engine v17.2 PRO
+ * Developed by Aditya Divte Production (aka Aditya Diwate)
+ * Website: https://adityadivte.com
+ * Project Hub: https://webecon.adityadivte.com
+ * 
+ * Free for commercial use. Resale and branding removal forbidden.
+ */
 (function(){const icons={
     // Navigation
     'home': `<path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>`,

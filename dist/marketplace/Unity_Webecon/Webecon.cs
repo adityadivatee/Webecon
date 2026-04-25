@@ -1,10 +1,8 @@
 /**
  * Webecon C# SDK - v17.2 PRO
- * Copyright (c) 2026 Aditya Divte Production (adityadivte.com)
- * 
- * Commercial Use: Allowed | Resale: Forbidden | Branding Removal: Forbidden
- * 
- * Visit https://adityadivte.com for more professional tools and elite UI assets.
+ * Developed by Aditya Divte Production (aka Aditya Diwate)
+ * Website: https://adityadivte.com
+ * Visit https://webecon.adityadivte.com for more info.
  */
 
 /**
