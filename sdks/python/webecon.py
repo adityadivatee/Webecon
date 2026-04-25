@@ -13,12 +13,12 @@ IconName = Literal['3d-printer-pro', 'abacus-classic', 'accordion', 'activity', 
 def check_updates():
     import urllib.request, json
     try:
-        with urllib.request.urlopen("https://api.github.com/repos/adityadivte/webecon/releases/latest", timeout=2) as r:
+        with urllib.request.urlopen("https://api.github.com/repos/adityadivatee/Webecon/releases/latest", timeout=2) as r:
             data = json.loads(r.read().decode())
             latest = data['tag_name'].replace('v', '')
             if latest > "17.2.5":
                 print(f"\n\033[96m🚀 New Webecon version available: v{latest} (Current: v17.2.5)\033[0m")
-                print(f"\033[94m👉 Update now: https://github.com/adityadivte/webecon\033[0m\n")
+                print(f"\033[94m👉 Update now: https://github.com/adityadivatee/Webecon\033[0m\n")
     except: pass
 
 check_updates()

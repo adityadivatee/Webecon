@@ -17,7 +17,7 @@ func main() {
     fmt.Println("[START] Testing Webecon Go Fluent Builder...")
 
     // We'll use the logic directly from the SDK to verify the template works.
-    // In a real scenario, user would import "github.com/adityadivte/webecon"
+    // In a real scenario, user would import "github.com/adityadivatee/Webecon"
     
     // I'll manually verify the sdks/go/webecon.go file first.
     dat, _ := ioutil.ReadFile("sdks/go/webecon.go")

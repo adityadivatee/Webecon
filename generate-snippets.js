@@ -4,7 +4,7 @@ import fs from 'fs';
 const snippets = {};
 
 Object.keys(icons).forEach(name => {
-    const previewUrl = `https://raw.githubusercontent.com/adityadivte/webecon/main/dist/icons/${name}.svg`;
+    const previewUrl = `https://raw.githubusercontent.com/adityadivatee/Webecon/main/dist/icons/${name}.svg`;
     const previewMd = `\n\n![Preview](${previewUrl})`;
 
     // Standard Snippet

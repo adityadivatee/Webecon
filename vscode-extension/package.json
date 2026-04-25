@@ -8,7 +8,7 @@
     "icon": "webecon128.png",
     "repository": {
         "type": "git",
-        "url": "https://github.com/adityadivte/webecon"
+        "url": "https://github.com/adityadivatee/Webecon"
     },
     "engines": {
         "vscode": "^1.60.0"
