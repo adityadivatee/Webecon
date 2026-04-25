@@ -23,403 +23,109 @@
         h2 { font-size: 2rem; margin: 3rem 0 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
         p { margin-bottom: 1.5rem; color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; }
         .alert { padding: 1rem 1.5rem; border-radius: 1rem; background: rgba(99, 102, 241, 0.1); border: 1px solid rgba(99, 102, 241, 0.2); color: var(--text); margin: 2rem 0; }
-        .sdk-download-card { text-decoration: none; background: rgba(255,255,255,0.03); border: 1px solid var(--border); padding: 1.25rem; border-radius: 1rem; text-align: center; color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; transition: 0.3s; }
-        .sdk-download-card:hover { background: rgba(255,255,255,0.08); border-color: var(--primary); transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
-        .sdk-download-card strong { font-size: 0.85rem; letter-spacing: 0.5px; }
+        .sdk-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1rem; margin-top: 2rem; }
+        .sdk-card { background: rgba(255,255,255,0.03); border: 1px solid var(--border); padding: 1.5rem; border-radius: 1rem; text-align: center; color: white; text-decoration: none; transition: 0.3s; }
+        .sdk-card:hover { border-color: var(--primary); background: rgba(255,255,255,0.08); transform: translateY(-5px); }
     </style>
 </head>
 <body>
     <aside class="docs-sidebar">
         <a href="index.html" class="logo" style="margin-bottom: 3rem;">
             <img src="Webecon.png" alt="Webecon" style="height: 32px; width: auto;">
-            <div class="sub" style="font-size: 0.5rem; letter-spacing: 1px; margin-top: 0.5rem; color: var(--text-muted);">adityadivte.com</div>
         </a>
         
         <div class="docs-nav-group">
             <h4>Getting Started</h4>
             <a href="#introduction" class="active">Introduction</a>
-            <a href="#libraries" style="color: var(--secondary); font-weight: 700;">📦 Download SDKs</a>
+            <a href="#sdk-flutter">Native Flutter SDK</a>
             <a href="#api-reference">Master Reference</a>
-            <a href="#installation">Installation</a>
         </div>
 
         <div class="docs-nav-group">
-            <h4>IDE & Development</h4>
-            <a href="#setup-vscode">VS Code Extension</a>
-            <a href="#setup-java">Java Integration</a>
-            <a href="#setup-production">Production Setup</a>
-        </div>
-
-        <div class="docs-nav-group">
-            <h4>Zero-Search SDKs</h4>
+            <h4>Universal SDKs</h4>
+            <a href="#sdk-web">Web (CDN)</a>
             <a href="#sdk-react">React / Next.js</a>
-            <a href="#sdk-flutter">Flutter (Dart)</a>
             <a href="#sdk-python">Python</a>
-            <a href="#sdk-swift">Swift (iOS)</a>
-            <a href="#sdk-java">Java / Maven</a>
-        </div>
-
-        <div class="docs-nav-group">
-            <h4>Performance native</h4>
+            <a href="#sdk-java">Java / Kotlin</a>
+            <a href="#sdk-go">Go (Native)</a>
             <a href="#sdk-rust">Rust (Cargo)</a>
-            <a href="#go">Go (Native)</a>
-            <a href="#cpp">C++ (Unreal)</a>
-            <a href="#csharp">C# (Unity)</a>
-            <a href="#typescript">TypeScript</a>
-        </div>
-
-        <div class="docs-nav-group">
-            <h4>Commercial Hub</h4>
-            <a href="#licensing">Commercial License</a>
-            <a href="#branding-rules">Watermark Policy</a>
-            <a href="LICENSE.md">License Support</a>
-            <a href="https://adityadivte.com" target="_blank">Production Portfolio</a>
         </div>
     </aside>
 
     <main class="docs-content">
         <div style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(236, 72, 153, 0.1)); padding: 4rem; border-radius: 2rem; border: 1px solid var(--border); margin-bottom: 4rem;">
-            <h1 style="margin: 0; font-size: 3.5rem;">Documentation <span>Hub</span></h1>
-            <p style="margin-top: 1rem; font-size: 1.25rem;">Official Engineering Guide for Webecon Universal SDKs</p>
+            <h1 style="margin: 0;">Documentation <span>Hub</span></h1>
+            <p style="margin-top: 1rem;">Official Engineering Guide for Webecon v17.2.6 PRO</p>
             <div style="display: flex; gap: 1rem; margin-top: 2rem;">
-                <span style="background: var(--primary); color: white; padding: 0.5rem 1rem; border-radius: 2rem; font-size: 0.75rem; font-weight: 700;">v17.2.4 PRO</span>
-                <span style="background: rgba(255,255,255,0.05); color: var(--text-muted); padding: 0.5rem 1rem; border-radius: 2rem; font-size: 0.75rem;">Verified by Aditya Divte Production</span>
+                <span style="background: var(--primary); color: white; padding: 0.5rem 1rem; border-radius: 2rem; font-size: 0.75rem; font-weight: 700;">v17.2.6 PRO</span>
+                <span style="background: rgba(255,255,255,0.05); color: var(--text-muted); padding: 0.5rem 1rem; border-radius: 2rem; font-size: 0.75rem;">Aditya Divte Production</span>
             </div>
         </div>
 
         <section id="introduction">
-            <h2>Introduction</h2>
-            <p>Webecon by <b>adityadivte.com</b> is the definitive icon engine for elite software development teams. Developed by <b>Aditya Divte Production (aka Aditya Diwate)</b>, the ecosystem provides native, zero-search performance across all platforms.</p>
-            <div class="alert">
-                <strong>Branding Notice:</strong> You are free to sell any product (app, website, game) using these icons. Standalone resale of assets is forbidden.
-            </div>
+            <h2>Universal Icon Engine</h2>
+            <p>Webecon is a unified iconography system. We provide native, hardware-accelerated SDKs for every major programming language, all using the same professional <b>Webecon</b> API.</p>
         </section>
 
-        <section id="api-reference">
-            <h2>Master API Reference</h2>
-            <p>Every customization in our Studio is accessible natively via code. Use these properties to fine-tune your iconography without visiting the website.</p>
-            
-            <table style="width: 100%; border-collapse: collapse; margin-top: 2rem;">
-                <tr style="border-bottom: 2px solid var(--border); text-align: left;">
-                    <th style="padding: 1rem; color: var(--primary);">Property</th>
-                    <th style="padding: 1rem;">Default</th>
-                    <th style="padding: 1rem;">Example Values / Description</th>
-                </tr>
-                <tr style="border-bottom: 1px solid var(--border);">
-                    <td style="padding: 1rem; font-family: monospace;">name</td>
-                    <td style="padding: 1rem;">"home"</td>
-                    <td style="padding: 1rem; color: var(--text-muted);">"rocket", "zap", "shield"</td>
-                </tr>
-                <tr style="border-bottom: 1px solid var(--border);">
-                    <td style="padding: 1rem; font-family: monospace;">size</td>
-                    <td style="padding: 1rem;">24</td>
-                    <td style="padding: 1rem; color: var(--text-muted);">16, 32, 64, 128 (Integer)</td>
-                </tr>
-                <tr style="border-bottom: 1px solid var(--border);">
-                    <td style="padding: 1rem; font-family: monospace;">color</td>
-                    <td style="padding: 1rem;">"currentColor"</td>
-                    <td style="padding: 1rem; color: var(--text-muted);">Primary color (HEX, RGB, CSS name)</td>
-                </tr>
-                <tr style="border-bottom: 1px solid var(--border);">
-                    <td style="padding: 1rem; font-family: monospace;">secondary-color</td>
-                    <td style="padding: 1rem;">"none"</td>
-                    <td style="padding: 1rem; color: var(--text-muted);">Secondary/Background color</td>
-                </tr>
-                <tr style="border-bottom: 1px solid var(--border);">
-                    <td style="padding: 1rem; font-family: monospace;">secondary-opacity</td>
-                    <td style="padding: 1rem;">0.35</td>
-                    <td style="padding: 1rem; color: var(--text-muted);">0.0 to 1.0 (Float)</td>
-                </tr>
-                <tr style="border-bottom: 1px solid var(--border);">
-                    <td style="padding: 1rem; font-family: monospace;">stroke</td>
-                    <td style="padding: 1rem;">2.0</td>
-                    <td style="padding: 1rem; color: var(--text-muted);">0.5 to 5.0 (Thickness)</td>
-                </tr>
-                <tr style="border-bottom: 1px solid var(--border);">
-                    <td style="padding: 1rem; font-family: monospace;">theme</td>
-                    <td style="padding: 1rem;">"line"</td>
-                    <td style="padding: 1rem; color: var(--text-muted);">"shine", "neon", "duo", "3d", "glass", "solid"</td>
-                </tr>
-                <tr style="border-bottom: 1px solid var(--border);">
-                    <td style="padding: 1rem; font-family: monospace;">animation</td>
-                    <td style="padding: 1rem;">"none"</td>
-                    <td style="padding: 1rem; color: var(--text-muted);">"spin", "pulse", "bounce", "float", "shake"</td>
-                </tr>
-                <tr style="border-bottom: 1px solid var(--border);">
-                    <td style="padding: 1rem; font-family: monospace;">animation-mode</td>
-                    <td style="padding: 1rem;">"infinite"</td>
-                    <td style="padding: 1rem; color: var(--text-muted);">"hover", "click", "infinite"</td>
-                </tr>
-            </table>
+        <section id="sdk-web">
+            <h2>Web (HTML/CDN)</h2>
+            <div class="code-header"><span class="code-lang">html</span></div>
+            <pre><code>&lt;!-- Load Webecon Engine --&gt;
+&lt;script src="https://cdn.jsdelivr.net/gh/adityadivatee/Webecon/dist/webicons.js"&gt;&lt;/script&gt;
 
-            <h3 style="margin-top: 3rem;">Universal Language Demo</h3>
-            <p>Every Webecon SDK follows a unified property injection pattern. Here is how to add an icon with full parameters in different languages:</p>
-            
-            <div class="code-header"><span class="code-lang">Python</span></div>
-            <pre><code># Natural, property-chained syntax
-icon = Webecon("zap").size(48).stroke(1.5).color("#ff0000").theme("neon").trigger("hover")
-print(icon) # Automatically renders the HTML tag</code></pre>
-
-            <div class="code-header"><span class="code-lang">Java / Kotlin</span></div>
-            <pre><code>// Sleek Fluent API
-String tag = Webecon.icon("shield")
-                    .size(64)
-                    .stroke(2.0)
-                    .theme("glass")
-                    .trigger("click")
-                    .build();</code></pre>
-
-            <div class="code-header"><span class="code-lang">Dart (Flutter)</span></div>
-            <pre><code>// Unified property injection
-var tag = Webecon.icon("rocket")
-                 .setSize(32)
-                 .setTheme("duo")
-                 .setTrigger("infinite")
-                 .build();</code></pre>
-        </section>
-
-        <section id="setup-vscode">
-            <h2>VS Code Extension</h2>
-            <p>Install the Webecon Official Extension to get live previews and autocompletion directly in your editor.</p>
-            <div class="code-header"><span class="code-lang">CLI</span></div>
-            <pre><code>code --install-extension adityadivte.webecon</code></pre>
-            <p style="margin-top: 1rem;">Once installed, simply type <code>&lt;webecon-</code> to see the full list of icons with instant visual previews.</p>
-        </section>
-
-        <section id="setup-java">
-            <h2>Java / Kotlin Integration</h2>
-            <p>Webecon provides native loaders for enterprise environments and mobile development (Android).</p>
-            <div class="code-header"><span class="code-lang">Maven / Gradle</span></div>
-            <pre><code>// Maven
-&lt;dependency&gt;
-    &lt;groupId&gt;com.adityadivte&lt;/groupId&gt;
-    &lt;artifactId&gt;webecon-java&lt;/artifactId&gt;
-    &lt;version&gt;17.2.0&lt;/version&gt;
-&lt;/dependency&gt;</code></pre>
-            <p style="margin-top: 1rem;">Java Usage: <code>Webecon.icon("home").size(24).theme("line").build();</code></p>
-            <p>Kotlin Usage: <code>Webecon.icon("home").size(24).theme("line").build()</code></p>
-        </section>
-
-        <section id="sdk-html">
-            <h2>Pure HTML / Web Components</h2>
-            <p>The fastest way to add icons to any website. No framework required.</p>
-            <div class="code-header"><span class="code-lang">HTML</span></div>
-            <pre><code>&lt;!-- Load the engine --&gt;
-&lt;script src="https://cdn.adityadivte.com/webecon.js"&gt;&lt;/script&gt;
-
-&lt;!-- Use the component --&gt;
-&lt;webecon-icon 
-    name="zap" 
-    size="48" 
-    theme="neon" 
-    color="#6366f1"
-    animation="pulse"
-&gt;&lt;/webecon-icon&gt;</code></pre>
-        </section>
-
-        <section id="setup-production">
-            <h2>Production Setup</h2>
-            <p>For high-performance production environments, we recommend self-hosting the library or using our global edge CDN.</p>
-            <div class="code-header"><span class="code-lang">HTML</span></div>
-            <pre><code>&lt;script src="https://adityadivte.com/v17.2/loader.js"&gt;&lt;/script&gt;</code></pre>
-        </section>
-
-        <section id="sdk-react">
-            <h2>React / Next.js SDK</h2>
-            <p>High-performance React components with full TypeScript support. Package handles SVG hydration and motion preset injection automatically.</p>
-            <div class="code-header"><span class="code-lang">CLI</span></div>
-            <pre><code>npm install webecon-react</code></pre>
-            <div class="code-header"><span class="code-lang">React (Duo-Tone with Shine)</span></div>
-            <pre><code>import { Webecon } from 'webecon-react';
-
-const App = () => (
-    &lt;Webecon 
-        name="rocket" 
-        size={64} 
-        theme="shine" 
-        color="#6366f1"
-        secondaryColor="#ffffff"
-        animation="pulse" 
-    /&gt;
-);</code></pre>
+&lt;!-- Use Icons --&gt;
+&lt;webecon-icon name="activity" theme="neon" animation="pulse"&gt;&lt;/webecon-icon&gt;</code></pre>
         </section>
 
         <section id="sdk-flutter">
-            <h2>Flutter SDK (Dart)</h2>
-            <p>Native Flutter widgets for consistent iconography across iOS, Android, and Web platforms.</p>
-            <div class="code-header"><span class="code-lang">Dart (Full Configuration)</span></div>
+            <h2>Flutter Native SDK (New)</h2>
+            <p>The official native SDK for Android, iOS, and Web. Supports high-performance SVG rendering and professional themes.</p>
+            <div class="code-header"><span class="code-lang">dart</span></div>
             <pre><code>import 'package:webecon/webecon.dart';
 
-var tag = Webecon.icon("rocket")
-                 .setSize(48)
-                 .setTheme("duo")
-                 .setTrigger("hover")
-                 .build();</code></pre>
-        </section>
-
-        <section id="sdk-python">
-            <h2>Python SDK</h2>
-            <p>Type-safe Python library for AI automation, data dashboards, and back-office tools.</p>
-            <div class="code-header"><span class="code-lang">Python</span></div>
-            <pre><code>import webecon
- 
- # Natural Builder syntax
- icon = webecon.Webecon("ai-processor").size(64).theme("neon").trigger("infinite").build()
- print(icon)</code></pre>
-        </section>
-
-        <section id="sdk-swift">
-            <h2>Swift SDK (iOS/macOS)</h2>
-            <p>Native SwiftUI components with hardware-accelerated SVG rendering and system-level theme support.</p>
-            <div class="code-header"><span class="code-lang">SwiftUI (Advanced Configuration)</span></div>
-            <pre><code>import Webecon
-
-let svg = Webecon.icon("shield-check")
-                 .size(44)
-                 .stroke(2.0)
-                 .theme("shine")
-                 .trigger("hover")
-                 .build()</code></pre>
-        </section>
-
-        <section id="sdk-rust">
-            <h2>Rust SDK</h2>
-            <p>Zero-dependency SVG parser and renderer for high-performance Rust applications.</p>
-            <div class="code-header"><span class="code-lang">Rust</span></div>
-            <pre><code>use webecon::Webecon;
- 
- let tag = Webecon::icon("cpu").size(48).theme("3d").trigger("infinite").build();</code></pre>
-        </section>
-
-        <section id="sdk-go">
-            <h2>Go SDK</h2>
-            <p>Optimized for web servers and native tools. Generates memory-efficient SVG streams.</p>
-            <div class="code-header"><span class="code-lang">Go</span></div>
-            <pre><code>import "webecon"
- 
- icon := webecon.Icon("glob").SetSize(64).SetTheme("glass").Build()</code></pre>
-        </section>
-        <section id="cpp">
-            <h2>C++ SDK (Unreal / Native)</h2>
-            <p>High-performance header-only library for C++ projects and Unreal Engine.</p>
-            <div class="code-header"><span class="code-lang">C++</span></div>
-            <pre><code>#include "webecon.hpp"
- 
- std::string tag = webecon::Webecon::icon("activity").size(64).theme("neon").trigger("hover").build();</code></pre>
-        </section>
-
-        <section id="csharp">
-            <h2>C# SDK (Unity / .NET)</h2>
-            <p>Professional C# library optimized for Unity Canvas and general .NET applications.</p>
-            <div class="code-header"><span class="code-lang">C# (Unity)</span></div>
-            <pre><code>using Webecon.Icon;
- 
- var tag = Webecon.Icon("target").Size(128).Theme("shine").Build();</code></pre>
-        </section>
-
-        <section id="sdk-ruby">
-            <h2>Ruby SDK</h2>
-            <p>Elegant Ruby module for Rails, Sinatra, and server-side rendering.</p>
-            <div class="code-header"><span class="code-lang">Ruby</span></div>
-            <pre><code>require 'webecon'
-
-svg = Webecon.get_svg(
-  "heart", size: 48, stroke: 2.0, color: "#f43f5e", 
-  theme: "solid", animation: "pulse", animation_mode: "infinite"
+// Inside your build method
+Webecon(
+  name: 'zap',
+  size: 64,
+  color: Colors.indigoAccent,
+  theme: 'shine',
 )</code></pre>
         </section>
 
-        <section id="sdk-c">
-            <h2>Pure C SDK</h2>
-            <p>Minimalist header for embedded systems, IoT, and high-performance C engines.</p>
-            <div class="code-header"><span class="code-lang">Pure C</span></div>
-            <pre><code>#include "webecon.h"
+        <section id="sdk-python">
+            <h2>Python</h2>
+            <div class="code-header"><span class="code-lang">python</span></div>
+            <pre><code>import webecon
 
-// Access raw path data via macros
-const char* path = WEBECON_ICON_ROCKET;</code></pre>
+# Fluent API
+icon = webecon.Webecon("home").size(48).theme("neon").animation("pulse")
+print(icon) # Output: &lt;webecon-icon name="home" ...&gt;</code></pre>
         </section>
 
-        <section id="typescript">
-            <h2>TypeScript Reference</h2>
-            <p>Full type definitions for all 1,031+ icons. Perfect for modern frontend architectures.</p>
-            <div class="code-header"><span class="code-lang">TypeScript</span></div>
-            <pre><code>import { IconName, WebeconProps } from './webecon';
+        <section id="sdk-java">
+            <h2>Java / Kotlin</h2>
+            <div class="code-header"><span class="code-lang">java</span></div>
+            <pre><code>import com.adityadivte.webecon.Webecon;
 
-const myIcon: IconName = 'zap'; // Type-safe autocomplete</code></pre>
+String tag = Webecon.icon("user")
+    .size(64)
+    .theme("duo")
+    .color("#6366f1")
+    .build();</code></pre>
         </section>
 
+        <section id="sdk-go">
+            <h2>Go (Native)</h2>
+            <div class="code-header"><span class="code-lang">go</span></div>
+            <pre><code>import "webecon"
 
-        <section id="licensing">
-            <h2>Commercial License & Legal Protection</h2>
-            <p>The Webecon license is designed for maximum flexibility and developer safety. You are **FULLY PERMITTED** to sell any product (app, website, game) that uses our icons.</p>
-            
-            <div class="alert" style="background: rgba(239, 68, 68, 0.1); border-color: rgba(239, 68, 68, 0.2);">
-                <strong>Legal Disclaimer:</strong> By using this software, you agree that it is provided "AS IS". Webecon is currently in a <b>Development Phase</b>. 
-                Aditya Divte Production is <b>NOT RESPONSIBLE</b> for any project failures, legal struggles, or data loss arising from the use of these tools. Use at your own risk.
-            </div>
-
-            <p><b>Aditya Divte Production</b> holds zero liability for any issues arising from the use of this software. We reserve the right to showcase your work in our portfolio. For removal, email `support@adityadivte.com` (Processed ASAP).</p>
+icon := webecon.Icon("rocket").SetSize(128).SetTheme("shine").Build()</code></pre>
         </section>
 
-        <section id="branding-rules">
-            <h2>Watermark Policy</h2>
-            <p>To protect the provenance of the library, all icons contain an invisible XML comment: <code>&lt;!-- Webecon by Aditya Divte Production --&gt;</code>. Modifying the icon's visual appearance is encouraged, but removing this watermark from the source code of the icons is technically prohibited under the Commercial License.</p>
-            <div class="alert">
-                <strong>Why watermarks?</strong> They ensure that Webecon remains a recognized professional standard and prevents unauthorized asset re-distribution.
-            </div>
+        <section style="margin-top: 6rem; padding-top: 4rem; border-top: 1px solid var(--border); text-align: center;">
+            <p>Produced by <b>Aditya Divte Production</b></p>
+            <p style="font-size: 0.8rem; opacity: 0.5;">GitHub: adityadivatee/Webecon | adityadivte.com</p>
         </section>
-
-        <section id="libraries">
-            <h2>Native Libraries</h2>
-            <p>Download the optimized SDK for your specific development environment. Each pack includes native autocomplete, data loaders, and implementation examples based on the v17.2 PRO build.</p>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1rem; margin-top: 2rem;">
-                <a href="dist/sdks/webecon-react.zip" class="sdk-download-card" download><strong>⚛️ React</strong></a>
-                <a href="dist/sdks/webecon-dart.zip" class="sdk-download-card" download><strong>💙 Flutter</strong></a>
-                <a href="dist/sdks/webecon-python.zip" class="sdk-download-card" download><strong>🐍 Python</strong></a>
-                <a href="dist/sdks/webecon-java.zip" class="sdk-download-card" download><strong>☕ Java</strong></a>
-                <a href="dist/sdks/webecon-kotlin.zip" class="sdk-download-card" download><strong>📱 Kotlin</strong></a>
-                <a href="dist/sdks/webecon-rust.zip" class="sdk-download-card" download><strong>🦀 Rust</strong></a>
-                <a href="dist/sdks/webecon-go.zip" class="sdk-download-card" download><strong>🐹 Go</strong></a>
-                <a href="dist/sdks/webecon-swift.zip" class="sdk-download-card" download><strong>🍎 Swift</strong></a>
-                <a href="dist/sdks/webecon-cpp.zip" class="sdk-download-card" download><strong>🎬 C++</strong></a>
-                <a href="dist/sdks/webecon-csharp.zip" class="sdk-download-card" download><strong>🕹️ C#</strong></a>
-                <a href="dist/sdks/webecon-ruby.zip" class="sdk-download-card" download><strong>💎 Ruby</strong></a>
-                <a href="dist/sdks/webecon-c.zip" class="sdk-download-card" download><strong>🔌 Pure C</strong></a>
-                <a href="dist/sdks/webecon-typescript.zip" class="sdk-download-card" download><strong>📘 TypeScript</strong></a>
-                <a href="dist/sdks/webecon-html.zip" class="sdk-download-card" download><strong>🌐 HTML</strong></a>
-                <a href="dist/sdks/webecon-vscode.zip" class="sdk-download-card" download><strong>💻 VS Code</strong></a>
-            </div>
-            <p style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.6; text-align: center;">All individual SDKs are production-ready and free for commercial use.</p>
-        </section>
-
-        <footer style="margin-top: 10rem; padding: 6rem 0; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.9rem; text-align: center;">
-            <img src="Webecon.png" alt="Webecon" style="height: 32px; width: auto; opacity: 0.5; margin-bottom: 2rem;">
-            <div style="font-weight: 700; color: white; margin-bottom: 0.5rem;">Webecon by Aditya Divte Production</div>
-            &copy; 2026 Webecon by Aditya Divte Production. All rights reserved. <a href="https://adityadivte.com" style="color: var(--primary); text-decoration: none;">adityadivte.com</a> | <a href="mailto:support@adityadivte.com" style="color: var(--text-muted); text-decoration: none;">support@adityadivte.com</a> | <a href="https://rzp.io/rzp/webecon" target="_blank" style="color: #ef4444; font-weight: 600; text-decoration: none;">Donate ❤️</a>
-        </footer>
     </main>
-
-    <script>
-        // Simple scroll spy logic
-        const links = document.querySelectorAll('.docs-nav-group a');
-        const sections = document.querySelectorAll('section');
-
-        document.querySelector('.docs-content').onscroll = () => {
-            let current = "";
-            sections.forEach(s => {
-                const top = s.offsetTop;
-                if (document.querySelector('.docs-content').scrollTop >= top - 200) {
-                    current = s.getAttribute('id');
-                }
-            });
-            links.forEach(l => {
-                l.classList.remove('active');
-                if (l.getAttribute('href').substring(1) === current) {
-                    l.classList.add('active');
-                }
-            });
-        };
-    </script>
 </body>
 </html>

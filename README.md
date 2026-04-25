@@ -1,4 +1,4 @@
-# Webecon — Universal Animated Icon Engine (v17.2 PRO)
+# Webecon — Universal Animated Icon Engine (v17.2.6 PRO)
 
 ![Webecons Hero Banner](webecons_hero_banner_1776602228561.png)
 
@@ -12,11 +12,11 @@
 
 ## 🌟 Key Features
 
-- **🦾 Multi-Platform Native**: Native SDKs for React, Flutter, Swift, Java, Kotlin, Python, Go, Rust, Unity, Unreal Engine, Ruby, Pure C, and TypeScript.
+- **🦾 Multi-Platform Native**: Native SDKs for React, Flutter, Swift, Java, Kotlin, Python, Go, Rust, Unity, Unreal Engine, Ruby, PHP, and more.
 - **✨ Professional Themes**: Switch between **Shine (Glossy)**, **Duo Tone**, **Glitch**, **Neon**, and **Glassmorphism** with a single attribute.
 - **🎨 Dual-Color System**: Every icon supports a Primary and Secondary color for deep branding integration.
-- **🎬 20+ Motion Presets**: High-performance CSS and hardware-accelerated animations (Pulse, Spin, Jello, Rubber-Band, etc.).
-- **📐 Infinite Scalability**: Pure SVG-based rendering ensures your icons are sharp at any resolution, from 12px to 4K.
+- **🎬 20+ Motion Presets**: High-performance hardware-accelerated animations (Pulse, Spin, Jello, Rubber-Band, etc.).
+- **📐 Infinite Scalability**: Pure SVG-based rendering ensures your icons are sharp at any resolution.
 
 ---
 
@@ -25,32 +25,35 @@
 ### Web (CDN)
 The fastest way to get started in any HTML project:
 ```html
-<script src="https://cdn.adityadivte.com/webecon.js"></script>
+<!-- Load the Webecon Engine -->
+<script src="https://cdn.jsdelivr.net/gh/adityadivatee/Webecon/dist/webicons.js"></script>
+
+<!-- Use the Icon -->
 <webecon-icon name="rocket" theme="shine" animation="pulse"></webecon-icon>
 ```
 
-### React / Next.js
-```bash
-npm install webecon-react
-```
-```jsx
-import { Webecon } from 'webecon-react';
-
-<Webecon name="zap" theme="duo" color="#6366f1" secondaryColor="#fff" animation="pulse" />
-```
-
-### Flutter (Dart)
+### Flutter (Native Android/iOS/Web)
 ```yaml
 dependencies:
-  webecon: ^17.2.0
+  webecon:
+    path: ./sdks/flutter/webecon # Or use from GitHub
 ```
 ```dart
+import 'package:webecon/webecon.dart';
+
 Webecon(
   name: 'shield-check',
-  theme: WebeconTheme.shine,
+  size: 48,
   color: Colors.blue,
-  animation: 'heartbeat',
+  theme: 'shine',
 )
+```
+
+### Python
+```python
+import webecon
+icon = webecon.Webecon("zap").size(48).theme("neon")
+print(icon) # Prints the <webecon-icon> tag
 ```
 
 ---
@@ -72,14 +75,14 @@ Webecon is published under the **Webecon Open-Brand License**.
 - ✅ **100% Free** for commercial projects, apps, games, and client work.
 - ✅ No attribution required (though appreciated).
 - ❌ Reselling icons as standalone assets or competing libraries is prohibited.
-- ❌ Removal of invisible metadata watermarks (`<!-- Webecon by Aditya Divte Production — adityadivte.com -->`) is prohibited.
+- ❌ Removal of metadata watermarks (`<!-- Webecon by Aditya Divte Production — adityadivte.com -->`) is prohibited.
 
 ---
 
 ## 🏗️ Technical Provenance
 Produced and Maintained by **Webecon by Aditya Divte Production**.  
 Official Website: **[adityadivte.com](https://adityadivte.com)**  
+GitHub: **[adityadivatee/Webecon](https://github.com/adityadivatee/Webecon)**  
 Support Email: **[support@adityadivte.com](mailto:support@adityadivte.com)**
 
-**Visit [adityadivte.com](https://adityadivte.com) for more professional tools and elite UI assets for free.**  
-**Visit [adityadivte.com](https://adityadivte.com) for the full library and live customizer.**
+**Visit [adityadivte.com](https://adityadivte.com) for more professional tools and elite UI assets for free.**
