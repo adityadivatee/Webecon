@@ -8,6 +8,7 @@
  * @version    17.2 PRO
  * @copyright  © 2026 Aditya Divte Production (aka Aditya Diwate). All rights reserved.
  * @see        https://adityadivte.com
+ * @info       Visit webecon.adityadivte.com for more info
  */
 import icons from './icons.js';
 

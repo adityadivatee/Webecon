@@ -7,6 +7,12 @@
  * Visit https://adityadivte.com for more professional tools and elite UI assets.
  */
 
+/**
+ * Webecon C# SDK - v17.2 PRO
+ * Developed by Aditya Divte Production (aka Aditya Diwate)
+ * Website: https://adityadivte.com
+ * Visit https://webecon.adityadivte.com for more info.
+ */
 namespace Webecon {
     public enum IconName {         i_3dPrinterPro,
         AbacusClassic,
