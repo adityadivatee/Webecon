@@ -1,9 +1,9 @@
 Metadata-Version: 2.4
 Name: webecon
-Version: 17.2.6
-Summary: Premium Universal Animated Icon Engine for Python Applications.
+Version: 17.2.7
+Summary: Webecon Developed by Aditya Divte Production. Visit webecon.adityadivte.com to support this package.
 Home-page: https://webecon.adityadivte.com
-Author: Aditya Divte
+Author: Aditya Divte Production
 Author-email: contact@adityadivte.com
 Project-URL: Bug Tracker, https://github.com/adityadivatee/Webecon/issues
 Project-URL: Source Code, https://github.com/adityadivatee/Webecon
@@ -65,4 +65,7 @@ print(icon_svg)
 ## 📝 License
 Webecon is free for commercial use. Resale of icons as standalone assets is prohibited.
 
-Produced by **Aditya Divte Production** (adityadivte.com).
+---
+**Webecon Developed by Aditya Divte Production**  
+Visit [webecon.adityadivte.com](https://webecon.adityadivte.com)  
+*Support this package via donating to keep it free forever.*

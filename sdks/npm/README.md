@@ -48,4 +48,8 @@ function App() {
 ## 📝 License
 Webecon is free for commercial use. Resale of icons as standalone assets is prohibited.
 
-Produced by **Aditya Divte Production** (adityadivte.com).
+---
+**Webecon Developed by Aditya Divte Production**  
+To donate or to explore the full library, visit [webecon.adityadivte.com](https://webecon.adityadivte.com)  
+*Support this package via donating to keep it free forever.*
+

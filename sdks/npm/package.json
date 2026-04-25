@@ -1,7 +1,7 @@
 {
   "name": "webecon",
-  "version": "17.2.6",
-  "description": "Premium Universal Animated Icon Engine. 1,031+ professional, themeable animated icons for high-performance web applications.",
+  "version": "17.2.7",
+  "description": "Webecon Developed by Aditya Divte Production. Visit webecon.adityadivte.com to support this package via donating to keep it free forever.",
   "main": "index.js",
   "module": "index.js",
   "exports": {
@@ -26,7 +26,7 @@
     "webecon",
     "adityadivte"
   ],
-  "author": "Aditya Divte (https://adityadivte.com)",
+  "author": "Aditya Divte Production (https://adityadivte.com)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/adityadivatee/Webecon/issues"

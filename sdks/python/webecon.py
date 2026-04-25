@@ -1,8 +1,8 @@
 #######################################################################
-# Webecon Python SDK - v17.2.6 PRO
-# Developed by Aditya Divte Production (aka Aditya Diwate)
-# Website: https://adityadivte.com
+# Webecon Python SDK - v17.2.7 PRO
+# Developed by Aditya Divte Production
 # Visit https://webecon.adityadivte.com for more info.
+# Support this package via donating to keep it free forever.
 #######################################################################
 
 from typing import Literal, Optional

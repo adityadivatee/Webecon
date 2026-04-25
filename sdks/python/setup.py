@@ -5,10 +5,10 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="webecon",
-    version="17.2.6",
-    author="Aditya Divte",
+    version="17.2.7",
+    author="Aditya Divte Production",
     author_email="contact@adityadivte.com",
-    description="Premium Universal Animated Icon Engine for Python Applications.",
+    description="Webecon Developed by Aditya Divte Production. Visit webecon.adityadivte.com to support this package.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://webecon.adityadivte.com",

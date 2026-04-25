@@ -1,3 +1,10 @@
+// #######################################################################
+// Webecon Flutter SDK - v17.2.7 PRO
+// Developed by Aditya Divte Production
+// Visit https://webecon.adityadivte.com for more info.
+// Support this package via donating to keep it free forever.
+// #######################################################################
+
 library webecon;
 
 import 'package:flutter/material.dart';
