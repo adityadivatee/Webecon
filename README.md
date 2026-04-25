@@ -1,4 +1,4 @@
-# 🚀 Webecon v17.2 PRO
+# 🚀 Webecon v17.2.1 PRO
 ### Premium Animated Icon Engine for the Modern Developer
 **Developed by Aditya Divte Production (aka Aditya Diwate)**
 
@@ -9,7 +9,7 @@
 [![Animations](https://img.shields.io/badge/Animations-15+-pink.svg)](docs.html)
 [![Themes](https://img.shields.io/badge/Themes-11_Premium-orange.svg)](docs.html)
 
-**Webecon** is the world's most versatile, high-performance animated icon ecosystem. With 1,031+ cinematically rendered assets and a unified **Fluent Builder API**, Webecon provides a "Zero-Search" developer experience across 14+ programming languages.
+**Webecon** is the world's most versatile, high-performance animated icon ecosystem. Visit the [Project Hub](https://webecon.adityadivte.com) for a live customizer. With 1,031+ cinematically rendered assets and a unified **Fluent Builder API**, Webecon provides a "Zero-Search" developer experience across 14+ programming languages.
 
 ---
 
@@ -47,7 +47,7 @@ var tag = Webecon.icon("heart").size(128).theme("shine").trigger("click").build(
 
 ## 📦 Installation & SDKs
 1. **Web**: Add `<script src="https://cdn.adityadivte.com/webecon.js"></script>` to your HTML.
-2. **Native**: Download the optimized ZIP for your language from the [Documentation Hub](docs.html).
+2. **Native**: Download the optimized ZIP for your language from the [Project Hub](https://webecon.adityadivte.com).
 
 ---
 
@@ -59,5 +59,6 @@ Webecon is **100% FREE** for both personal and commercial use (apps, websites, g
 
 ---
 **Official Website**: [adityadivte.com](https://adityadivte.com)  
+**Project Hub**: [webecon.adityadivte.com](https://webecon.adityadivte.com)  
 **Support**: [support@adityadivte.com](mailto:support@adityadivte.com)  
 **Donate**: [Support the Project](https://rzp.io/rzp/webecon)
