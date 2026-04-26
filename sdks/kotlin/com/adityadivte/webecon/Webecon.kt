@@ -1,5 +1,5 @@
 /**
- * Webecon Kotlin SDK - v17.2.5 PRO
+ * Webecon Kotlin SDK - v17.2.7 PRO
  * Developed by Aditya Divte Production (aka Aditya Diwate)
  * Website: https://adityadivte.com
  * Visit https://webecon.adityadivte.com for more info.

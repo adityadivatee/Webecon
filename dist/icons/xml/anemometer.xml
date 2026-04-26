@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Webecon anemometer - Developed by Aditya Divte Production -->
+    <path
+        android:strokeColor="#FF000000"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M12 12V2m0 10l-6 6m6-6l6 6m-9-9c-2 0-4-2-4-4s2-4 4-4m6 0c2 0 4 2 4 4s-2 4-4 4" />
+</vector>

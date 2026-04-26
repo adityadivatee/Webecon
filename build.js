@@ -57,7 +57,7 @@ async function build() {
     const toScreaming = (str) => sanitize(str.replace(/-/g, '_').toUpperCase());
 
     // --- 1. Generate Universal Web Formats ---
-    const VERSION = '17.2.6';
+    const VERSION = '17.2.7';
     const GITHUB_REPO = 'adityadivatee/Webecon';
     const jsHeader = `/**\n * Webecon - Premium Animated Icon Engine v${VERSION} PRO\n * Developed by Aditya Divte Production (aka Aditya Diwate)\n * Website: https://adityadivte.com\n * Project Hub: https://webecon.adityadivte.com\n * \n * Free for commercial use. Resale and branding removal forbidden.\n */\n`;
     let componentContent = fs.readFileSync(WEB_COMPONENT_FILE, 'utf8');
@@ -77,7 +77,7 @@ async function build() {
         fs.writeFileSync(path.join(fullDir, file), header + content);
 
         // Generate SDK-specific README
-        const readme = `# Webecon ${langName} SDK (v${VERSION} PRO)\n\n## 🚀 Installation\nInclude \`${file}\` in your project's source directory.\n\n## 🛠️ Quick Usage\n\`\`\`${langName.toLowerCase().replace(' / ', '').replace('+', 'pp').replace('dart', 'dart')}\n${usageExample}\n\`\`\`\n\n## ⚖️ Licensing\n- ✅ **Commercial Use Allowed**\n- ❌ **Standalone Resale Forbidden**\n- ❌ **Branding Removal Forbidden**\n\nProduced by **Aditya Divte Production** (adityadivte.com)`;
+        const readme = `# Webecon ${langName} SDK (v${VERSION} PRO)\n\n## 🚀 Installation\nInclude \`${file}\` in your project's source directory.\n\n## 🛠️ Quick Usage\n\`\`\`${langName.toLowerCase().replace(' / ', '').replace('+', 'pp').replace('dart', 'dart')}\n${usageExample}\n\`\`\`\n\n## ⚖️ Licensing\n- ✅ **Commercial Use Allowed**\n- ❌ **Standalone Resale Forbidden**\n- ❌ **Branding Removal Forbidden**\n\n## Developed by\n**Webecon Developed by Aditya Divte Production**  \nTo donate or to explore the full library, visit [webecon.adityadivte.com](https://webecon.adityadivte.com)  \nSupport this package via donating to keep it free forever.\n\nProduced by **Aditya Divte Production** (adityadivte.com)`;
         fs.writeFileSync(path.join(fullDir, 'README.md'), readme);
     };
 
@@ -101,7 +101,7 @@ check_updates()
 
     // Java Builder
     const javaIcons = `    private static final java.util.Map<String, String> ICONS = new java.util.HashMap<>();\n    static {\n${iconKeys.map(k => `        ICONS.put("${k}", "${icons[k].replace(/"/g, '\\"')}");`).join('\n')}\n    }\n\n`;
-    const javaPkgPath = 'com/adityadivatee/Webecon';
+    const javaPkgPath = 'com/adityadivte/Webecon';
     const javaFullDir = path.join(sdkBase, 'java', javaPkgPath);
     fs.mkdirSync(javaFullDir, { recursive: true });
     writeSDK('java', path.join(javaPkgPath, 'Webecon.java'), `package com.adityadivte.webecon;\n\npublic class Webecon {\n    private String name;\n    private int size = 24;\n    private double stroke = 2.0;\n    private String color = "currentColor";\n    private String secondaryColor = "none";\n    private double secondaryOpacity = 0.35;\n    private String theme = "line";\n    private String animation = "none";\n    private String trigger = "infinite";\n\n    public Webecon(String name) { this.name = name; }\n    public static Webecon icon(String name) { return new Webecon(name); }\n\n    public Webecon size(int s) { this.size = s; return this; }\n    public Webecon stroke(double s) { this.stroke = s; return this; }\n    public Webecon color(String c) { this.color = c; return this; }\n    public Webecon secondaryColor(String c) { this.secondaryColor = c; return this; }\n    public Webecon secondaryOpacity(double o) { this.secondaryOpacity = o; return this; }\n    public Webecon theme(String t) { this.theme = t; return this; }\n    public Webecon animation(String a) { this.animation = a; return this; }\n    public Webecon trigger(String t) { this.trigger = t; return this; }\n\n    public String build() {\n        return String.format(\n            "<webecon-icon name='%s' size='%d' stroke='%.2f' color='%s' secondary-color='%s' secondary-opacity='%.2f' theme='%s' animation='%s' animation-mode='%s'></webecon-icon>",\n            name, size, stroke, color, secondaryColor, secondaryOpacity, theme, animation, trigger\n        );\n    }\n\n    @Override\n    public String toString() { return build(); }\n\n${javaIcons}\n}`, 'Java', 'import com.adityadivte.webecon.Webecon;\nString svg = Webecon.icon("home").size(48).theme("neon").trigger("hover").build();');
@@ -126,7 +126,7 @@ check_updates()
     writeSDK('swift', 'Webecon.swift', `import SwiftUI\n\npublic class Webecon {\n    var name, color, secondaryColor, theme, animation, trigger: String\n    var size: Int; var stroke, secondaryOpacity: Double\n\n    public init(_ name: String) {\n        self.name = name; self.size = 24; self.stroke = 2.0; self.color = "currentColor";\n        self.secondaryColor = "none"; self.secondaryOpacity = 0.35; self.theme = "line";\n        self.animation = "none"; self.trigger = "infinite"\n    }\n    public static func icon(_ name: String) -> Webecon { return Webecon(name) }\n    public func size(_ s: Int) -> Webecon { self.size = s; return self }\n    public func theme(_ t: String) -> Webecon { self.theme = t; return self }\n    public func trigger(_ t: String) -> Webecon { self.trigger = t; return self }\n    public func build() -> String {\n        return "<webecon-icon name='\\(name)' size='\\(size)' stroke='\\(stroke)' color='\\(color)' secondary-color='\\(secondaryColor)' secondary-opacity='\\(secondaryOpacity)' theme='\\(theme)' animation='\\(animation)' animation-mode='\\(trigger)'></webecon-icon>"\n    }\n}`, 'Swift', 'let tag = Webecon.icon("zap").size(48).theme("neon").build()');
 
     // Kotlin Builder
-    const ktPkgPath = 'com/adityadivatee/Webecon';
+    const ktPkgPath = 'com/adityadivte/Webecon';
     const ktFullDir = path.join(sdkBase, 'kotlin', ktPkgPath);
     fs.mkdirSync(ktFullDir, { recursive: true });
     writeSDK('kotlin', path.join(ktPkgPath, 'Webecon.kt'), `package com.adityadivte.webecon\n\nclass Webecon(val name: String) {\n    var size: Int = 24; var stroke: Double = 2.0; var color: String = "currentColor"\n    var secondaryColor: String = "none"; var secondaryOpacity: Double = 0.35; var theme: String = "line"\n    var animation: String = "none"; var trigger: String = "infinite"\n\n    companion object {\n        fun icon(name: String) = Webecon(name)\n    }\n    fun size(s: Int) = apply { size = s }\n    fun theme(t: String) = apply { theme = t }\n    fun trigger(t: String) = apply { trigger = t }\n    fun build() = "<webecon-icon name='$name' size='$size' stroke='$stroke' color='$color' secondary-color='$secondaryColor' secondary-opacity='$secondaryOpacity' theme='$theme' animation='$animation' animation-mode='$trigger'></webecon-icon>"\n}`, 'Kotlin', 'val tag = Webecon.icon("zap").size(48).theme("neon").build()');
@@ -135,7 +135,7 @@ check_updates()
     writeSDK('php', 'Webecon.php', `<?php\nnamespace Webecon;\n\nclass Webecon {\n    private $name, $size=24, $stroke=2.0, $color="currentColor", $secondaryColor="none", $secondaryOpacity=0.35, $theme="line", $animation="none", $trigger="infinite";\n\n    public function __construct($name) { $this->name = $name; }\n    public static function icon($name) { return new self($name); }\n    public function size($s) { $this->size = $s; return $this; }\n    public function theme($t) { $this->theme = $t; return $this; }\n    public function trigger($t) { $this->trigger = $t; return $this; }\n    public function build() {\n        return "<webecon-icon name='{$this->name}' size='{$this->size}' stroke='{$this->stroke}' color='{$this->color}' secondary-color='{$this->secondaryColor}' secondary-opacity='{$this->secondaryOpacity}' theme='{$this->theme}' animation='{$this->animation}' animation-mode='{$this->trigger}'></webecon-icon>";\n    }\n}`, 'PHP', '$tag = Webecon::icon("zap")->size(48)->theme("neon")->build();');
 
     // Ruby Builder
-    writeSDK('ruby', 'webecon.rb', `module Webecon\n  class Icon\n    def initialize(name)\n      @name=name; @size=24; @stroke=2.0; @color="currentColor"; @secondary_color="none"; @secondary_opacity=0.35; @theme="line"; @animation="none"; @trigger="infinite"\n    end\n    def self.icon(name); new(name); end\n    def size(s); @size=s; self; end\n    def theme(t); @theme=t; self; end\n    def trigger(t); @trigger=t; self; end\n    def build; "<webecon-icon name='#{@name}' size='#{@size}' stroke='#{@stroke}' color='#{@color}' secondary-color='#{@secondary_color}' secondary-opacity='#{@secondary_opacity}' theme='#{@theme}' animation='#{@animation}' animation-mode='#{@trigger}'></webecon-icon>"; end\n  end\nend`, 'Ruby', 'tag = Webecon::Icon.icon("zap").size(48).build');
+    writeSDK('ruby', 'webecon.rb', `module Webecon\n  class Icon\n    def initialize(name)\n      @name=name; @size=24; @stroke=2.0; @color="currentColor"; @secondary_color="none"; @secondary_opacity=0.35; @theme="line"; @animation="none"; @trigger="infinite"\n    end\n    def self.icon(name); new(name); end\n    def size(s); @size=s; self; end\n    def theme(t); @theme=t; self; end\n    def trigger(t); @trigger=t; self; end\n    def build; "<webecon-icon name='#{@name}' size='#{@size}' stroke='#{@stroke}' color='#{@color}' secondary_color='#{@secondary_color}' secondary_opacity='#{@secondary_opacity}' theme='#{@theme}' animation='#{@animation}' animation-mode='#{@trigger}'></webecon-icon>"; end\n  end\nend`, 'Ruby', 'tag = Webecon::Icon.icon("zap").size(48).build');
 
     // React
     const jsUpdateCheck = `
@@ -157,11 +157,87 @@ try {
     const htmlRef = iconKeys.slice(0, 50).map(k => `<div style="display:flex; flex-direction:column; align-items:center; gap:8px; padding:16px; border:1px solid #eee; border-radius:8px;">\n  <webecon-icon name="${k}" size="32"></webecon-icon>\n  <code style="font-size:10px;">${k}</code>\n</div>`).join('\n');
     writeSDK('html', 'index.html', `<!DOCTYPE html>\n<html>\n<head>\n    <title>Webecon Icon Library</title>\n    <script src="https://cdn.adityadivte.com/webecon.js"></script>\n</head>\n<body>\n    <h1 style="text-align:center;">Webecon Icons Reference</h1>\n    <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(120px, 1fr)); gap:16px; padding:32px;">\n${htmlRef}\n    </div>\n</body>\n</html>`, 'HTML Reference');
 
-    // --- 3. Standalone SVGs ---
-    console.log('🖼️  Generating standalone SVGs...');
+    // (Adding the XML generator helper)
+    const svgToXml = (name, iconContent) => {
+        let xml = `<?xml version="1.0" encoding="utf-8"?>\n<vector xmlns:android="http://schemas.android.com/apk/res/android"\n    android:width="24dp"\n    android:height="24dp"\n    android:viewportWidth="24"\n    android:viewportHeight="24">\n    <!-- Webecon ${name} - Developed by Aditya Divte Production -->\n`;
+        
+        const addPath = (d) => {
+            xml += `    <path\n        android:strokeColor="#FF000000"\n        android:strokeWidth="2"\n        android:strokeLineCap="round"\n        android:strokeLineJoin="round"\n        android:pathData="${d}" />\n`;
+        };
+
+        const paths = iconContent.match(/<path d="([^"]+)"/g);
+        if (paths) paths.forEach(p => addPath(p.match(/d="([^"]+)"/)[1]));
+        
+        const polylines = iconContent.match(/<polyline points="([^"]+)"/g);
+        if (polylines) {
+            polylines.forEach(pl => {
+                const points = pl.match(/points="([^"]+)"/)[1].trim().split(/[\s,]+/);
+                let d = `M ${points[0]} ${points[1]}`;
+                for(let i=2; i<points.length; i+=2) d += ` L ${points[i]} ${points[i+1]}`;
+                addPath(d);
+            });
+        }
+
+        const polygons = iconContent.match(/<polygon points="([^"]+)"/g);
+        if (polygons) {
+            polygons.forEach(pg => {
+                const points = pg.match(/points="([^"]+)"/)[1].trim().split(/[\s,]+/);
+                let d = `M ${points[0]} ${points[1]}`;
+                for(let i=2; i<points.length; i+=2) d += ` L ${points[i]} ${points[i+1]}`;
+                d += ' Z';
+                addPath(d);
+            });
+        }
+
+        const lines = iconContent.match(/<line x1="([^"]+)" x2="([^"]+)" y1="([^"]+)" y2="([^"]+)"/g);
+        if (lines) {
+            lines.forEach(l => {
+                const x1 = l.match(/x1="([^"]+)"/)[1];
+                const x2 = l.match(/x2="([^"]+)"/)[1];
+                const y1 = l.match(/y1="([^"]+)"/)[1];
+                const y2 = l.match(/y2="([^"]+)"/)[1];
+                addPath(`M ${x1} ${y1} L ${x2} ${y2}`);
+            });
+        }
+
+        const rects = iconContent.match(/<rect ([^>]+)>/g);
+        if (rects) {
+            rects.forEach(r => {
+                const w = parseFloat(r.match(/width="([^"]+)"/)?.[1] || 0);
+                const h = parseFloat(r.match(/height="([^"]+)"/)?.[1] || 0);
+                const x = parseFloat(r.match(/x="([^"]+)"/)?.[1] || 0);
+                const y = parseFloat(r.match(/y="([^"]+)"/)?.[1] || 0);
+                addPath(`M ${x} ${y} h ${w} v ${h} h -${w} Z`);
+            });
+        }
+
+        const circles = iconContent.match(/<circle ([^>]+)>/g);
+        if (circles) {
+            circles.forEach(c => {
+                const cx = parseFloat(c.match(/cx="([^"]+)"/)?.[1] || 0);
+                const cy = parseFloat(c.match(/cy="([^"]+)"/)?.[1] || 0);
+                const r = parseFloat(c.match(/r="([^"]+)"/)?.[1] || 0);
+                addPath(`M ${cx} ${cy-r} a ${r} ${r} 0 1 0 0 ${2*r} a ${r} ${r} 0 1 0 0 -${2*r} Z`);
+            });
+        }
+
+        xml += `</vector>`;
+        return xml;
+    };
+
+    // --- 3. Standalone SVGs & XMLs ---
+    console.log('🖼️  Generating standalone SVGs and Android XMLs...');
+    const xmlDir = path.join(iconsDir, 'xml');
+    if (!fs.existsSync(xmlDir)) fs.mkdirSync(xmlDir, { recursive: true });
+
     iconKeys.forEach(name => {
+        // SVG
         const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- Webecon by Aditya Divte Production (aka Aditya Diwate) (adityadivte.com) -->${icons[name]}</svg>`;
         fs.writeFileSync(path.join(iconsDir, `${name}.svg`), svg);
+
+        // XML (Android)
+        const xml = svgToXml(name, icons[name]);
+        fs.writeFileSync(path.join(xmlDir, `${name}.xml`), xml);
     });
 
     // --- 4. Marketplace & ZIPs ---
