@@ -750,9 +750,25 @@
 
     <section class="section" style="background:#000;">
         <h1 style="font-size: 7rem; margin-bottom: 4rem;">BUILD <span style="color:var(--primary);">BEYOND.</span></h1>
-        <div
-            style="background: var(--primary); color: #fff; padding: 2.5rem 7rem; border-radius: 99px; font-size: 3.5rem; font-weight: 900;">
-            webecon.adityadivte.com</div>
+        <div id="final-cta-container"
+            style="background: var(--primary); color: #fff; padding: 2.5rem 7rem; border-radius: 99px; font-size: 3.5rem; font-weight: 900; min-height: 120px; display: flex; align-items: center; justify-content: center;">
+            <span id="final-typing-cta"></span><span class="cursor-text" style="background: #fff; width: 5px; height: 1.2em;"></span>
+        </div>
+    </section>
+
+    <section class="section" style="background: var(--surface); text-align: center;">
+        <h2 style="font-size: 4rem; margin-bottom: 2rem;">Ready to upgrade?</h2>
+        <a href="https://webecon.adityadivte.com" style="text-decoration: none; color: inherit;">
+            <div style="font-size: 2.5rem; color: var(--primary); font-weight: 800; letter-spacing: -1px;">
+                Visit webecon.adityadivte.com Now
+            </div>
+        </a>
+    </section>
+
+    <section class="section" style="background: #000; height: 50vh; display: flex; align-items: center; justify-content: center;">
+        <div style="font-size: 1.5rem; color: var(--muted); font-weight: 600; letter-spacing: 2px; text-transform: uppercase;">
+            Visit webecon.adityadivte.com Now
+        </div>
     </section>
 
     <script>
@@ -839,7 +855,10 @@
             .to("#typ-grid-14", { duration: 1, text: "dart pub get" }, "-=1")
             .to("#typ-grid-15", { duration: 1, text: "pip install webecon" }, "-=1")
 
-            .to("#intro-scroll", { opacity: 1, duration: 0.5, delay: 1 });
+            .to("#intro-scroll", { opacity: 1, duration: 0.5, delay: 1 })
+            
+            // Final CTA Typing
+            .to("#final-typing-cta", { duration: 2, text: "Visit webecon.adityadivte.com Now", ease: "none", delay: 1 });
     </script>
 </body>
 
