@@ -1,0 +1,8 @@
+LICENSE
+README.md
+setup.py
+webecon/__init__.py
+webecon.egg-info/PKG-INFO
+webecon.egg-info/SOURCES.txt
+webecon.egg-info/dependency_links.txt
+webecon.egg-info/top_level.txt

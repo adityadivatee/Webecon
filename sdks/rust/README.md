@@ -1,4 +1,4 @@
-# Webecon Rust SDK (v17.2.7 PRO)
+# Webecon Rust SDK (v17.2.6 PRO)
 
 ## 🚀 Installation
 Include `webecon.rs` in your project's source directory.
@@ -13,10 +13,5 @@ let tag = Webecon::icon("zap").size(48).theme("neon").build();
 - ✅ **Commercial Use Allowed**
 - ❌ **Standalone Resale Forbidden**
 - ❌ **Branding Removal Forbidden**
-
-## Developed by
-**Webecon Developed by Aditya Divte Production**  
-To donate or to explore the full library, visit [webecon.adityadivte.com](https://webecon.adityadivte.com)  
-Support this package via donating to keep it free forever.
 
 Produced by **Aditya Divte Production** (adityadivte.com)

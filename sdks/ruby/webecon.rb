@@ -1,5 +1,5 @@
 #######################################################################
-# Webecon Ruby SDK - v17.2.7 PRO
+# Webecon Ruby SDK - v17.2.6 PRO
 # Developed by Aditya Divte Production (aka Aditya Diwate)
 # Website: https://adityadivte.com
 # Visit https://webecon.adityadivte.com for more info.
@@ -14,6 +14,6 @@ module Webecon
     def size(s); @size=s; self; end
     def theme(t); @theme=t; self; end
     def trigger(t); @trigger=t; self; end
-    def build; "<webecon-icon name='#{@name}' size='#{@size}' stroke='#{@stroke}' color='#{@color}' secondary_color='#{@secondary_color}' secondary_opacity='#{@secondary_opacity}' theme='#{@theme}' animation='#{@animation}' animation-mode='#{@trigger}'></webecon-icon>"; end
+    def build; "<webecon-icon name='#{@name}' size='#{@size}' stroke='#{@stroke}' color='#{@color}' secondary-color='#{@secondary_color}' secondary-opacity='#{@secondary_opacity}' theme='#{@theme}' animation='#{@animation}' animation-mode='#{@trigger}'></webecon-icon>"; end
   end
 end

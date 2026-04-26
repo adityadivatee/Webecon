@@ -1,0 +1,28 @@
+name: webecon
+description: "Webecon Developed by Aditya Divte Production. Visit webecon.adityadivte.com to support this package via donating to keep it free forever."
+version: 17.2.7
+repository: https://github.com/adityadivatee/Webecon
+homepage: https://webecon.adityadivte.com
+issue_tracker: https://github.com/adityadivatee/Webecon/issues
+
+screenshots:
+  - description: "Official Webecon Icon Engine Showcase"
+    path: banner.png
+
+environment:
+  sdk: ^3.11.0
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_svg: ^2.2.4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  assets:
+    - assets/icons/

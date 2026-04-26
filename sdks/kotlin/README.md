@@ -1,7 +1,7 @@
-# Webecon Kotlin SDK (v17.2.7 PRO)
+# Webecon Kotlin SDK (v17.2.6 PRO)
 
 ## 🚀 Installation
-Include `com\adityadivte\Webecon\Webecon.kt` in your project's source directory.
+Include `com\adityadivatee\Webecon\Webecon.kt` in your project's source directory.
 
 ## 🛠️ Quick Usage
 ```kotlin
@@ -12,10 +12,5 @@ val tag = Webecon.icon("zap").size(48).theme("neon").build()
 - ✅ **Commercial Use Allowed**
 - ❌ **Standalone Resale Forbidden**
 - ❌ **Branding Removal Forbidden**
-
-## Developed by
-**Webecon Developed by Aditya Divte Production**  
-To donate or to explore the full library, visit [webecon.adityadivte.com](https://webecon.adityadivte.com)  
-Support this package via donating to keep it free forever.
 
 Produced by **Aditya Divte Production** (adityadivte.com)
