@@ -43,5 +43,8 @@
     "react-dom": {
       "optional": true
     }
+  },
+  "dependencies": {
+    "webecon": "^17.2.7"
   }
 }
