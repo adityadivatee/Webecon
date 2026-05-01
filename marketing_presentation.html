@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webecon 17.2.6 — The New Standard</title>
+    <script src="dist/webicons.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg: #020412;
+            --surface: #0a0b1e;
+            --text: #ffffff;
+            --muted: #94a3b8;
+            --primary: #3b82f6;
+            --border: rgba(255, 255, 255, 0.08);
+            --shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            --vsc-bg: #1e1e1e;
+            --vsc-sidebar: #252526;
+            --vsc-activity: #333333;
+            --accent-glow: 0 0 40px rgba(59, 130, 246, 0.3);
+            /* Syntax Colors */
+            --syntax-tag: #e06c75;
+            --syntax-attr: #d19a66;
+            --syntax-val: #98c379;
+            --syntax-comment: #5c6370;
+            --syntax-text: #abb2bf;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-snap-type: y mandatory;
+            scroll-behavior: smooth;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        html::-webkit-scrollbar {
+            display: none;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            overflow-x: hidden;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+        .section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            position: relative;
+            scroll-snap-align: start;
+        }
+
+        /* --- Intro Hero Container --- */
+        #branding-hero {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            z-index: 9000;
+            width: 100%;
+        }
+
+        #ghost-mouse {
+            height: 150px;
+            width: auto;
+            opacity: 0;
+            transform-origin: center center;
+            margin-bottom: 40px;
+        }
+
+        #intro-branding-text {
+            opacity: 0;
+        }
+
+        #intro-branding-text h1 {
+            font-size: 6rem;
+            margin-bottom: 25px;
+            letter-spacing: -3px;
+            line-height: 0.9;
+            font-weight: 800;
+            color: #ffffff;
+            filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.5));
+        }
+
+        #intro-branding-text .author {
+            font-size: 1.2rem;
+            color: var(--muted);
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            font-weight: 600;
+            opacity: 0.8;
+        }
+
+        #intro-branding-text .url {
+            font-size: 1.8rem;
+            color: var(--primary);
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            text-shadow: var(--accent-glow);
+        }
+
+        /* --- Intro Question Text --- */
+        #intro-text-container {
+            width: 100%;
+            max-width: 1000px;
+            padding: 2rem;
+            text-align: center;
+            z-index: 5000;
+            position: relative;
+        }
+
+        #intro-text {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -1px;
+            color: #ffffff;
+            text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .cursor-text {
+            display: inline-block;
+            width: 15px;
+            height: 1em;
+            background: var(--primary);
+            margin-left: 10px;
+            animation: blink 0.8s infinite;
+            vertical-align: middle;
+            box-shadow: var(--accent-glow);
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        /* --- VS Code Simulation --- */
+        #vscode-sim {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.9);
+            width: 90%;
+            max-width: 1100px;
+            height: 600px;
+            background: var(--vsc-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            opacity: 0;
+            z-index: 4000;
+            display: grid;
+            grid-template-columns: 50px 250px 1fr;
+            box-shadow: 0 60px 120px rgba(0, 0, 0, 0.9);
+            overflow: hidden;
+        }
+
+        .activity-bar {
+            background: var(--vsc-activity);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 15px;
+            gap: 25px;
+        }
+
+        .activity-icon {
+            color: #858585;
+            font-size: 24px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+            transition: all 0.2s;
+        }
+
+        .activity-icon.active {
+            color: #fff;
+            background: #37373d;
+            border-left: 3px solid var(--primary);
+        }
+
+        .side-bar {
+            background: var(--vsc-sidebar);
+            padding: 15px;
+            border-right: 1px solid #333;
+            display: none;
+        }
+
+        .search-box {
+            background: #3c3c3c;
+            border: 1px solid transparent;
+            padding: 8px 12px;
+            width: 100%;
+            color: #fff;
+            font-size: 13px;
+            margin-bottom: 20px;
+            outline: none;
+            border-radius: 4px;
+        }
+
+        .search-box.focus {
+            border-color: var(--primary);
+        }
+
+        .extension-item {
+            display: flex;
+            gap: 12px;
+            padding: 12px;
+            border-radius: 6px;
+        }
+
+        .main-view {
+            background: var(--vsc-bg);
+            overflow-y: auto;
+            display: none;
+        }
+
+        .main-view::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        .main-view::-webkit-scrollbar-thumb {
+            background: #444;
+        }
+
+        /* --- Code Editor View --- */
+        #code-view {
+            display: none;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .editor-tabs {
+            display: flex;
+            background: #252526;
+            border-bottom: 1px solid #333;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            background: #1e1e1e;
+            border-right: 1px solid #333;
+            font-size: 12px;
+            color: #fff;
+            border-top: 2px solid var(--primary);
+        }
+
+        .editor-content {
+            flex: 1;
+            padding: 20px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--syntax-text);
+            position: relative;
+        }
+
+        .line-numbers {
+            color: #5c6370;
+            margin-right: 20px;
+            text-align: right;
+            user-select: none;
+        }
+
+        .ct {
+            color: var(--syntax-tag);
+        }
+
+        .ca {
+            color: var(--syntax-attr);
+        }
+
+        .cv {
+            color: var(--syntax-val);
+        }
+
+        /* --- Browser Simulation --- */
+        #browser-sim {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.9);
+            width: 95%;
+            max-width: 1200px;
+            height: 700px;
+            background: #fff;
+            border-radius: 12px;
+            opacity: 0;
+            z-index: 5000;
+            box-shadow: 0 80px 150px rgba(0, 0, 0, 1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .browser-header {
+            background: #e0e0e0;
+            padding: 12px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .browser-address {
+            background: #fff;
+            flex: 1;
+            padding: 6px 15px;
+            border-radius: 6px;
+            font-size: 13px;
+            color: #666;
+        }
+
+        .browser-content {
+            flex: 1;
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        /* --- Terminal Universe --- */
+        #terminal-universe-container {
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 98%;
+            max-width: 1400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #terminal-grid-header {
+            opacity: 0;
+            text-align: center;
+            margin-bottom: 50px;
+            transform: translateY(-30px);
+        }
+
+        #terminal-grid-header h2 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            letter-spacing: -2px;
+            line-height: 1;
+        }
+
+        #terminal-grid-header p {
+            font-size: 1.8rem;
+            color: var(--muted);
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        #terminal-grid-header span {
+            color: var(--primary);
+            font-weight: 800;
+        }
+
+        #terminal-grid {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+            opacity: 0;
+            z-index: 6000;
+            pointer-events: none;
+        }
+
+        .terminal-sim {
+            background: rgba(10, 11, 30, 0.95);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 12px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8);
+            font-family: 'JetBrains Mono', monospace;
+            color: #fff;
+            height: 130px;
+            opacity: 0;
+            transform: scale(0);
+        }
+
+        #main-python-term {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 800px;
+            height: 450px;
+            z-index: 7000;
+            opacity: 0;
+            background: rgba(10, 11, 30, 0.98);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 50px 100px rgba(0, 0, 0, 1);
+        }
+
+        .term-header {
+            margin-bottom: 10px;
+            display: flex;
+            gap: 6px;
+            align-items: center;
+        }
+
+        .term-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+
+        .term-body {
+            font-size: 11px;
+            line-height: 1.4;
+        }
+
+        .prompt {
+            color: #5af78e;
+            font-weight: bold;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 4rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            font-size: 0.9rem;
+            color: var(--muted);
+            opacity: 0.6;
+        }
+
+        .p-badge {
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--primary);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            padding: 4px 10px;
+            border-radius: 99px;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+        
+        /* Floating Animation */
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        .floating-cta {
+            animation: floating 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="branding-hero">
+        <img id="ghost-mouse" src="Webecon.png" alt="Mouse">
+        <div id="intro-branding-text">
+            <h1>WEBECON</h1>
+            <div class="author">By Aditya Divte Production</div>
+            <div class="url">webecon.adityadivte.com</div>
+        </div>
+    </div>
+
+    <section class="section" id="cinematic-intro">
+        <div id="intro-text-container">
+            <span id="intro-text"></span><span class="cursor-text"></span>
+        </div>
+
+        <div id="vscode-sim">
+            <div class="activity-bar">
+                <div class="activity-icon">📄</div>
+                <div class="activity-icon">🔍</div>
+                <div class="activity-icon">🔱</div>
+                <div class="activity-icon" id="ext-btn">🧩</div>
+            </div>
+            <div class="side-bar" id="ext-sidebar">
+                <div style="color:#888; font-size:11px; font-weight:800; margin-bottom:15px;">EXTENSIONS</div>
+                <div class="search-box" id="search-input"></div>
+                <div id="search-results" style="display:none;">
+                    <div class="extension-item" id="webecon-ext-item">
+                        <img src="Webecon.png" style="width:42px; height:42px; border-radius:4px;">
+                        <div style="margin-left:10px;">
+                            <div style="font-weight:bold; font-size:13px; color:#fff;">Webecon</div>
+                            <div style="color:#888; font-size:11px;">By Aditya Divte Production | ⭐⭐⭐⭐⭐</div>
+                            <div style="color:var(--primary); font-size:10px; font-weight:800;">104K Installs</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-view" id="details-view">
+                <div
+                    style="padding: 40px; border-bottom: 1px solid #333; display: flex; gap: 30px; background: linear-gradient(to right, rgba(0,0,0,0.2), transparent);">
+                    <img src="Webecon.png"
+                        style="width:120px; height:120px; border-radius:15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                    <div>
+                        <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+                            <h1 style="font-size:36px; color:#fff; font-weight:800; margin:0; letter-spacing: -1px;">
+                                Webecon</h1>
+                            <span
+                                style="background:var(--primary); padding:4px 10px; border-radius:4px; font-size:11px; font-weight:bold;">v17.2.6</span>
+                            <span
+                                style="background:#333; padding:4px 10px; border-radius:4px; font-size:11px; font-weight:bold; color:#ccc;">PRO</span>
+                        </div>
+                        <div style="color:var(--primary); font-size:15px; margin-bottom:12px; font-weight:600;">By
+                            Aditya Divte Production | ⭐⭐⭐⭐⭐ (5.0)</div>
+                        <p style="color:#ccc; font-size:14px; max-width:450px; line-height:1.5; opacity:0.8;">The
+                            Universal Icon Engine for elite developers. One library, infinite platforms.</p>
+                        <div style="margin-top:25px; display:flex; gap:15px;">
+                            <button class="install-btn" id="install-btn-ui"
+                                style="background:#007acc; color:#fff; padding:8px 24px; border-radius:3px; font-size:14px; font-weight:bold; border:none;">Install</button>
+                            <span style="color:#666; font-size:12px; align-self:center;">104,291 Installs</span>
+                        </div>
+                    </div>
+                </div>
+                <div style="padding: 40px; display: grid; grid-template-columns: 1fr 220px; gap: 40px;">
+                    <div>
+                        <div style="display:flex; gap:8px; margin-bottom:30px;">
+                            <span class="p-badge">FLUTTER</span><span class="p-badge">REACT</span><span
+                                class="p-badge">PYTHON</span><span class="p-badge">SWIFT</span><span
+                                class="p-badge">JAVA</span><span class="p-badge">UNITY</span>
+                        </div>
+                        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:20px;">
+                            <div
+                                style="background:rgba(255,255,255,0.03); padding:20px; border-radius:12px; border:1px solid rgba(255,255,255,0.05);">
+                                <div
+                                    style="color:var(--primary); font-weight:800; font-size:11px; margin-bottom:8px; letter-spacing:1px;">
+                                    PERFORMANCE</div>
+                                <div style="color:#fff; font-size:14px; font-weight:600;">20+ Motion Presets</div>
+                                <div style="color:#666; font-size:12px; margin-top:4px;">Hardware accelerated
+                                    animations.</div>
+                            </div>
+                            <div
+                                style="background:rgba(255,255,255,0.03); padding:20px; border-radius:12px; border:1px solid rgba(255,255,255,0.05);">
+                                <div
+                                    style="color:var(--primary); font-weight:800; font-size:11px; margin-bottom:8px; letter-spacing:1px;">
+                                    DESIGN</div>
+                                <div style="color:#fff; font-size:14px; font-weight:600;">Dual-Color System</div>
+                                <div style="color:#666; font-size:12px; margin-top:4px;">Deep brand integration.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="code-view">
+                <div class="editor-tabs">
+                    <div class="tab">webecon.html</div>
+                </div>
+                <div class="editor-content">
+                    <div style="display:flex;">
+                        <div class="line-numbers">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9</div>
+                        <div id="typing-code"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="browser-sim">
+            <div class="browser-header">
+                <div class="browser-dots">
+                    <div class="dot" style="background:#ff5f56;"></div>
+                    <div class="dot" style="background:#ffbd2e;"></div>
+                    <div class="dot" style="background:#27c93f;"></div>
+                </div>
+                <div class="browser-address">localhost:3000/webecon.html</div>
+            </div>
+            <div class="browser-content"></div>
+        </div>
+
+        <!-- The Big Python Terminal (Start) -->
+        <div id="main-python-term">
+            <div class="term-header">
+                <div class="term-dot" style="background:#ff5f56;"></div>
+                <div class="term-dot" style="background:#ffbd2e;"></div>
+                <div class="term-dot" style="background:#27c93f;"></div><span
+                    style="font-size:12px; color:#666; margin-left:auto; font-weight:bold;">python-env</span>
+            </div>
+            <div class="term-body" style="font-size:24px; padding:20px;">
+                <span class="prompt">~$</span> <span id="typ-python-big"></span>
+                <div id="out-python-big" style="opacity:0; color:#5af78e; font-size:18px; margin-top:20px;">Successfully
+                    installed webecon-17.2.6</div>
+            </div>
+        </div>
+
+        <!-- The Grid Reveal Container -->
+        <div id="terminal-universe-container">
+            <div id="terminal-grid-header">
+                <h2>Explore 1,000+ Icons for 14+ SDKs</h2>
+                <p>Only on <span>webecon.adityadivte.com</span></p>
+            </div>
+            <div id="terminal-grid">
+                <!-- 15 Terminals for 15 SDKs -->
+                <div class="terminal-sim" id="t-1">
+                    <div class="term-header">
+                        <div class="term-dot" style="background:#ff5f56;"></div><span
+                            style="font-size:9px; color:#444; margin-left:auto;">react</span>
+                    </div>
+                    <div class="term-body"><span class="prompt">~$</span> <span id="typ-grid-1"></span></div>
+                </div>
+                <div class="terminal-sim" id="t-2">
+                    <div class="term-header">
+                        <div class="term-dot" style="background:#ffbd2e;"></div><span
+                            style="font-size:9px; color:#444; margin-left:auto;">flutter</span>
+                    </div>
+                    <div class="term-body"><span class="prompt">~$</span> <span id="typ-grid-2"></span></div>
+                </div>
+                <div class="terminal-sim" id="t-3">
+                    <div class="term-header">
+                        <div class="term-dot" style="background:#27c93f;"></div><span
+                            style="font-size:9px; color:#444; margin-left:auto;">swift</span>
+                    </div>
+                    <div class="term-body"><span class="prompt">~$</span> <span id="typ-grid-3"></span></div>
+                </div>
+                <div class="terminal-sim" id="t-4">
+                    <div class="term-header">
+                        <div class="term-dot" style="background:#3b82f6;"></div><span
+                            style="font-size:9px; color:#444; margin-left:auto;">java</span>
+                    </div>
+                    <div class="term-body"><span class="prompt">~$</span> <span id="typ-grid-4"></span></div>
+                </div>
+                <div class="terminal-sim" id="t-5">
+                    <div class="term-header">
+                        <div class="term-dot" style="background:#e06c75;"></div><span
+                            style="font-size:9px; color:#444; margin-left:auto;">rust</span>
+                    </div>
+                    <div class="term-body"><span class="prompt">~$</span> <span id="typ-grid-5"></span></div>
+                </div>
+                <div class="terminal-sim" id="t-6">
+                    <div class="term-header">
+                        <div class="term-dot" style="background:#98c379;"></div><span
+                            style="font-size:9px; color:#444; margin-left:auto;">golang</span>
+                    </div>
+                    <div class="term-body"><span class="prompt">~$</span> <span id="typ-grid-6"></span></div>
+                </div>
+                <div class="terminal-sim" id="t-7">
+                    <div class="term-header">
+                        <div class="term-dot" style="background:#d19a66;"></div><span
+                            style="font-size:9px; color:#444; margin-left:auto;">unity</span>
+                    </div>
+                    <div class="term-body"><span class="prompt">~$</span> <span id="typ-grid-7"></span></div>
+                </div>
+                <div class="terminal-sim" id="t-8">
+                    <div class="term-header">
+                        <div class="term-dot" style="background:#61afef;"></div><span
+                            style="font-size:9px; color:#444; margin-left:auto;">unreal</span>
+                    </div>
+                    <div class="term-body"><span class="prompt">~$</span> <span id="typ-grid-8"></span></div>
+                </div>
+                <div class="terminal-sim" id="t-9">
+                    <div class="term-header">
+                        <div class="term-dot" style="background:#c678dd;"></div><span
+                            style="font-size:9px; color:#444; margin-left:auto;">ruby</span>
+                    </div>
+                    <div class="term-body"><span class="prompt">~$</span> <span id="typ-grid-9"></span></div>
+                </div>
+                <div class="terminal-sim" id="t-10">
+                    <div class="term-header">
+                        <div class="term-dot" style="background:#56b6c2;"></div><span
+                            style="font-size:9px; color:#444; margin-left:auto;">php</span>
+                    </div>
+                    <div class="term-body"><span class="prompt">~$</span> <span id="typ-grid-10"></span></div>
+                </div>
+                <div class="terminal-sim" id="t-11">
+                    <div class="term-header">
+                        <div class="term-dot" style="background:#abb2bf;"></div><span
+                            style="font-size:9px; color:#444; margin-left:auto;">c++</span>
+                    </div>
+                    <div class="term-body"><span class="prompt">~$</span> <span id="typ-grid-11"></span></div>
+                </div>
+                <div class="terminal-sim" id="t-12">
+                    <div class="term-header">
+                        <div class="term-dot" style="background:#5c6370;"></div><span
+                            style="font-size:9px; color:#444; margin-left:auto;">c#</span>
+                    </div>
+                    <div class="term-body"><span class="prompt">~$</span> <span id="typ-grid-12"></span></div>
+                </div>
+                <div class="terminal-sim" id="t-13">
+                    <div class="term-header">
+                        <div class="term-dot" style="background:#e06c75;"></div><span
+                            style="font-size:9px; color:#444; margin-left:auto;">kotlin</span>
+                    </div>
+                    <div class="term-body"><span class="prompt">~$</span> <span id="typ-grid-13"></span></div>
+                </div>
+                <div class="terminal-sim" id="t-14">
+                    <div class="term-header">
+                        <div class="term-dot" style="background:#d19a66;"></div><span
+                            style="font-size:9px; color:#444; margin-left:auto;">dart</span>
+                    </div>
+                    <div class="term-body"><span class="prompt">~$</span> <span id="typ-grid-14"></span></div>
+                </div>
+                <div class="terminal-sim" id="t-15">
+                    <div class="term-header">
+                        <div class="term-dot" style="background:#98c379;"></div><span
+                            style="font-size:9px; color:#444; margin-left:auto;">python</span>
+                    </div>
+                    <div class="term-body"><span class="prompt">~$</span> <span id="typ-grid-15"></span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator" id="intro-scroll" style="opacity:0;"></div>
+    </section>
+
+    <section class="section">
+        <div class="bento-grid">
+            <div class="bento-item bento-1">
+                <webecon-icon name="brand-javascript" size="100" color="#3b82f6" theme="neon"></webecon-icon>
+                <div style="margin-top:30px; font-weight:800; font-size:2rem;">NPM & REACT</div>
+            </div>
+            <div class="bento-item bento-2">
+                <div style="font-weight:800; color:white; font-size: 3rem;">1,031+ ASSETS</div>
+            </div>
+            <div class="bento-item">
+                <webecon-icon name="brand-python" size="50" color="#fff" theme="line"></webecon-icon>
+                <div style="font-weight:800; margin-top:10px; font-size:1.2rem;">PYTHON</div>
+            </div>
+            <div class="bento-item"
+                style="grid-column: span 2; font-weight: 800; text-transform: uppercase; font-size: 16px; letter-spacing: 4px; color: var(--primary);">
+                C++ • C# • Go • Rust • Swift • Kotlin • Java</div>
+        </div>
+    </section>
+
+    <section class="section" style="background:#000;">
+        <h1 style="font-size: 7rem; margin-bottom: 4rem;">BUILD <span style="color:var(--primary);">BEYOND.</span></h1>
+        <div id="final-cta-container" class="floating-cta"
+            style="background: var(--primary); color: #fff; padding: 2.5rem 7rem; border-radius: 99px; font-size: 3.5rem; font-weight: 900; min-height: 120px; display: flex; align-items: center; justify-content: center;">
+            <span id="final-typing-cta"></span><span class="cursor-text" style="background: #fff; width: 5px; height: 1.2em;"></span>
+        </div>
+    </section>
+
+    <section class="section" style="background: var(--surface); text-align: center;">
+        <h2 style="font-size: 4rem; margin-bottom: 2rem;">Ready to upgrade?</h2>
+        <a href="https://webecon.adityadivte.com" style="text-decoration: none; color: inherit;">
+            <div style="font-size: 2.5rem; color: var(--primary); font-weight: 800; letter-spacing: -1px;">
+                Visit webecon.adityadivte.com Now
+            </div>
+        </a>
+    </section>
+
+    <section class="section" style="background: #000; height: 50vh; display: flex; align-items: center; justify-content: center;">
+        <div style="font-size: 1.5rem; color: var(--muted); font-weight: 600; letter-spacing: 2px; text-transform: uppercase;">
+            Visit webecon.adityadivte.com Now
+        </div>
+    </section>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger, TextPlugin);
+
+        const tl = gsap.timeline();
+        tl.to("#intro-text", { duration: 1.5, text: "Are you a developer?", ease: "none" })
+            .to("#intro-text", { duration: 1, delay: 1, text: "", ease: "none" })
+            .to("#intro-text", { duration: 2.5, text: "Stress of free and animated icons directly in ur code", ease: "none" })
+            .to("#intro-text", { duration: 1, delay: 1.5, text: "", ease: "none" })
+            .to(".cursor-text", { display: "none" })
+            .to("#intro-text", { opacity: 0, y: -20, duration: 0.5 })
+
+            .set("#ghost-mouse", { opacity: 1, scale: 0.5 })
+            .to("#ghost-mouse", { scale: 1.1, duration: 1.5, ease: "elastic.out(1, 0.5)" })
+            .to("#ghost-mouse", { y: -20, duration: 2, repeat: 1, yoyo: true, ease: "sine.inOut" })
+
+            .to("#intro-branding-text", { opacity: 1, y: 0, duration: 1 }, "-=1")
+            .to("#intro-branding-text", { opacity: 0, y: 30, duration: 0.5, delay: 1.5 })
+            .to("#vscode-sim", { opacity: 1, scale: 1, duration: 1, ease: "expo.out" })
+
+            .to("#ghost-mouse", { x: -528, y: 99, duration: 1.5, ease: "power2.inOut", scale: 0.25 })
+            .to("#ghost-mouse", { scale: 0.2, duration: 0.1, repeat: 1, yoyo: true })
+            .set("#ext-btn", { className: "activity-icon active" })
+            .set("#ext-sidebar", { display: "block" })
+
+            .to("#ghost-mouse", { x: -380, y: -127, duration: 1.2, ease: "power2.inOut", delay: 0.3 })
+            .to("#search-input", { duration: 1.5, text: "webecon", ease: "none" })
+            .set("#search-results", { display: "block" })
+
+            .to("#ghost-mouse", { x: -387, y: -43, duration: 1, ease: "power2.inOut", delay: 0.3 })
+            .set("#details-view", { display: "block" })
+
+            .to("#ghost-mouse", { x: -4, y: 33, duration: 1.2, ease: "power2.inOut", delay: 0.4 })
+            .set("#install-btn-ui", { text: "Installed", background: "#37373d", color: "#888" })
+
+            .to("#details-view", { opacity: 0, duration: 0.5, delay: 0.5 })
+            .set("#details-view", { display: "none" })
+            .set("#ext-sidebar", { display: "none" })
+            .set("#code-view", { display: "flex", opacity: 0 })
+            .to("#code-view", { opacity: 1, duration: 0.5 })
+
+            .to("#ghost-mouse", { opacity: 0, duration: 0.5 })
+            .to("#typing-code", { duration: 0.4, text: "!", ease: "none", delay: 0.5 })
+            .set("#typing-code", { innerHTML: '<span class="ct">&lt;!DOCTYPE html&gt;</span><br><span class="ct">&lt;head&gt;</span><br>&nbsp;&nbsp;<span class="ct">&lt;script</span> <span class="ca">src</span>=<span class="cv">"..."</span><span class="ct">&gt;&lt;/script&gt;</span><br><span class="ct">&lt;/head&gt;<br><span class="ct">&lt;body&gt;</span><br><span class="ct">&lt;/body&gt;</span><br><span class="ct">&lt;/html&gt;' })
+            .to("#typing-code", { duration: 2, delay: 0.5, text: { value: '<span class="ct">&lt;!DOCTYPE html&gt;</span><br><span class="ct">&lt;head&gt;</span><br>&nbsp;&nbsp;<span class="ct">&lt;script</span> <span class="ca">src</span>=<span class="cv">"https://cdn.jsdelivr.net/gh/adityadivatee/webecon/dist/webicons.js"</span><span class="ct">&gt;&lt;/script&gt;</span><br>&nbsp;&nbsp;<span class="ct">&lt;webecon-icon</span> <span class="ca">name</span>=<span class="cv">"heart"</span> <span class="ca">theme</span>=<span class="cv">"neon"</span> <span class="ct">/&gt;</span><br><span class="ct">&lt;/body&gt;</span><br>&lt;/html&gt;' } })
+
+            .to("#vscode-sim", { rotationY: -20, scale: 0.7, x: -1000, opacity: 0, duration: 1.5, ease: "expo.inOut", delay: 1 })
+            .fromTo("#browser-sim", { opacity: 0, scale: 0.5, rotationY: 30, x: 500 }, { opacity: 1, scale: 1, rotationY: 0, x: 0, duration: 1.5, ease: "expo.out" }, "-=1.3")
+            .set(".browser-content", { innerHTML: '<webecon-icon name="heart" size="220" theme="neon" color="#ff2e63"></webecon-icon><h1 style="font-size: 5rem; margin-top: 40px; font-weight: 800;">LOVED BY ALL.</h1>' }, "-=1.4")
+
+            .to("#browser-sim", { rotationX: 90, y: -500, opacity: 0, scale: 0.5, duration: 1.2, ease: "power2.inIn" }, "+=2")
+
+            // PHASE 1: Big Python Terminal
+            .fromTo("#main-python-term", { opacity: 0, scale: 0.5, rotationX: -90, y: 500 }, { opacity: 1, scale: 1, rotationX: 0, y: 0, duration: 1.2, ease: "expo.out" }, "-=0.6")
+            .to("#typ-python-big", {
+                duration: 1.5, text: "pip install webecon", onUpdate: function () {
+                    let t = document.getElementById("typ-python-big");
+                    if (t.innerText.startsWith("pip")) t.innerHTML = t.innerText.replace("pip", '<span style="color:#e5c07b;">pip</span>');
+                }, delay: 0.5
+            })
+            .to("#out-python-big", { opacity: 1, duration: 0.3 })
+
+            // PHASE 2: The Shockwave Expansion with Grand Header
+            .to("#main-python-term", { scale: 0.1, opacity: 0, duration: 1, ease: "power4.inOut", delay: 1 })
+            .to("#terminal-grid-header", { opacity: 1, y: 0, duration: 1, ease: "expo.out" }, "-=0.5")
+            .to("#terminal-grid", { opacity: 1, duration: 0.5 }, "-=0.8")
+            .to(".terminal-sim", { scale: 1, opacity: 1, stagger: { amount: 1, grid: [3, 5], from: "center" }, ease: "back.out(1.7)" }, "-=1")
+
+            // Parallel Massive Typing
+            .to("#typ-grid-1", { duration: 1, text: "npm install webecon" }, "-=0.5")
+            .to("#typ-grid-2", { duration: 1, text: "flutter pub add webecon" }, "-=1")
+            .to("#typ-grid-3", { duration: 1, text: "swift package install" }, "-=1")
+            .to("#typ-grid-4", { duration: 1, text: "mvn install webecon" }, "-=1")
+            .to("#typ-grid-5", { duration: 1, text: "cargo add webecon" }, "-=1")
+            .to("#typ-grid-6", { duration: 1, text: "go get webecon" }, "-=1")
+            .to("#typ-grid-7", { duration: 1, text: "unity-pkg import webecon" }, "-=1")
+            .to("#typ-grid-8", { duration: 1, text: "unreal-plugin load" }, "-=1")
+            .to("#typ-grid-9", { duration: 1, text: "gem install webecon" }, "-=1")
+            .to("#typ-grid-10", { duration: 1, text: "php artisan webecon:sync" }, "-=1")
+            .to("#typ-grid-11", { duration: 1, text: "cmake .. && make" }, "-=1")
+            .to("#typ-grid-12", { duration: 1, text: "dotnet add package" }, "-=1")
+            .to("#typ-grid-13", { duration: 1, text: "kotlin-pkg sync" }, "-=1")
+            .to("#typ-grid-14", { duration: 1, text: "dart pub get" }, "-=1")
+            .to("#typ-grid-15", { duration: 1, text: "pip install webecon" }, "-=1")
+
+            .to("#intro-scroll", { opacity: 1, duration: 0.5, delay: 1 });
+            
+        // Individual ScrollTrigger for the final CTA to ensure it triggers correctly
+        gsap.to("#final-typing-cta", {
+            scrollTrigger: {
+                trigger: "#final-cta-container",
+                start: "top 80%",
+                toggleActions: "play none none none"
+            },
+            duration: 2,
+            text: "Visit webecon.adityadivte.com Now",
+            ease: "none",
+            delay: 0.5
+        });
+    </script>
+</body>
+</html>

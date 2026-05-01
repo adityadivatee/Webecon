@@ -206,7 +206,7 @@ public class Webecon {
         ICONS.put("bed-pro", "<path d=\"M2 4v16M2 11h20M22 4v16M2 17h20\"/><rect width=\"6\" height=\"4\" x=\"5\" y=\"7\" rx=\"1\"/>");
         ICONS.put("bee", "<circle cx=\"12\" cy=\"12\" r=\"6\"/><path d=\"M12 6l-2-4M12 6l2-4M6 12l-4-2M6 12l-4 2M18 12l4-2M18 12l4 2\"/><line x1=\"8\" x2=\"16\" y1=\"10\" y2=\"10\"/><line x1=\"8\" x2=\"16\" y1=\"14\" y2=\"14\"/>");
         ICONS.put("beer", "<path d=\"M17 11h1a3 3 0 0 1 0 6h-1M5 21h9V6H5v15z\"/><path d=\"M5 6c0-2 2-3 4.5-3S14 4 14 6\"/>");
-        ICONS.put("behance", "<path d=\"M12 12h5v1h-5zM9 10c0-1.7-1.3-3-3-3H2v10h4c1.7 0 3-1.3 3-3v-4Zm-3 3H4v-1h2v1Zm0 3H4v-1h2v1ZM14 7h7M15 10c-1.7 0-3 1.3-3 3s1.3 3 3 3c1 0 2-.5 2.5-1.2l-1-.6c-.3.4-.8.8-1.5.8-1 0-1.8-.7-2-1.5h5c.1-.2.2-.5.2-.8s-1.3-2.7-3.2-2.7Zm1.8 2.2h-3.6c.2-.8.9-1.3 1.8-1.3s1.6.5 1.8 1.3Z\"/>");
+        ICONS.put("behance", "<path d=\"M12 12h5v1h-5zM9 10c0-1.7-1.3-3-3-3H2v10h4c1.7 0 3-1.3 3-3v-4Zm-3 3H4v-1h2v1Zm0 3H4v-1h2v1ZM14 7h7M15 10c-1.7 0-3 1.3-3 3s1.3 3 3 3c1 0 2-.5 2.5-1.2l-1-.6c-.3.4-.8.8-1.5.8-1 0-1.8-.7-2-1.5h5c.1-.2.2-.5.2-.8s-1.3-2.7-3.2-2.7Zm1.8 2.2h-3.6c.2-.8.9-1.3 1.8-1.3s1.6.5 1.8 1.3Z\" fill=\"currentColor\" stroke=\"none\"/>");
         ICONS.put("bell", "<path d=\"M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9\"/><path d=\"M10.3 21a1.94 1.94 0 0 0 3.4 0\"/>");
         ICONS.put("bell-pro", "<path d=\"M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9z\"/><path d=\"M13.7 21a2 2 0 0 1-3.4 0\"/><circle cx=\"18\" cy=\"4\" r=\"2\"/>");
         ICONS.put("bicycle-eco", "<circle cx=\"6\" cy=\"16\" r=\"4\"/><circle cx=\"18\" cy=\"16\" r=\"4\"/><path d=\"M12 16V8l4-4m-4 4H8\"/><path d=\"M11 6h2\"/>");
@@ -381,7 +381,7 @@ public class Webecon {
         ICONS.put("desert-heat", "<path d=\"M2 20c10-2 12-2 20 0\"/><circle cx=\"12\" cy=\"10\" r=\"5\"/><path d=\"M12 2v2M5 5l1.5 1.5M19 5l-1.5 1.5\"/>");
         ICONS.put("desk-lamp-pro", "<path d=\"M12 2L8 10h8L12 2z\"/><path d=\"M12 10v10M8 22h8\"/>");
         ICONS.put("desk-pro", "<rect width=\"18\" height=\"12\" x=\"3\" y=\"6\" rx=\"1\"/><path d=\"M6 18v4M18 18v4M3 10h18\"/>");
-        ICONS.put("dev-to", "<rect width=\"18\" height=\"18\" x=\"3\" y=\"3\" rx=\"2\"/><path d=\"M7 8v8h2v-3h2v-2H9V8H7zm7 0v8h5v-2h-3v-1h2v-2h-2v-1h3V8h-5z\"/>");
+        ICONS.put("dev-to", "<rect width=\"18\" height=\"18\" x=\"3\" y=\"3\" rx=\"2\"/><path d=\"M7 8v8h2v-3h2v-2H9V8H7zm7 0v8h5v-2h-3v-1h2v-2h-2v-1h3V8h-5z\" fill=\"currentColor\" stroke=\"none\"/>");
         ICONS.put("dialog-bubble", "<path d=\"M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 1 1-7.6-12.7 8.19 8.19 0 0 1 4.9 1.5L21 3Z\"/><path d=\"M8 10h8M8 14h5\"/>");
         ICONS.put("diamond-nested", "<path d=\"M12 2l10 10-10 10L2 12z\"/><path d=\"M12 6l6 6-6 6-6-6 6-6z\"/>");
         ICONS.put("diamond-raw", "<path d=\"M12 2L2 12l10 10 10-10L12 2z\"/><path d=\"M12 2v20M2 12h20\"/>");
@@ -389,7 +389,7 @@ public class Webecon {
         ICONS.put("diamond-shine", "<path d=\"M6 3h12l4 6-10 12L2 9z\"/><path d=\"M12 3L9 9l3 12 3-12zM2 9l20 0\"/>");
         ICONS.put("diamond-stack", "<path d=\"m12 2 4 4-4 4-4-4 4-4zM12 14l4 4-4 4-4-4 4-4z\"/>");
         ICONS.put("diploma-ribbon", "<path d=\"M4 19.5V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v14.5a2.5 2.5 0 0 1-2.5 2.5H6a2.5 2.5 0 0 1-2.5-2.5z\"/><polyline points=\"12 3 12 10 15 8 18 10 18 3\"/>");
-        ICONS.put("discord", "<path d=\"M18.5 4a12 12 0 0 0-3.5-1 12 12 0 0 0-.5 1 12 12 0 0 0-5 0 12 12 0 0 0-.5-1 12 12 0 0 0-3.5 1 12 12 0 0 0-2 8c1 2 3.5 3 4.5 3 .5-.5.5-1 1-1.5-1-.5-2-1-3-2.5.5.5 1.5 1 2.5 1.5h6c1-.5 2-1 2.5-1.5-1 1.5-2 2-3 2.5.5.5.5 1 1 1.5 1 0 3.5-1 4.5-3 0-4-1-7-2-8ZM9 12a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm6 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z\"/>");
+        ICONS.put("discord", "<path d=\"M18.5 4a12 12 0 0 0-3.5-1 12 12 0 0 0-.5 1 12 12 0 0 0-5 0 12 12 0 0 0-.5-1 12 12 0 0 0-3.5 1 12 12 0 0 0-2 8c1 2 3.5 3 4.5 3 .5-.5.5-1 1-1.5-1-.5-2-1-3-2.5.5.5 1.5 1 2.5 1.5h6c1-.5 2-1 2.5-1.5-1 1.5-2 2-3 2.5.5.5.5 1 1 1.5 1 0 3.5-1 4.5-3 0-4-1-7-2-8ZM9 12a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm6 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z\" fill=\"currentColor\" stroke=\"none\"/>");
         ICONS.put("discount", "<circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"m15 9-6 6M9 9h.01M15 15h.01\"/>");
         ICONS.put("dishwasher", "<rect width=\"16\" height=\"20\" x=\"4\" y=\"2\" rx=\"2\"/><path d=\"M4 8h16M8 12h8M8 16h8\"/>");
         ICONS.put("djinn-bottle", "<path d=\"M12 2v4a4 4 0 0 0 4 4v8a2 2 0 0 1-2 2H10a2 2 0 0 1-2-2v-8a4 4 0 0 0 4-4V2z\"/>");
@@ -406,7 +406,7 @@ public class Webecon {
         ICONS.put("drag-handle", "<circle cx=\"9\" cy=\"5\" r=\"1\"/><circle cx=\"9\" cy=\"12\" r=\"1\"/><circle cx=\"9\" cy=\"19\" r=\"1\"/><circle cx=\"15\" cy=\"5\" r=\"1\"/><circle cx=\"15\" cy=\"12\" r=\"1\"/><circle cx=\"15\" cy=\"19\" r=\"1\"/>");
         ICONS.put("drag-vertical", "<circle cx=\"9\" cy=\"5\" r=\"1\"/><circle cx=\"9\" cy=\"12\" r=\"1\"/><circle cx=\"9\" cy=\"19\" r=\"1\"/><circle cx=\"15\" cy=\"5\" r=\"1\"/><circle cx=\"15\" cy=\"12\" r=\"1\"/><circle cx=\"15\" cy=\"19\" r=\"1\"/>");
         ICONS.put("dragon-scale", "<path d=\"M12 2s-8 4-8 10 8 10 8 10 8-4 8-10-8-10-8-10z\"/><path d=\"M12 8c2 2 4 4 4 4m-8 0c2 2 4 4 4 4\"/>");
-        ICONS.put("dribbble", "<circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"M8.5 2.2c1.7 2.2 2.6 5 2.5 7.8M4.1 15.5c4.2-1.2 8.1-1.2 12.3 0M12 21.8c-1.3-3.8-1.3-7.7 0-11.5\"/>");
+        ICONS.put("dribbble", "<circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32\"/>");
         ICONS.put("drill", "<path d=\"M10 5h6l4 4-4 4h-6V5ZM6 13l4 4v5h-4v-5l-2-2V13h2Z\"/><path d=\"M12 9h2\"/>");
         ICONS.put("drone", "<circle cx=\"12\" cy=\"12\" r=\"2\"/><path d=\"M12 10V2m0 20v-8M2 12h8m12 0h-8\"/><path d=\"M5 5l2 2m10 10l2 2m-14 10l2-2m10-10l2-2\"/><circle cx=\"4\" cy=\"4\" r=\"1\"/><circle cx=\"20\" cy=\"4\" r=\"1\"/><circle cx=\"4\" cy=\"20\" r=\"1\"/><circle cx=\"20\" cy=\"20\" r=\"1\"/>");
         ICONS.put("drum", "<ellipse cx=\"12\" cy=\"7\" rx=\"9\" ry=\"4\"/><path d=\"M3 7v10a9 4 0 0 0 18 0V7\"/>");
@@ -796,7 +796,7 @@ public class Webecon {
         ICONS.put("pineapple-pro", "<rect width=\"10\" height=\"14\" x=\"7\" y=\"8\" rx=\"3\"/><path d=\"M12 8V2m-3 4l3-2 3 2\"/>");
         ICONS.put("ping", "<path d=\"M2 12h20\"/><polyline points=\"10 12 12 8 14 12 16 2 18 12\"/>");
         ICONS.put("ping-signal", "<path d=\"M2 20h20\"/><path d=\"M4 20v-4M9 20V12M14 20V8M19 20V4\"/>");
-        ICONS.put("pinterest", "<circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"M12 6c0 3-1 5-2 9l-1 3m1-12c4 0 4 6 4 6s0 3-2 3\"/>");
+        ICONS.put("pinterest", "<circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"M12 6c0 3-1 5-2 9l-1 3m1-12c4 0 4 6 4 6s0 3-2 3\" fill=\"currentColor\" stroke=\"none\"/>");
         ICONS.put("pipe-wrench", "<path d=\"M18 4h-4v4h4v8h-4v4h4a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zM4 12h10\"/>");
         ICONS.put("pipette", "<path d=\"m15 5 4 4-12 12-4 1 1-4L15 5z\"/><path d=\"M12 12l2 2\"/>");
         ICONS.put("pistol", "<path d=\"M21 8H7l-2 2v2h4l1 4h3l1-4h7V8z\"/><path d=\"M11 12v3M14 12v3\"/>");
@@ -846,8 +846,8 @@ public class Webecon {
         ICONS.put("recycle", "<path d=\"M7 11l5-5 5 5M12 6v12M17 13l-5 5-5-5\"/>");
         ICONS.put("recycle-pro", "<path d=\"M7 11l5-5 5 5M12 6v12M17 13l-5 5-5-5\"/>");
         ICONS.put("red-cabbage", "<circle cx=\"12\" cy=\"14\" r=\"8\"/><path d=\"M12 6s-4 4-4 8M12 6s4 4 4 8M5 10s4 2 7 2 7-2 7-2\"/>");
-        ICONS.put("reddit", "<circle cx=\"12\" cy=\"12\" r=\"10\"/><circle cx=\"8\" cy=\"11\" r=\"1\"/><circle cx=\"16\" cy=\"11\" r=\"1\"/><path d=\"M10 16s1 1 2 1 2-1 2-1M12 6c0-1.5 1-2 2-2\"/>");
-        ICONS.put("reddit-brand", "<circle cx=\"12\" cy=\"12\" r=\"10\"/><circle cx=\"8\" cy=\"11\" r=\"1\"/><circle cx=\"16\" cy=\"11\" r=\"1\"/><path d=\"M10 16s1 1 2 1 2-1 2-1M12 6c0-1.5 1-2 2-2\"/>");
+        ICONS.put("reddit", "<path d=\"M12 8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2\"/><path d=\"M12.4 6c.9 1 2.4 1.3 3.6 1.1\"/><path d=\"M16 11c0-1.1-.9-2-2-2s-2 .9-2 2c0 1.1.9 2 2 2 .4 0 .8-.1 1.1-.3\"/><path d=\"M8 11c0-1.1-.9-2-2-2s-2 .9-2 2c0 1.1.9 2 2 2 .4 0 .8-.1 1.1-.3\"/><path d=\"M10 16c0 1.1.9 2 2 2s2-.9 2-2\"/><path d=\"M12 22c5.5 0 10-4.5 10-10s-4.5-10-10-10S2 6.5 2 12s4.5 10 10 10z\"/>");
+        ICONS.put("reddit-brand", "<path d=\"M12 8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2\"/><path d=\"M12.4 6c.9 1 2.4 1.3 3.6 1.1\"/><path d=\"M16 11c0-1.1-.9-2-2-2s-2 .9-2 2c0 1.1.9 2 2 2 .4 0 .8-.1 1.1-.3\"/><path d=\"M8 11c0-1.1-.9-2-2-2s-2 .9-2 2c0 1.1.9 2 2 2 .4 0 .8-.1 1.1-.3\"/><path d=\"M10 16c0 1.1.9 2 2 2s2-.9 2-2\"/><path d=\"M12 22c5.5 0 10-4.5 10-10s-4.5-10-10-10S2 6.5 2 12s4.5 10 10 10z\"/>");
         ICONS.put("refresh", "<path d=\"M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8\"/><path d=\"M3 3v5h5\"/><path d=\"M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16\"/><path d=\"M16 16h5v5\"/>");
         ICONS.put("refrigerator-pro", "<rect width=\"14\" height=\"20\" x=\"5\" y=\"2\" rx=\"2\"/><path d=\"M5 10h14M9 5h0M9 13h0\"/>");
         ICONS.put("reindeer", "<path d=\"M12 20v-6m-4-2h8m-8-4L8 2m8 6l4-6\"/><circle cx=\"12\" cy=\"10\" r=\"4\"/>");
@@ -915,10 +915,10 @@ public class Webecon {
         ICONS.put("sim-card", "<path d=\"M4 2h10l6 6v14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z\"/><path d=\"M6 10h4v10H6z\"/>");
         ICONS.put("skeleton-ribs", "<path d=\"M12 4v16M8 8h8M6 12h12M8 16h8\"/>");
         ICONS.put("skill-tree", "<path d=\"M12 2v4m0 8v4m0 4v2M5 10l7 4 7-4\"/><rect width=\"4\" height=\"4\" x=\"10\" y=\"6\" rx=\"1\"/><rect width=\"4\" height=\"4\" x=\"3\" y=\"10\" rx=\"1\"/><rect width=\"4\" height=\"4\" x=\"17\" y=\"10\" rx=\"1\"/>");
-        ICONS.put("slack", "<circle cx=\"6\" cy=\"6\" r=\"2\"/><circle cx=\"18\" cy=\"6\" r=\"2\"/><circle cx=\"6\" cy=\"18\" r=\"2\"/><circle cx=\"18\" cy=\"18\" r=\"2\"/><path d=\"M6 10h12M10 6v12\"/>");
+        ICONS.put("slack", "<rect width=\"3\" height=\"8\" x=\"13\" y=\"2\" rx=\"1.5\"/><path d=\"M19 8.5v1a1.5 1.5 0 0 1-3 0v-1a1.5 1.5 0 0 1 3 0z\"/><rect width=\"3\" height=\"8\" x=\"8\" y=\"14\" rx=\"1.5\"/><path d=\"M5 15.5v-1a1.5 1.5 0 0 1 3 0v1a1.5 1.5 0 0 1-3 0z\"/><rect width=\"8\" height=\"3\" x=\"14\" y=\"13\" rx=\"1.5\"/><path d=\"M15.5 19h-1a1.5 1.5 0 0 1 0-3h1a1.5 1.5 0 0 1 0 3z\"/><rect width=\"8\" height=\"3\" x=\"2\" y=\"8\" rx=\"1.5\"/><path d=\"M8.5 5h1a1.5 1.5 0 0 1 0 3h-1a1.5 1.5 0 0 1 0-3z\"/>");
         ICONS.put("sling", "<path d=\"M12 12c-4 0-8 4-8 8s4-4 8-4 8 4 8-4-4-8-8-8z\"/><circle cx=\"12\" cy=\"12\" r=\"2\"/>");
         ICONS.put("smartwatch", "<rect width=\"12\" height=\"14\" x=\"6\" y=\"5\" rx=\"3\"/><path d=\"M9 5V2h6v3m-6 14v3h6v-3\"/><circle cx=\"12\" cy=\"12\" r=\"2\"/>");
-        ICONS.put("snapchat", "<path d=\"M12 3c-4 0-6 3-6 6 0 2 1 3 1 3s-2 1-2 3c0 2 3 3 3 3s1 2 4 2 4-2 4-2 3-1 3-3c0-2-2-3-2-3s1-1 1-3c0-3-2-6-6-6z\"/>");
+        ICONS.put("snapchat", "<path d=\"M12 3c-4 0-6 3-6 6 0 2 1 3 1 3s-2 1-2 3c0 2 3 3 3 3s1 2 4 2 4-2 4-2 3-1 3-3c0-2-2-3-2-3s1-1 1-3c0-3-2-6-6-6z\" fill=\"currentColor\" stroke=\"none\"/>");
         ICONS.put("sniper", "<path d=\"M2 15h4l2-2h14v2l-1 1H8l-2 2H2v-3z\"/><path d=\"M10 13l1-4h4l1 4\"/><circle cx=\"13\" cy=\"7\" r=\"1\"/>");
         ICONS.put("snowflake", "<path d=\"M12 2v20M2 12h20m-4.22-5.78L4.22 17.78m13.56 0L4.22 6.22\"/><path d=\"m8 4 4 4 4-4m-8 16 4-4 4 4m4-8-4-4 4-4m-16 8 4-4-4-4\"/>");
         ICONS.put("snowflake-cold", "<path d=\"M12 2v20M2 12h20m-4.22-5.78L4.22 17.78m13.56 0L4.22 6.22\"/><circle cx=\"12\" cy=\"12\" r=\"2\"/>");
@@ -1008,7 +1008,7 @@ public class Webecon {
         ICONS.put("trophy", "<path d=\"M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M12 14V19M8 22h8M12 4a7 7 0 0 0-7 7v3h14v-3a7 7 0 0 0-7-7Z\"/>");
         ICONS.put("truck-delivery", "<path d=\"M2 17h16V7H2v10Z\"/><path d=\"M18 17h4l-2-5h-2v5Z\"/><circle cx=\"5\" cy=\"19\" r=\"2\"/><circle cx=\"15\" cy=\"19\" r=\"2\"/>");
         ICONS.put("tsunami", "<path d=\"M2 18c4-4 8 4 12 0s8-12 10-4\"/><path d=\"M2 22h22\"/>");
-        ICONS.put("tumblr", "<path d=\"M10 21c-2 0-3-1-3-3v-7H5V7h2V3h4v4h4v4h-4v6c0 1 1 1 2 1h1v4h-4z\"/>");
+        ICONS.put("tumblr", "<path d=\"M10 21c-2 0-3-1-3-3v-7H5V7h2V3h4v4h4v4h-4v6c0 1 1 1 2 1h1v4h-4z\" fill=\"currentColor\" stroke=\"none\"/>");
         ICONS.put("tuning-fork", "<path d=\"M8 2v10a4 4 0 0 0 8 0V2\"/><path d=\"M12 16v6\"/>");
         ICONS.put("turntable-pro", "<rect width=\"20\" height=\"14\" x=\"2\" y=\"5\" rx=\"2\"/><circle cx=\"10\" cy=\"12\" r=\"6\"/><path d=\"M18 7v10l-4-4\"/>");
         ICONS.put("tv-pro", "<rect width=\"20\" height=\"14\" x=\"2\" y=\"3\" rx=\"2\"/><path d=\"M8 21h8M12 17v4M17 19h2\"/>");
@@ -1052,7 +1052,7 @@ public class Webecon {
         ICONS.put("welding-mask", "<path d=\"M6 4h12l1 6v10H5V10l1-4z\"/><rect width=\"8\" height=\"4\" x=\"8\" y=\"10\" rx=\"1\"/>");
         ICONS.put("werewolf-claw", "<path d=\"M6 4l2 12M12 2l1 16M18 4l-2 12\"/>");
         ICONS.put("whale", "<path d=\"M2 12c4 4 12 4 16 0s4-10 4-10-10 2-14 6L2 12z\"/><circle cx=\"16\" cy=\"8\" r=\"1\"/>");
-        ICONS.put("whatsapp", "<circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"M8 8a3 3 0 0 1 8 0v8a3 3 0 0 1-8 0V8Z\"/><path d=\"M8 12h8\"/>");
+        ICONS.put("whatsapp", "<path d=\"M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z\"/><path d=\"M16.5 13.5c-.8.8-2 .8-2.8 0l-3.4-3.4c-.8-.8-.8-2 0-2.8.8-.8 2-.8 2.8 0l.6.6c.8.8.8 2 0 2.8l-1.4 1.4c.4.8 1 1.6 1.8 2l1.4-1.4c.8-.8 2-.8 2.8 0l.6.6c.8.8.8 2 0 2.8z\"/>");
         ICONS.put("wheel-barrow", "<path d=\"M4 10h12l4-6H4z\"/><circle cx=\"6\" cy=\"18\" r=\"3\"/><path d=\"M16 10l4 8H8\"/>");
         ICONS.put("whistle", "<path d=\"M18 7H6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h4l4 4h4a2 2 0 0 0 2-2v-6c0-3.3-2.7-6-6-6Z\"/><circle cx=\"8\" cy=\"12\" r=\"1\"/>");
         ICONS.put("wifi", "<path d=\"M5 12.55a11 11 0 0 1 14.08 0M1.42 10.59a16 16 0 0 1 21.16 0M8.59 14.41a6 6 0 0 1 6.82 0M12 18h.01\"/>");
