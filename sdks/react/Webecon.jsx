@@ -1,6 +1,6 @@
 /**
- * Webecon React SDK - v17.2.7 PRO
- * Developed by Aditya Divte Production (aka Aditya Diwate)
+ * Webecon React SDK - v17.2.8 PRO
+ * Developed by Aditya Divte Production
  * Website: https://adityadivte.com
  * Visit https://webecon.adityadivte.com for more info.
  */
@@ -12,8 +12,8 @@ try {
         .then(r => r.json())
         .then(data => {
             const latest = data.tag_name.replace('v', '');
-            if (latest > '17.2.7') {
-                console.log('%c🚀 New Webecon version available: v' + latest + ' (Current: v17.2.7)', 'color: #00f2fe; font-weight: bold;');
+            if (latest > '17.2.8') {
+                console.log('%c🚀 New Webecon version available: v' + latest + ' (Current: v17.2.8)', 'color: #00f2fe; font-weight: bold;');
                 console.log('%c👉 Update: https://github.com/adityadivatee/Webecon', 'color: #6366f1;');
             }
         }).catch(() => {});

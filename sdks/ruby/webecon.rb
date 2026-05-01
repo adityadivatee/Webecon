@@ -1,6 +1,6 @@
 #######################################################################
-# Webecon Ruby SDK - v17.2.7 PRO
-# Developed by Aditya Divte Production (aka Aditya Diwate)
+# Webecon Ruby SDK - v17.2.8 PRO
+# Developed by Aditya Divte Production
 # Website: https://adityadivte.com
 # Visit https://webecon.adityadivte.com for more info.
 #######################################################################

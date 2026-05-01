@@ -1,6 +1,6 @@
 /**
- * Webecon - Premium Animated Icon Engine v17.2.7 PRO
- * Developed by Aditya Divte Production (aka Aditya Diwate)
+ * Webecon - Premium Animated Icon Engine v17.2.8 PRO
+ * Developed by Aditya Divte Production
  * Website: https://adityadivte.com
  * Project Hub: https://webecon.adityadivte.com
  * 

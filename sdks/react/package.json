@@ -1,0 +1,17 @@
+{
+    "name": "webecon-react",
+    "version": "17.2.8",
+    "description": "Webecon Animated Icons for React",
+    "main": "Webecon.jsx",
+    "author": "Aditya Divte Production <support@adityadivte.com>",
+    "license": "ISC",
+    "peerDependencies": {
+        "react": ">=16.8.0"
+    },
+    "keywords": [
+        "webecon",
+        "icons",
+        "react",
+        "animated"
+    ]
+}

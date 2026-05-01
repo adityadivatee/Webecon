@@ -1,7 +1,9 @@
-# Webecon Java SDK (v17.2.7 PRO)
+# Webecon Java SDK (v17.2.8 PRO)
+
+> ⚠️ **Public Beta**: Webecon is currently in Public Beta. Please report any bugs or issues to [support@adityadivte.com](mailto:support@adityadivte.com).
 
 ## 🚀 Installation
-Include `com\adityadivte\Webecon\Webecon.java` in your project's source directory.
+Include `com\adityadivte\Webecon\Webecon.java` in your project's source directory, or install via package manager if applicable.
 
 ## 🛠️ Quick Usage
 ```java

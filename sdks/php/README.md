@@ -1,7 +1,9 @@
-# Webecon PHP SDK (v17.2.7 PRO)
+# Webecon PHP SDK (v17.2.8 PRO)
+
+> ⚠️ **Public Beta**: Webecon is currently in Public Beta. Please report any bugs or issues to [support@adityadivte.com](mailto:support@adityadivte.com).
 
 ## 🚀 Installation
-Include `Webecon.php` in your project's source directory.
+Include `Webecon.php` in your project's source directory, or install via package manager if applicable.
 
 ## 🛠️ Quick Usage
 ```php
