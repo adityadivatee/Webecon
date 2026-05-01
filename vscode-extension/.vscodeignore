@@ -1,0 +1,8 @@
+webecon-official-release/**
+node_modules/**
+.git/**
+.gemini/**
+.antigravity/**
+scratch/**
+*.log
+*.vsix

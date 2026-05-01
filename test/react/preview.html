@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webecon Icon React Showcase</title>
+    <!-- Loads React and Babel for a 0-config browser preview -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- Webecon Icon Engine -->
+    <script src="../../dist/webicons.js"></script>
+    <style>
+        body { margin: 0; font-family: 'Inter', sans-serif; background: #0f172a; color: white; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; padding: 3rem; }
+        .card { background: rgba(30, 41, 59, 0.7); border: 1px solid rgba(255, 255, 255, 0.1); padding: 2rem; border-radius: 1.5rem; text-align: center; }
+        h1 { text-align: center; color: #6366f1; padding-top: 3rem; margin: 0; }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState } = React;
+
+        const App = () => {
+            const icons = [
+                { name: 'activity', color: '#00f2fe', theme: 'glass', anim: 'pulse' },
+                { name: 'heart', color: '#f43f5e', theme: 'neon', anim: 'heartbeat', secondary: '#9f1239' },
+                { name: 'zap', color: '#f59e0b', theme: '3d', anim: 'none' },
+                { name: 'star', color: '#fbbf24', theme: 'shine', anim: 'spin' }
+            ];
+
+            return (
+                <div>
+                    <h1>REACT SDK SHOWCASE</h1>
+                    <div className="grid">
+                        {icons.map((icon, i) => (
+                            <div key={i} className="card">
+                                <webecon 
+                                    name={icon.name} 
+                                    size="80" 
+                                    color={icon.color} 
+                                    theme={icon.theme} 
+                                    animation={icon.anim} 
+                                    secondary-color={icon.secondary || 'none'}
+                                />
+                                <p style={{marginTop: '1rem', textTransform: 'capitalize'}}>{icon.name}</p>
+                                <span style={{fontSize: '0.8rem', color: '#94a3b8'}}>{icon.theme} theme</span>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            );
+        };
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>

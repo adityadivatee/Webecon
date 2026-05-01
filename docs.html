@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation | Webecon Universal Engine</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --sidebar-w: 280px; }
+        body { background: #0b0f1a; display: flex; height: 100vh; overflow: hidden; }
+        .docs-sidebar { width: var(--sidebar-w); border-right: 1px solid var(--border); padding: 2rem; overflow-y: auto; background: var(--bg); }
+        .docs-content { flex: 1; padding: 4rem; overflow-y: auto; scroll-behavior: smooth; }
+        .docs-nav-group { margin-bottom: 2rem; }
+        .docs-nav-group h4 { font-size: 0.75rem; text-transform: uppercase; color: var(--primary); letter-spacing: 0.1rem; margin-bottom: 1rem; opacity: 0.8; }
+        .docs-nav-group a { display: block; color: var(--text-muted); text-decoration: none; padding: 0.5rem 0; font-size: 0.95rem; transition: 0.2s; }
+        .docs-nav-group a:hover, .docs-nav-group a.active { color: white; transform: translateX(5px); }
+        
+        .code-header { background: #1a1b26; border: 1px solid var(--border); border-bottom: none; border-radius: 0.5rem 0.5rem 0 0; padding: 0.5rem 1rem; display: flex; justify-content: space-between; align-items: center; margin-top: 2rem; }
+        .code-lang { font-size: 0.7rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase; }
+        .docs-content pre { margin-top: 0; border-radius: 0 0 0.5rem 0.5rem; background: #0d1117; border: 1px solid var(--border); padding: 1.5rem; font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; overflow-x: auto; color: #e6edf3; }
+        h1 { font-size: 3rem; margin-bottom: 2rem; }
+        h2 { font-size: 2rem; margin: 3rem 0 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+        p { margin-bottom: 1.5rem; color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; }
+        .alert { padding: 1rem 1.5rem; border-radius: 1rem; background: rgba(99, 102, 241, 0.1); border: 1px solid rgba(99, 102, 241, 0.2); color: var(--text); margin: 2rem 0; }
+        .sdk-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1rem; margin-top: 2rem; }
+        .sdk-card { background: rgba(255,255,255,0.03); border: 1px solid var(--border); padding: 1.5rem; border-radius: 1rem; text-align: center; color: white; text-decoration: none; transition: 0.3s; }
+        .sdk-card:hover { border-color: var(--primary); background: rgba(255,255,255,0.08); transform: translateY(-5px); }
+    </style>
+</head>
+<body>
+    <aside class="docs-sidebar">
+        <a href="index.html" class="logo" style="margin-bottom: 3rem;">
+            <img src="Webecon.png" alt="Webecon" style="height: 32px; width: auto;">
+        </a>
+        
+        <div class="docs-nav-group">
+            <h4>Getting Started</h4>
+            <a href="#introduction" class="active">Introduction</a>
+            <a href="#sdk-flutter">Native Flutter SDK</a>
+            <a href="#license">License & Legal</a>
+            <a href="#api-reference">Master Reference</a>
+        </div>
+
+        <div class="docs-nav-group">
+            <h4>Universal SDKs</h4>
+            <a href="#sdk-web">Web (CDN)</a>
+            <a href="#sdk-react">React / Next.js</a>
+            <a href="#sdk-python">Python</a>
+            <a href="#sdk-java">Java / Kotlin</a>
+            <a href="#sdk-go">Go (Native)</a>
+            <a href="#sdk-rust">Rust (Cargo)</a>
+        </div>
+    </aside>
+
+    <main class="docs-content">
+        <div style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(236, 72, 153, 0.1)); padding: 4rem; border-radius: 2rem; border: 1px solid var(--border); margin-bottom: 4rem;">
+            <h1 style="margin: 0;">Documentation <span>Hub</span></h1>
+            <p style="margin-top: 1rem;">Official Engineering Guide for Webecon v17.2.6 PRO</p>
+            <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                <span style="background: var(--primary); color: white; padding: 0.5rem 1rem; border-radius: 2rem; font-size: 0.75rem; font-weight: 700;">v17.2.6 PRO</span>
+                <span style="background: rgba(255,255,255,0.05); color: var(--text-muted); padding: 0.5rem 1rem; border-radius: 2rem; font-size: 0.75rem;">Aditya Divte Production</span>
+            </div>
+            
+            <div class="alert" style="background: rgba(236, 72, 153, 0.1); border-color: rgba(236, 72, 153, 0.2); margin-top: 2rem;">
+                <h4 style="margin: 0; color: #ec4899;">Public Beta</h4>
+                <p style="margin: 0.5rem 0 0; font-size: 0.95rem;">This is a Public Beta. Please report any bugs or issues to <a href="mailto:support@adityadivte.com" style="color: #ec4899;">support@adityadivte.com</a>.</p>
+            </div>
+        </div>
+
+        <section id="introduction">
+            <h2>Universal Icon Engine</h2>
+            <p>Webecon is a unified iconography system. We provide native, hardware-accelerated SDKs for every major programming language, all using the same professional <b>Webecon</b> API.</p>
+        </section>
+
+        <section id="sdk-web">
+            <h2>Web (HTML/CDN)</h2>
+            <div class="code-header"><span class="code-lang">html</span></div>
+            <pre><code>&lt;!-- Load Webecon Engine --&gt;
+&lt;script src="https://cdn.jsdelivr.net/gh/adityadivatee/webecon/dist/webicons.js"&gt;&lt;/script&gt;
+
+&lt;!-- Use Icons --&gt;
+&lt;webecon-icon name="activity" theme="neon" animation="pulse"&gt;&lt;/webecon-icon&gt;</code></pre>
+        </section>
+
+        <section id="sdk-flutter">
+            <h2>Flutter Native SDK (New)</h2>
+            <p>The official native SDK for Android, iOS, and Web. Supports high-performance SVG rendering and professional themes.</p>
+            <div class="code-header"><span class="code-lang">dart</span></div>
+            <pre><code>import 'package:webecon/webecon.dart';
+
+// Inside your build method
+Webecon(
+  name: 'zap',
+  size: 64,
+  color: Colors.indigoAccent,
+  theme: 'shine',
+)</code></pre>
+        </section>
+
+        <section id="sdk-python">
+            <h2>Python</h2>
+            <div class="code-header"><span class="code-lang">python</span></div>
+            <pre><code>import webecon
+
+# Fluent API
+icon = webecon.Webecon("home").size(48).theme("neon").animation("pulse")
+print(icon) # Output: &lt;webecon-icon name="home" ...&gt;</code></pre>
+        </section>
+
+        <section id="sdk-java">
+            <h2>Java / Kotlin</h2>
+            <div class="code-header"><span class="code-lang">java</span></div>
+            <pre><code>import com.adityadivte.webecon.Webecon;
+
+String tag = Webecon.icon("user")
+    .size(64)
+    .theme("duo")
+    .color("#6366f1")
+    .build();</code></pre>
+        </section>
+
+        <section id="sdk-go">
+            <h2>Go (Native)</h2>
+            <div class="code-header"><span class="code-lang">go</span></div>
+            <pre><code>import "webecon"
+
+icon := webecon.Icon("rocket").SetSize(128).SetTheme("shine").Build()</code></pre>
+        </section>
+
+        <section id="license">
+            <h2>License & Legal</h2>
+            <div class="alert" style="background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.2);">
+                <h4 style="margin: 0; color: #10b981;">Webecon Open-Brand License (v3.0)</h4>
+                <p style="margin: 0.5rem 0 0; font-size: 0.95rem;">100% Free for Commercial & Personal Use</p>
+            </div>
+            
+            <p>Webecon is designed to be an open, professional-grade resource. Our licensing model is built on two simple principles: <b>Maximum Freedom for Users</b> and <b>Non-Negotiable Brand Integrity</b>.</p>
+
+            <h3>The Freedoms</h3>
+            <ul>
+                <li><b>Commercial Projects:</b> You are fully permitted to use Webecon in apps, websites, games, and software that you sell or monetize.</li>
+                <li><b>No Attribution Required:</b> You are not required to provide public attribution on your website or app (though we appreciate it).</li>
+                <li><b>Unlimited Scale:</b> There are no limits on the number of projects or the volume of traffic/users.</li>
+            </ul>
+
+            <h3>The Requirements</h3>
+            <p>While the assets are free, the following legal requirements must be strictly followed:</p>
+            <ul>
+                <li><b>Metadata Preservation:</b> You may NOT remove or obscure the <code>&lt;!-- Webecon by Aditya Divte Production --&gt;</code> watermarks or author comments within the source files.</li>
+                <li><b>No Standalone Resale:</b> You are strictly prohibited from reselling Webecon icons, SDKs, or assets as a standalone digital pack or as part of a competing icon library.</li>
+                <li><b>Brand Identity:</b> You may not claim ownership or authorship of the Webecon Engine or the icon designs.</li>
+            </ul>
+
+            <div class="alert" style="background: rgba(239, 68, 68, 0.05); border-color: rgba(239, 68, 68, 0.1);">
+                <h4 style="margin: 0; color: #ef4444; text-transform: uppercase; font-size: 0.8rem;">Strict Legal Disclaimer</h4>
+                <p style="margin: 0.5rem 0 0; font-size: 0.85rem; line-height: 1.6; opacity: 0.8;">
+                    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND. ADITYA DIVTE PRODUCTION AND ADITYA DIWATE SHALL NOT BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY ARISING FROM THE USE OF THIS SOFTWARE. YOU USE THIS PRODUCT ENTIRELY AT YOUR OWN RISK.
+                </p>
+            </div>
+
+            <p style="font-size: 0.9rem; margin-top: 2rem;">For official legal inquiries or opt-out requests, please contact: <a href="mailto:support@adityadivte.com" style="color: var(--primary);">support@adityadivte.com</a></p>
+        </section>
+            <p>Produced by <b>Aditya Divte Production</b></p>
+            <p style="font-size: 0.8rem; opacity: 0.5;">GitHub: adityadivatee/Webecon | adityadivte.com</p>
+        </section>
+    </main>
+</body>
+</html>

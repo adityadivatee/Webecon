@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visit Webecon Now</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;800&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+    <style>
+        :root {
+            --bg: #020412;
+            --primary: #3b82f6;
+            --white: white;
+            --accent: #60a5fa;
+            --glow: rgba(59, 130, 246, 0.5);
+        }
+
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--bg);
+            font-family: 'Outfit', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .cta-wrapper {
+            position: relative;
+            text-align: center;
+        }
+
+        .floating-container {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 3rem 6rem;
+            border-radius: 100px;
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5), 0 0 40px var(--glow);
+            cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 600px;
+        }
+
+        .floating-container:hover {
+            transform: scale(1.05) translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 60px 120px rgba(0, 0, 0, 0.6), 0 0 60px var(--primary);
+        }
+
+        #cta-text {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: -1px;
+            margin: 0;
+            white-space: nowrap;
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 4px;
+            height: 1.2em;
+            background: var(--primary);
+            margin-left: 8px;
+            vertical-align: middle;
+            animation: blink 0.8s infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        /* Ambient Background Particles */
+        .bg-glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--glow) 0%, transparent 70%);
+            filter: blur(80px);
+            border-radius: 50%;
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        .top-left {
+            top: -200px;
+            left: -200px;
+        }
+
+        .bottom-right {
+            bottom: -200px;
+            right: -200px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        #phase-2 {
+            display: none;
+            opacity: 0;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #logo-big {
+            height: 160px;
+            width: auto;
+            margin-bottom: 2rem;
+            filter: drop-shadow(0 0 30px var(--glow));
+        }
+
+        .brand-name {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #fff;
+            margin: 0;
+            letter-spacing: -1px;
+        }
+
+        .brand-sub {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: var(--white);
+            letter-spacing: 10px;
+            text-transform: uppercase;
+            margin-top: 0.5rem;
+            margin-left: 10px;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="bg-glow top-left"></div>
+    <div class="bg-glow bottom-right"></div>
+
+    <div class="cta-wrapper">
+        <a href="https://webecon.adityadivte.com" target="_blank">
+            <div class="floating-container" id="cta-container">
+                <div id="phase-1">
+                    <span id="cta-text"></span><span class="cursor"></span>
+                </div>
+                <div id="phase-2">
+                    <img id="logo-big" src="Production logo.png" alt="Production Logo">
+                    <div class="brand-text">
+                        <h2 class="brand-name">Aditya Divte</h2>
+                        <div class="brand-sub">Production</div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <script>
+        gsap.registerPlugin(TextPlugin);
+
+        // Floating Animation for the container
+        gsap.to("#cta-container", {
+            y: -20,
+            duration: 3,
+            repeat: -1,
+            yoyo: true,
+            ease: "sine.inOut"
+        });
+
+        const mainTl = gsap.timeline();
+
+        // 1. Typing Phase
+        mainTl.to("#cta-text", {
+            duration: 2.5,
+            text: "Visit webecon.adityadivte.com Now",
+            ease: "none",
+            delay: 1
+        });
+
+        // 2. Wait and Transition
+        mainTl.to("#phase-1", {
+            opacity: 0,
+            y: -20,
+            duration: 0.8,
+            delay: 3,
+            ease: "power2.in",
+            onComplete: () => {
+                document.getElementById('phase-1').style.display = 'none';
+                document.getElementById('phase-2').style.display = 'flex';
+            }
+        });
+
+        // 3. Show Production Identity
+        mainTl.to("#phase-2", {
+            opacity: 1,
+            duration: 1,
+            ease: "power2.out"
+        });
+
+        mainTl.from("#logo-big", {
+            scale: 0.5,
+            rotation: -10,
+            duration: 1.2,
+            ease: "back.out(1.7)"
+        }, "<");
+
+        mainTl.from(".brand-text", {
+            y: 30,
+            opacity: 0,
+            duration: 1,
+            ease: "power3.out"
+        }, "-=0.5");
+
+        // Subtle rotation animation for the whole container
+        gsap.to("#cta-container", {
+            rotationZ: 1.5,
+            duration: 4,
+            repeat: -1,
+            yoyo: true,
+            ease: "sine.inOut"
+        });
+    </script>
+</body>
+
+</html>
