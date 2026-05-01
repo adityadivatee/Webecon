@@ -381,7 +381,6 @@ public class Webecon {
         ICONS.put("desert-heat", "<path d=\"M2 20c10-2 12-2 20 0\"/><circle cx=\"12\" cy=\"10\" r=\"5\"/><path d=\"M12 2v2M5 5l1.5 1.5M19 5l-1.5 1.5\"/>");
         ICONS.put("desk-lamp-pro", "<path d=\"M12 2L8 10h8L12 2z\"/><path d=\"M12 10v10M8 22h8\"/>");
         ICONS.put("desk-pro", "<rect width=\"18\" height=\"12\" x=\"3\" y=\"6\" rx=\"1\"/><path d=\"M6 18v4M18 18v4M3 10h18\"/>");
-        ICONS.put("dev-to", "<rect width=\"18\" height=\"18\" x=\"3\" y=\"3\" rx=\"2\"/><path d=\"M6 15V9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2H6z\"/><path d=\"M14 9h-3v6h3\"/><path d=\"M11 12h2\"/><path d=\"M15 9l1.5 6L18 9\"/>");
         ICONS.put("dialog-bubble", "<path d=\"M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 1 1-7.6-12.7 8.19 8.19 0 0 1 4.9 1.5L21 3Z\"/><path d=\"M8 10h8M8 14h5\"/>");
         ICONS.put("diamond-nested", "<path d=\"M12 2l10 10-10 10L2 12z\"/><path d=\"M12 6l6 6-6 6-6-6 6-6z\"/>");
         ICONS.put("diamond-raw", "<path d=\"M12 2L2 12l10 10 10-10L12 2z\"/><path d=\"M12 2v20M2 12h20\"/>");
@@ -830,7 +829,6 @@ public class Webecon {
         ICONS.put("question-diamond", "<path d=\"M12 2l10 10-10 10L2 12z\"/><path d=\"M12 16v-1m0-2c0-2 2-2 2-4s-2-2-2-2-2 1-2 2\"/>");
         ICONS.put("quill-pen", "<path d=\"M20 2s-8 4-12 12c-2 4-6 8-6 8s4-2 8-4l10-16z\"/>");
         ICONS.put("quiver", "<rect width=\"6\" height=\"16\" x=\"9\" y=\"6\" rx=\"1\"/><path d=\"M10 6l2-4 2 4M10 10h4\"/>");
-        ICONS.put("quora", "<path d=\"M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z\"/><path d=\"M16 16l4 4\"/>");
         ICONS.put("radio-vintage", "<rect width=\"18\" height=\"12\" x=\"3\" y=\"8\" rx=\"2\"/><circle cx=\"15\" cy=\"14\" r=\"3\"/><path d=\"M3 12h10M6 4l6 4M12 14h0\"/>");
         ICONS.put("radish", "<path d=\"M12 16L9 22H7l5-10\"/><circle cx=\"12\" cy=\"10\" r=\"6\"/><path d=\"M12 4l-2-2m4 2l2-2\"/>");
         ICONS.put("raid-disk", "<circle cx=\"12\" cy=\"12\" r=\"10\"/><circle cx=\"12\" cy=\"12\" r=\"3\"/><path d=\"M12 2v6m0 8v6M2 12h6m8 0h6\"/>");
@@ -918,7 +916,6 @@ public class Webecon {
         ICONS.put("slack", "<rect width=\"3\" height=\"8\" x=\"13\" y=\"2\" rx=\"1.5\"/><path d=\"M19 8.5v1a1.5 1.5 0 0 1-3 0v-1a1.5 1.5 0 0 1 3 0z\"/><rect width=\"3\" height=\"8\" x=\"8\" y=\"14\" rx=\"1.5\"/><path d=\"M5 15.5v-1a1.5 1.5 0 0 1 3 0v1a1.5 1.5 0 0 1-3 0z\"/><rect width=\"8\" height=\"3\" x=\"14\" y=\"13\" rx=\"1.5\"/><path d=\"M15.5 19h-1a1.5 1.5 0 0 1 0-3h1a1.5 1.5 0 0 1 0 3z\"/><rect width=\"8\" height=\"3\" x=\"2\" y=\"8\" rx=\"1.5\"/><path d=\"M8.5 5h1a1.5 1.5 0 0 1 0 3h-1a1.5 1.5 0 0 1 0-3z\"/>");
         ICONS.put("sling", "<path d=\"M12 12c-4 0-8 4-8 8s4-4 8-4 8 4 8-4-4-8-8-8z\"/><circle cx=\"12\" cy=\"12\" r=\"2\"/>");
         ICONS.put("smartwatch", "<rect width=\"12\" height=\"14\" x=\"6\" y=\"5\" rx=\"3\"/><path d=\"M9 5V2h6v3m-6 14v3h6v-3\"/><circle cx=\"12\" cy=\"12\" r=\"2\"/>");
-        ICONS.put("snapchat", "<path d=\"M16.182 16.694c1.7 .306 3.818 1.306 3.818 1.306c0 .53 -.5 1 -.5 1c-1.5 0 -5.029 -1 -7.5 -1c-2.471 0 -6 1 -7.5 1c0 0 -.5 -.47 -.5 -1c0 0 2.118 -1 3.818 -1.306c0 0 1.761 -1.989 1.583 -3.181c-.5 -.5 -.8 -1.82 -.8 -1.82s-.986 -.077 -.986 -1.13c0 -.482 .322 -1.41 .772 -1.41c0 0 -.24 -2.573 .654 -4.137c.783 -1.371 1.84 -2.016 2.959 -2.016c1.12 0 2.176 .645 2.96 2.016c.893 1.564 .653 4.137 .653 4.137c.45 0 .772 .928 .772 1.41c0 1.053 -.986 1.13 -.986 1.13s-.3 1.32 -.8 1.82c-.178 1.192 1.583 3.181 1.583 3.181z\"/><path d=\"M10.5 20.5l1.5 .5l1.5 -.5\"/>");
         ICONS.put("sniper", "<path d=\"M2 15h4l2-2h14v2l-1 1H8l-2 2H2v-3z\"/><path d=\"M10 13l1-4h4l1 4\"/><circle cx=\"13\" cy=\"7\" r=\"1\"/>");
         ICONS.put("snowflake", "<path d=\"M12 2v20M2 12h20m-4.22-5.78L4.22 17.78m13.56 0L4.22 6.22\"/><path d=\"m8 4 4 4 4-4m-8 16 4-4 4 4m4-8-4-4 4-4m-16 8 4-4-4-4\"/>");
         ICONS.put("snowflake-cold", "<path d=\"M12 2v20M2 12h20m-4.22-5.78L4.22 17.78m13.56 0L4.22 6.22\"/><circle cx=\"12\" cy=\"12\" r=\"2\"/>");
