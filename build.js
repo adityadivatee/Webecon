@@ -14,7 +14,7 @@ async function build() {
   ╚███╔███╔╝███████╗██████╔╝███████╗╚██████╗╚██████╔╝██║ ╚████║
    ╚══╝╚══╝ ╚══════╝╚═════╝ ╚══════╝ ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝
     \x1b[0m`);
-    console.log('\x1b[35m%s\x1b[0m', '  🚀 Webecon by Aditya Divte Production (aka Aditya Diwate) - 100% FREE FOR ALL COMMERCIAL PURPOSES');
+    console.log('\x1b[35m%s\x1b[0m', '  🚀 Webecon by Aditya Divte Production - 100% FREE FOR ALL COMMERCIAL PURPOSES');
     console.log('\x1b[35m%s\x1b[0m', '  ✨ Features: 1031+ Icons | 11 Premium Themes | Dual-Tone Accents | 15+ Animations');
     console.log('\x1b[35m%s\x1b[0m', '  🌐 Website: adityadivte.com');
     console.log('\x1b[35m%s\x1b[0m', '  💎 Project Hub: webecon.adityadivte.com');
@@ -57,9 +57,9 @@ async function build() {
     const toScreaming = (str) => sanitize(str.replace(/-/g, '_').toUpperCase());
 
     // --- 1. Generate Universal Web Formats ---
-    const VERSION = '17.2.6';
+    const VERSION = '17.2.8';
     const GITHUB_REPO = 'adityadivatee/Webecon';
-    const jsHeader = `/**\n * Webecon - Premium Animated Icon Engine v${VERSION} PRO\n * Developed by Aditya Divte Production (aka Aditya Diwate)\n * Website: https://adityadivte.com\n * Project Hub: https://webecon.adityadivte.com\n * \n * Free for commercial use. Resale and branding removal forbidden.\n */\n`;
+    const jsHeader = `/**\n * Webecon - Premium Animated Icon Engine v${VERSION} PRO\n * Developed by Aditya Divte Production\n * Website: https://adityadivte.com\n * Project Hub: https://webecon.adityadivte.com\n * \n * Free for commercial use. Resale and branding removal forbidden.\n */\n`;
     let componentContent = fs.readFileSync(WEB_COMPONENT_FILE, 'utf8');
     componentContent = componentContent.replace(/import icons from '\.\/icons\.js';/, '');
     fs.writeFileSync(OUTPUT_FILE, `${jsHeader}(function(){const icons=${rawIconsContent};\nwindow.webecon_all_icons = icons;\n${componentContent}\n})();`);
@@ -72,12 +72,12 @@ async function build() {
         
         const isHash = file.endsWith('.py') || file.endsWith('.rb');
         const header = isHash 
-            ? `#######################################################################\n# Webecon ${langName} SDK - v${VERSION} PRO\n# Developed by Aditya Divte Production (aka Aditya Diwate)\n# Website: https://adityadivte.com\n# Visit https://webecon.adityadivte.com for more info.\n#######################################################################\n\n`
-            : `/**\n * Webecon ${langName} SDK - v${VERSION} PRO\n * Developed by Aditya Divte Production (aka Aditya Diwate)\n * Website: https://adityadivte.com\n * Visit https://webecon.adityadivte.com for more info.\n */\n\n`;
+            ? `#######################################################################\n# Webecon ${langName} SDK - v${VERSION} PRO\n# Developed by Aditya Divte Production\n# Website: https://adityadivte.com\n# Visit https://webecon.adityadivte.com for more info.\n#######################################################################\n\n`
+            : `/**\n * Webecon ${langName} SDK - v${VERSION} PRO\n * Developed by Aditya Divte Production\n * Website: https://adityadivte.com\n * Visit https://webecon.adityadivte.com for more info.\n */\n\n`;
         fs.writeFileSync(path.join(fullDir, file), header + content);
 
         // Generate SDK-specific README
-        const readme = `# Webecon ${langName} SDK (v${VERSION} PRO)\n\n## 🚀 Installation\nInclude \`${file}\` in your project's source directory.\n\n## 🛠️ Quick Usage\n\`\`\`${langName.toLowerCase().replace(' / ', '').replace('+', 'pp').replace('dart', 'dart')}\n${usageExample}\n\`\`\`\n\n## ⚖️ Licensing\n- ✅ **Commercial Use Allowed**\n- ❌ **Standalone Resale Forbidden**\n- ❌ **Branding Removal Forbidden**\n\nProduced by **Aditya Divte Production** (adityadivte.com)`;
+        const readme = `# Webecon ${langName} SDK (v${VERSION} PRO)\n\n> ⚠️ **Public Beta**: Webecon is currently in Public Beta. Please report any bugs or issues to [support@adityadivte.com](mailto:support@adityadivte.com).\n\n## 🚀 Installation\nInclude \`${file}\` in your project's source directory, or install via package manager if applicable.\n\n## 🛠️ Quick Usage\n\`\`\`${langName.toLowerCase().replace(' / ', '').replace('+', 'pp').replace('dart', 'dart')}\n${usageExample}\n\`\`\`\n\n## ⚖️ Licensing\n- ✅ **Commercial Use Allowed**\n- ❌ **Standalone Resale Forbidden**\n- ❌ **Branding Removal Forbidden**\n\n## Developed by\n**Webecon Developed by Aditya Divte Production**  \nTo donate or to explore the full library, visit [webecon.adityadivte.com](https://webecon.adityadivte.com)  \nSupport this package via donating to keep it free forever.\n\nProduced by **Aditya Divte Production** (adityadivte.com)`;
         fs.writeFileSync(path.join(fullDir, 'README.md'), readme);
     };
 
@@ -98,6 +98,11 @@ check_updates()
 `;
     const pyIcons = `icons = {\n${iconKeys.map(k => `    '${k}': "${icons[k].replace(/"/g, '\\"')}"`).join(',\n')}\n}\n\n`;
     writeSDK('python', 'webecon.py', `from typing import Literal, Optional\n\nIconName = Literal[${iconKeys.map(k => `'${k}'`).join(', ')}]\n\n${pyUpdateCheck}\n${pyIcons}\nclass Webecon:\n    def __init__(self, name: IconName):\n        self._name = name\n        self._size = 24\n        self._stroke = 2.0\n        self._color = 'currentColor'\n        self._secondary_color = 'none'\n        self._secondary_opacity = 0.35\n        self._theme = 'line'\n        self._animation = 'none'\n        self._trigger = 'infinite'\n\n    def size(self, s: int): self._size = s; return self\n    def stroke(self, s: float): self._stroke = s; return self\n    def color(self, c: str): self._color = c; return self\n    def secondary_color(self, c: str): self._secondary_color = c; return self\n    def secondary_opacity(self, o: float): self._secondary_opacity = o; return self\n    def theme(self, t: str): self._theme = t; return self\n    def animation(self, a: str): self._animation = a; return self\n    def trigger(self, t: str): self._trigger = t; return self\n\n    def build(self) -> str:\n        return f'<webecon-icon name="{self._name}" size="{self._size}" stroke="{self._stroke}" color="{self._color}" secondary-color="{self._secondary_color}" secondary-opacity="{self._secondary_opacity}" theme="{self._theme}" animation="{self._animation}" animation-mode="{self._trigger}"></webecon-icon>'\n\n    def __str__(self): return self.build()\n`, 'Python', 'import webecon\nicon = webecon.Webecon("zap").size(48).theme("neon").trigger("hover")\nprint(icon)');
+    
+    // Python Package Config
+    const pySetup = `from setuptools import setup, find_packages\n\nsetup(\n    name='webecon',\n    version='${VERSION}',\n    author='Aditya Divte Production',\n    author_email='support@adityadivte.com',\n    description='Webecon Animated Icons - Premium Icon Engine',\n    long_description=open('README.md', encoding='utf-8').read(),\n    long_description_content_type='text/markdown',\n    url='https://webecon.adityadivte.com',\n    py_modules=['webecon'],\n    classifiers=[\n        "Programming Language :: Python :: 3",\n        "Operating System :: OS Independent",\n    ],\n    python_requires='>=3.6',\n)\n`;
+    fs.writeFileSync(path.join(sdkBase, 'python', 'setup.py'), pySetup);
+
 
     // Java Builder
     const javaIcons = `    private static final java.util.Map<String, String> ICONS = new java.util.HashMap<>();\n    static {\n${iconKeys.map(k => `        ICONS.put("${k}", "${icons[k].replace(/"/g, '\\"')}");`).join('\n')}\n    }\n\n`;
@@ -114,13 +119,26 @@ check_updates()
 
     // C# Builder
     const csEnums = iconKeys.map(k => `        ${toPascal(k)},`).join('\n');
-    writeSDK('csharp', 'Webecon.cs', `/**\n * Webecon C# SDK - v17.2 PRO\n * Developed by Aditya Divte Production (aka Aditya Diwate)\n * Website: https://adityadivte.com\n * Visit https://webecon.adityadivte.com for more info.\n */\nnamespace Webecon {\n    public enum IconName { ${csEnums} }\n\n    public class Webecon {\n        private string _name; private int _size = 24; private float _stroke = 2.0f;\n        private string _color = "currentColor"; private string _secondaryColor = "none";\n        private float _secondaryOpacity = 0.35f; private string _theme = "line";\n        private string _animation = "none"; private string _trigger = "infinite";\n\n        public Webecon(string name) { _name = name; }\n        public static Webecon icon(string name) => new Webecon(name);\n\n        public Webecon size(int s) { _size = s; return this; }\n        public Webecon stroke(float s) { _stroke = s; return this; }\n        public Webecon color(string c) { _color = c; return this; }\n        public Webecon secondaryColor(string c) { _secondaryColor = c; return this; }\n        public Webecon secondaryOpacity(float o) { _secondaryOpacity = o; return this; }\n        public Webecon theme(string t) { _theme = t; return this; }\n        public Webecon animation(string a) { _animation = a; return this; }\n        public Webecon trigger(string t) { _trigger = t; return this; }\n\n        public string build() => $"<webecon-icon name='{_name}' size='{_size}' stroke='{_stroke}' color='{_color}' secondary-color='{_secondaryColor}' secondary-opacity='{_secondaryOpacity}' theme='{_theme}' animation='{_animation}' animation-mode='{_trigger}'></webecon-icon>";\n    }\n}`, 'C#', 'var tag = Webecon.icon("zap").size(64).theme("neon").build();');
+    writeSDK('csharp', 'Webecon.cs', `/**\n * Webecon C# SDK - v17.2 PRO\n * Developed by Aditya Divte Production\n * Website: https://adityadivte.com\n * Visit https://webecon.adityadivte.com for more info.\n */\nnamespace Webecon {\n    public enum IconName { ${csEnums} }\n\n    public class Webecon {\n        private string _name; private int _size = 24; private float _stroke = 2.0f;\n        private string _color = "currentColor"; private string _secondaryColor = "none";\n        private float _secondaryOpacity = 0.35f; private string _theme = "line";\n        private string _animation = "none"; private string _trigger = "infinite";\n\n        public Webecon(string name) { _name = name; }\n        public static Webecon icon(string name) => new Webecon(name);\n\n        public Webecon size(int s) { _size = s; return this; }\n        public Webecon stroke(float s) { _stroke = s; return this; }\n        public Webecon color(string c) { _color = c; return this; }\n        public Webecon secondaryColor(string c) { _secondaryColor = c; return this; }\n        public Webecon secondaryOpacity(float o) { _secondaryOpacity = o; return this; }\n        public Webecon theme(string t) { _theme = t; return this; }\n        public Webecon animation(string a) { _animation = a; return this; }\n        public Webecon trigger(string t) { _trigger = t; return this; }\n\n        public string build() => $"<webecon-icon name='{_name}' size='{_size}' stroke='{_stroke}' color='{_color}' secondary-color='{_secondaryColor}' secondary-opacity='{_secondaryOpacity}' theme='{_theme}' animation='{_animation}' animation-mode='{_trigger}'></webecon-icon>";\n    }\n}`, 'C#', 'var tag = Webecon.icon("zap").size(64).theme("neon").build();');
 
     // C++ Builder
     writeSDK('cpp', 'webecon.hpp', `#include <string>\n#include <sstream>\n\nnamespace webecon {\n    class Webecon {\n    private:\n        std::string _name, _color, _secondaryColor, _theme, _animation, _trigger;\n        int _size; float _stroke, _secondaryOpacity;\n    public:\n        Webecon(std::string name) : _name(name), _size(24), _stroke(2.0f), _color("currentColor"), _secondaryColor("none"), _secondaryOpacity(0.35f), _theme("line"), _animation("none"), _trigger("infinite") {}\n        static Webecon icon(std::string name) { return Webecon(name); }\n        Webecon& size(int s) { _size = s; return *this; }\n        Webecon& color(std::string c) { _color = c; return *this; }\n        Webecon& theme(std::string t) { _theme = t; return *this; }\n        Webecon& trigger(std::string t) { _trigger = t; return *this; }\n        std::string build() {\n            std::ostringstream oss;\n            oss << "<webecon-icon name='" << _name << "' size='" << _size << "' stroke='" << _stroke << "' color='" << _color << "' secondary-color='" << _secondaryColor << "' secondary-opacity='" << _secondaryOpacity << "' theme='" << _theme << "' animation='" << _animation << "' animation-mode='" << _trigger << "'></webecon-icon>";\n            return oss.str();\n        }\n    };\n}`, 'C++', 'auto tag = webecon::Webecon::icon("zap").size(64).build();');
 
-    // Dart Builder
-    writeSDK('dart', 'webecon.dart', `class Webecon {\n  String name, color, secondaryColor, theme, animation, trigger;\n  int size; double stroke, secondaryOpacity;\n\n  Webecon(this.name) : size=24, stroke=2.0, color='currentColor', secondaryColor='none', secondaryOpacity=0.35, theme='line', animation='none', trigger='infinite';\n  static Webecon icon(String name) => Webecon(name);\n\n  Webecon setSize(int s) { size = s; return this; }\n  Webecon setTheme(String t) { theme = t; return this; }\n  Webecon setTrigger(String t) { trigger = t; return this; }\n\n  String build() => "<webecon-icon name='$name' size='$size' stroke='$stroke' color='$color' secondary-color='$secondaryColor' secondary-opacity='$secondaryOpacity' theme='$theme' animation='$animation' animation-mode='$trigger'></webecon-icon>";\n}`, 'Dart', 'var tag = Webecon.icon("zap").setSize(48).setTheme("neon").build();');
+    // Dart / Flutter Package Builder
+    const dartFullDir = path.join(sdkBase, 'dart');
+    const dartLibDir = path.join(dartFullDir, 'lib');
+    fs.mkdirSync(dartLibDir, { recursive: true });
+    
+    const dartCode = `/**\n * Webecon Dart/Flutter SDK - v${VERSION} PRO\n * Developed by Aditya Divte Production\n * Website: https://adityadivte.com\n * Visit https://webecon.adityadivte.com for more info.\n */\n\nclass Webecon {\n  String name, color, secondaryColor, theme, animation, trigger;\n  int size; double stroke, secondaryOpacity;\n\n  Webecon(this.name) : size=24, stroke=2.0, color='currentColor', secondaryColor='none', secondaryOpacity=0.35, theme='line', animation='none', trigger='infinite';\n  static Webecon icon(String name) => Webecon(name);\n\n  Webecon setSize(int s) { size = s; return this; }\n  Webecon setTheme(String t) { theme = t; return this; }\n  Webecon setTrigger(String t) { trigger = t; return this; }\n\n  String build() => "<webecon-icon name='$name' size='$size' stroke='$stroke' color='$color' secondary-color='$secondaryColor' secondary-opacity='$secondaryOpacity' theme='$theme' animation='$animation' animation-mode='$trigger'></webecon-icon>";\n}`;
+    fs.writeFileSync(path.join(dartLibDir, 'webecon.dart'), dartCode);
+    
+    // Generate Dart pubspec.yaml
+    const pubspec = `name: webecon\ndescription: Webecon by Aditya Divte Production. 1,031+ premium animated SVG icons. Free for commercial use.\nversion: ${VERSION}\nhomepage: https://webecon.adityadivte.com\n\nenvironment:\n  sdk: '>=2.17.0 <4.0.0'\n`;
+    fs.writeFileSync(path.join(dartFullDir, 'pubspec.yaml'), pubspec);
+    
+    // Generate Dart README
+    const dartReadme = `# Webecon Dart/Flutter SDK (v${VERSION} PRO)\n\n> ⚠️ **Public Beta**: Webecon is currently in Public Beta. Please report any bugs or issues to [support@adityadivte.com](mailto:support@adityadivte.com).\n\n## 🚀 Installation\nAdd to your \`pubspec.yaml\`:\n\`\`\`yaml\ndependencies:\n  webecon: ^${VERSION}\n\`\`\`\n\n## 🛠️ Quick Usage\n\`\`\`dart\nimport 'package:webecon/webecon.dart';\n\nvar tag = Webecon.icon("zap").setSize(48).setTheme("neon").build();\n\`\`\`\n\n## ⚖️ Licensing\n- ✅ **Commercial Use Allowed**\n- ❌ **Standalone Resale Forbidden**\n- ❌ **Branding Removal Forbidden**\n\n## Developed by\n**Webecon Developed by Aditya Divte Production**  \nTo donate or to explore the full library, visit [webecon.adityadivte.com](https://webecon.adityadivte.com)  \nSupport this package via donating to keep it free forever.\n\nProduced by **Aditya Divte Production** (adityadivte.com)`;
+    fs.writeFileSync(path.join(dartFullDir, 'README.md'), dartReadme);
 
     // Swift Builder
     writeSDK('swift', 'Webecon.swift', `import SwiftUI\n\npublic class Webecon {\n    var name, color, secondaryColor, theme, animation, trigger: String\n    var size: Int; var stroke, secondaryOpacity: Double\n\n    public init(_ name: String) {\n        self.name = name; self.size = 24; self.stroke = 2.0; self.color = "currentColor";\n        self.secondaryColor = "none"; self.secondaryOpacity = 0.35; self.theme = "line";\n        self.animation = "none"; self.trigger = "infinite"\n    }\n    public static func icon(_ name: String) -> Webecon { return Webecon(name) }\n    public func size(_ s: Int) -> Webecon { self.size = s; return self }\n    public func theme(_ t: String) -> Webecon { self.theme = t; return self }\n    public func trigger(_ t: String) -> Webecon { self.trigger = t; return self }\n    public func build() -> String {\n        return "<webecon-icon name='\\(name)' size='\\(size)' stroke='\\(stroke)' color='\\(color)' secondary-color='\\(secondaryColor)' secondary-opacity='\\(secondaryOpacity)' theme='\\(theme)' animation='\\(animation)' animation-mode='\\(trigger)'></webecon-icon>"\n    }\n}`, 'Swift', 'let tag = Webecon.icon("zap").size(48).theme("neon").build()');
@@ -153,6 +171,19 @@ try {
 `;
     writeSDK('react', 'Webecon.jsx', `import React from 'react';\n${jsUpdateCheck}\nexport const Webecon = ({ name, ...props }) => <webecon-icon name={name} {...props} />;\nexport const Icon = (name) => (props) => <webecon-icon name={name} {...props} />;`, 'React', 'import { Webecon } from "./Webecon";\nconst App = () => <Webecon name="zap" size={48} theme="neon" />;');
 
+    const reactPkg = {
+        "name": "webecon-react",
+        "version": VERSION,
+        "description": "Webecon Animated Icons for React",
+        "main": "Webecon.jsx",
+        "author": "Aditya Divte Production <support@adityadivte.com>",
+        "license": "ISC",
+        "peerDependencies": { "react": ">=16.8.0" },
+        "keywords": ["webecon", "icons", "react", "animated"]
+    };
+    fs.writeFileSync(path.join(sdkBase, 'react', 'package.json'), JSON.stringify(reactPkg, null, 4));
+
+
     // HTML Reference
     const htmlRef = iconKeys.slice(0, 50).map(k => `<div style="display:flex; flex-direction:column; align-items:center; gap:8px; padding:16px; border:1px solid #eee; border-radius:8px;">\n  <webecon-icon name="${k}" size="32"></webecon-icon>\n  <code style="font-size:10px;">${k}</code>\n</div>`).join('\n');
     writeSDK('html', 'index.html', `<!DOCTYPE html>\n<html>\n<head>\n    <title>Webecon Icon Library</title>\n    <script src="https://cdn.adityadivte.com/webecon.js"></script>\n</head>\n<body>\n    <h1 style="text-align:center;">Webecon Icons Reference</h1>\n    <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(120px, 1fr)); gap:16px; padding:32px;">\n${htmlRef}\n    </div>\n</body>\n</html>`, 'HTML Reference');
@@ -160,7 +191,7 @@ try {
     // --- 3. Standalone SVGs ---
     console.log('🖼️  Generating standalone SVGs...');
     iconKeys.forEach(name => {
-        const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- Webecon by Aditya Divte Production (aka Aditya Diwate) (adityadivte.com) -->${icons[name]}</svg>`;
+        const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><!-- Webecon by Aditya Divte Production (adityadivte.com) -->${icons[name]}</svg>`;
         fs.writeFileSync(path.join(iconsDir, `${name}.svg`), svg);
     });
 
