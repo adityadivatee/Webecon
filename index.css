@@ -1,8 +1,8 @@
 /* --- Premium CSS Architecture --- */
 :root {
-    --primary: #00f2fe;
-    --primary-glow: rgba(0, 242, 254, 0.3);
-    --secondary: #10b981;
+    --primary: #f0503a;
+    --primary-glow: rgb(229 96 70 / 69%);
+    --secondary:#ef6c27;
     --bg: #050505;
     --bg-alt: #0a0a0a;
     --text: #f8fafc;
