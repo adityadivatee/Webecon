@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Webecon logo-java - Developed by Aditya Divte Production -->
+    <path
+        android:strokeColor="#FF000000"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M6 20c0 1.1 2.7 2 6 2s6-.9 6-2M3 17c0 1.1 4 2 9 2s9-.9 9-2M7 14c0 1 2.2 1.8 5 1.8s5-.8 5-1.8" />
+    <path
+        android:strokeColor="#FF000000"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M12 2c0 4-4 6-4 10s4 8 4 8 4-4 4-8-4-6-4-10z" />
+</vector>
