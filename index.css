@@ -1,8 +1,8 @@
 /* --- Premium CSS Architecture --- */
 :root {
-    --primary: #f0503a;
-    --primary-glow: rgb(229 96 70 / 69%);
-    --secondary:#ef6c27;
+    --primary: #f59e0b;
+    --primary-glow: rgba(245, 158, 11, 0.4); 
+    --secondary: #ef4444;
     --bg: #050505;
     --bg-alt: #0a0a0a;
     --text: #f8fafc;
@@ -31,8 +31,8 @@ body {
     overflow-x: hidden;
     position: relative;
     background-image:
-        radial-gradient(circle at 15% 50%, rgba(0, 242, 254, 0.05), transparent 25%),
-        radial-gradient(circle at 85% 30%, rgba(16, 185, 129, 0.05), transparent 25%);
+        radial-gradient(circle at 15% 50%, rgba(245, 158, 11, 0.05), transparent 25%),
+        radial-gradient(circle at 85% 30%, rgba(239, 68, 68, 0.05), transparent 25%);
 }
 
 /* Animated Mesh Background (Elite) */
@@ -44,7 +44,7 @@ body::before {
     width: 100vw;
     height: 100vh;
     background: 
-        radial-gradient(circle at 10% 20%, rgba(0, 242, 254, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 10% 20%, rgba(245, 158, 11, 0.08) 0%, transparent 40%),
         radial-gradient(circle at 90% 80%, rgba(16, 185, 129, 0.05) 0%, transparent 40%),
         radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.03) 0%, transparent 60%);
     filter: blur(120px);
@@ -330,10 +330,10 @@ a { text-decoration: none; color: inherit; }
 }
 
 .icon-card:hover {
-    background: rgba(0, 242, 254, 0.05);
-    border-color: rgba(0, 242, 254, 0.4);
+    background: rgba(245, 158, 11, 0.05);
+    border-color: rgba(245, 158, 11, 0.4);
     transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.5), 0 0 20px rgba(0, 242, 254, 0.1);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5), 0 0 20px rgba(245, 158, 11, 0.1);
 }
 
 .icon-card .name {
@@ -480,7 +480,7 @@ a { text-decoration: none; color: inherit; }
     width: 44px;
     height: 44px;
     border-radius: 10px;
-    background: rgba(0, 242, 254, 0.1);
+    background: rgba(245, 158, 11, 0.1);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -531,7 +531,7 @@ a { text-decoration: none; color: inherit; }
 
 .feature-card:hover {
     transform: translateY(-5px);
-    border-color: rgba(0, 242, 254, 0.4);
+    border-color: rgba(245, 158, 11, 0.4);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
@@ -628,7 +628,7 @@ a { text-decoration: none; color: inherit; }
     display: flex;
     align-items: center;
     justify-content: center;
-    background: radial-gradient(circle at center, rgba(0, 242, 254, 0.1), transparent);
+    background: radial-gradient(circle at center, rgba(245, 158, 11, 0.1), transparent);
     border-radius: 24px;
     margin-bottom: 2rem;
 }
@@ -666,7 +666,7 @@ a { text-decoration: none; color: inherit; }
 }
 
 .anim-card:hover, .anim-card.active {
-    background: rgba(0, 242, 254, 0.08);
+    background: rgba(245, 158, 11, 0.08);
     border-color: var(--primary);
     transform: translateY(-4px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.3);
@@ -1000,7 +1000,21 @@ footer {
     .nav-links a::after { display: none !important; }
 
     .hero-title { font-size: 3.5rem !important; }
-    .features-grid { grid-template-columns: 1fr !important; gap: 1.5rem !important; }
+    
+    /* 
+     * SEPARATED GRIDS FIX: 
+     * Force Features to 1 Column, BUT keep Icon Grid multi-column 
+     */
+    .features-grid { 
+        grid-template-columns: 1fr !important; 
+        gap: 1.5rem !important; 
+    }
+    
+    .icon-grid {
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)) !important;
+        gap: 1rem !important;
+    }
+    
     .feature-card { padding: 2rem 1.5rem !important; }
 }
 
@@ -1012,12 +1026,13 @@ footer {
     .hero-actions { flex-direction: column !important; gap: 1rem !important; width: 100% !important; }
     .btn { width: 100% !important; padding: 1.2rem 2rem !important; font-size: 1.1rem !important; }
     
-    /* Icon Library Mobile Fixes */
+    /* Icon Library Mobile Fixes - Force 3 or 4 columns */
     .search-container { margin-bottom: 2.5rem !important; }
     .search-input { padding: 1rem 1.25rem !important; font-size: 1rem !important; border-radius: 16px !important; }
     #library-counter { top: 1.1rem !important; right: 1.25rem !important; font-size: 0.75rem !important; }
+    
     .icon-grid { 
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)) !important; /* Forces 3-4 columns on mobile */
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)) !important; 
         gap: 1rem !important; 
     }
     .icon-card { padding: 1.5rem 0.5rem !important; border-radius: 12px !important; }
@@ -1051,6 +1066,9 @@ footer {
     .donate-text { display: none !important; } 
     .nav-donate-btn { padding: 0.45rem 0.6rem !important; }
     
-    /* Extra small screen adjustments */
-    .icon-grid { grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)) !important; }
+    /* Extra small screen adjustments - Force 2 or 3 columns minimum */
+    .icon-grid { 
+        grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)) !important; 
+        gap: 0.75rem !important;
+    }
 }
