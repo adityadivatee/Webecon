@@ -1,0 +1,14 @@
+{
+  "roots": [
+    "webecon"
+  ],
+  "packages": [
+    {
+      "name": "webecon",
+      "version": "17.2.8",
+      "dependencies": [],
+      "devDependencies": []
+    }
+  ],
+  "configVersion": 1
+}

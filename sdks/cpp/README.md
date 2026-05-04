@@ -1,28 +1,9 @@
-# Webecon C++ SDK (v17.2.9 PRO)
+# Webecon C++ SDK (v17.2.8 PRO)
+
+> ⚠️ **Public Beta**: Webecon is currently in Public Beta. Please report any bugs or issues to [support@adityadivte.com](mailto:support@adityadivte.com).
 
 ## 🚀 Installation
-
-Because Webecon is a **header-only** library, it's incredibly easy to integrate into any C++ project!
-
-### Option 1: Direct Include (Simplest)
-Copy `webecon.hpp` into your project's source or `include` directory and simply include it:
-```cpp
-#include "webecon.hpp"
-```
-
-### Option 2: CMake (FetchContent / add_subdirectory)
-We provide full CMake support.
-```cmake
-add_subdirectory(path/to/webecon/sdks/cpp)
-target_link_libraries(your_target PRIVATE webecon::webecon)
-```
-
-### Option 3: Conan Package Manager
-You can build and export the package to your local Conan cache:
-```bash
-conan create . -pr default
-```
-Then require `webecon/17.2.9` in your `conanfile.txt`.
+Include `webecon.hpp` in your project's source directory, or install via package manager if applicable.
 
 ## 🛠️ Quick Usage
 ```cpp+
@@ -33,5 +14,10 @@ auto tag = webecon::Webecon::icon("zap").size(64).build();
 - ✅ **Commercial Use Allowed**
 - ❌ **Standalone Resale Forbidden**
 - ❌ **Branding Removal Forbidden**
+
+## Developed by
+**Webecon Developed by Aditya Divte Production**  
+To donate or to explore the full library, visit [webecon.adityadivte.com](https://webecon.adityadivte.com)  
+Support this package via donating to keep it free forever.
 
 Produced by **Aditya Divte Production** (adityadivte.com)

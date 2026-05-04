@@ -24,14 +24,40 @@ function activate(context) {
             provideCompletionItems(document, position) {
                 const linePrefix = document.lineAt(position).text.substr(0, position.character);
                 
+                // Attribute Completions
+                const isTheme = linePrefix.match(/theme=['"][^'"]*$/i);
+                if (isTheme) {
+                    return ['line', 'solid', 'duo', 'flat', 'neon', 'shine'].map(theme => {
+                        return new vscode.CompletionItem(theme, vscode.CompletionItemKind.EnumMember);
+                    });
+                }
+                const isAnimation = linePrefix.match(/animation=['"][^'"]*$/i);
+                if (isAnimation) {
+                    return ['none', 'pulse', 'spin', 'float', 'shake', 'bounce'].map(anim => {
+                        return new vscode.CompletionItem(anim, vscode.CompletionItemKind.EnumMember);
+                    });
+                }
+                const isInteraction = linePrefix.match(/interaction=['"][^'"]*$/i);
+                if (isInteraction) {
+                    return ['hover', 'click', 'always'].map(inter => {
+                        return new vscode.CompletionItem(inter, vscode.CompletionItemKind.EnumMember);
+                    });
+                }
+                const isTrigger = linePrefix.match(/trigger=['"][^'"]*$/i);
+                if (isTrigger) {
+                    return ['loop', 'hover', 'click', 'morph'].map(trig => {
+                        return new vscode.CompletionItem(trig, vscode.CompletionItemKind.EnumMember);
+                    });
+                }
+
                 // Flexible matching for ALL languages:
                 // 1. HTML: <webecon-icon name="...
                 // 2. React: <Webecon name="...
                 // 3. SDKs: Webecon.icon("... or Webecon("... or Webecon(name: "...
-                const isInsideTag = linePrefix.match(/<webecon-icon[^>]*name=['"]$/i);
-                const isReactTag = linePrefix.match(/<Webecon[^>]*name=['"]$/i);
-                const isSDKCall = linePrefix.match(/Webecon(\.icon)?\s*\(['"]?$/i);
-                const isFlutterCall = linePrefix.match(/Webecon\(\s*name\s*:\s*['"]?$/i);
+                const isInsideTag = linePrefix.match(/<webecon-icon[^>]*name=['"][^'"]*$/i);
+                const isReactTag = linePrefix.match(/<Webecon[^>]*name=['"][^'"]*$/i);
+                const isSDKCall = linePrefix.match(/Webecon(\.icon)?\s*\(['"]?[^'"]*$/i);
+                const isFlutterCall = linePrefix.match(/Webecon\(\s*name\s*:\s*['"]?[^'"]*$/i);
                 const isTypingPrefix = linePrefix.match(/web[econ-]*$/i);
 
                 if (!isInsideTag && !isReactTag && !isSDKCall && !isFlutterCall && !isTypingPrefix) {

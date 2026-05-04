@@ -1,0 +1,7 @@
+name: webecon
+description: Webecon by Aditya Divte Production. 1,031+ premium animated SVG icons. Free for commercial use.
+version: 17.2.8
+homepage: https://webecon.adityadivte.com
+
+environment:
+  sdk: '>=2.17.0 <4.0.0'

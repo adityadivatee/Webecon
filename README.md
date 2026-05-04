@@ -1,4 +1,4 @@
-# Webecon — Universal Animated Icon Engine (v17.2.6 PRO)
+# Webecon — Universal Animated Icon Engine (v17.2.8 PRO)
 
 ![Webecons Hero Banner](webecons_hero_banner_1776602228561.png)
 
@@ -26,7 +26,7 @@
 The fastest way to get started in any HTML project:
 ```html
 <!-- Load the Webecon Engine -->
-<script src="https://cdn.jsdelivr.net/gh/adityadivatee/webecon/dist/webicons.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/adityadivatee/Webecon/dist/webicons.js"></script>
 
 <!-- Use the Icon -->
 <webecon-icon name="rocket" theme="shine" animation="pulse"></webecon-icon>
@@ -80,9 +80,14 @@ Webecon is published under the **Webecon Open-Brand License**.
 ---
 
 ## 🏗️ Technical Provenance
-Produced and Maintained by **Webecon by Aditya Divte Production**.  
+**Webecon Developed by Aditya Divte Production**  
 Official Website: **[adityadivte.com](https://adityadivte.com)**  
+Project Hub: **[webecon.adityadivte.com](https://webecon.adityadivte.com)**  
 GitHub: **[adityadivatee/Webecon](https://github.com/adityadivatee/Webecon)**  
 Support Email: **[support@adityadivte.com](mailto:support@adityadivte.com)**
+
+### **❤️ Support Development**
+Support this package via donating to keep it free forever.  
+**[Donate Now via Razorpay](https://rzp.io/rzp/webecon)**
 
 **Visit [adityadivte.com](https://adityadivte.com) for more professional tools and elite UI assets for free.**

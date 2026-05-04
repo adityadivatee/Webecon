@@ -18,3 +18,11 @@ task.md
 walkthrough.md
 scratch/
 .system_generated/
+
+# Language specific
+.dart_tool/
+__pycache__/
+*.pyc
+bin/
+obj/
+*.vsix

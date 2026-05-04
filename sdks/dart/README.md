@@ -1,10 +1,18 @@
-# Webecon Dart SDK (v17.2.6 PRO)
+# Webecon Dart/Flutter SDK (v17.2.8 PRO)
+
+> ⚠️ **Public Beta**: Webecon is currently in Public Beta. Please report any bugs or issues to [support@adityadivte.com](mailto:support@adityadivte.com).
 
 ## 🚀 Installation
-Include `webecon.dart` in your project's source directory.
+Add to your `pubspec.yaml`:
+```yaml
+dependencies:
+  webecon: ^17.2.8
+```
 
 ## 🛠️ Quick Usage
 ```dart
+import 'package:webecon/webecon.dart';
+
 var tag = Webecon.icon("zap").setSize(48).setTheme("neon").build();
 ```
 
@@ -12,5 +20,10 @@ var tag = Webecon.icon("zap").setSize(48).setTheme("neon").build();
 - ✅ **Commercial Use Allowed**
 - ❌ **Standalone Resale Forbidden**
 - ❌ **Branding Removal Forbidden**
+
+## Developed by
+**Webecon Developed by Aditya Divte Production**  
+To donate or to explore the full library, visit [webecon.adityadivte.com](https://webecon.adityadivte.com)  
+Support this package via donating to keep it free forever.
 
 Produced by **Aditya Divte Production** (adityadivte.com)
