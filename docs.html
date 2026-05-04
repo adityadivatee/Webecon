@@ -7,31 +7,168 @@
     <link rel="stylesheet" href="index.css">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        :root { --sidebar-w: 280px; }
-        body { background: #0b0f1a; display: flex; height: 100vh; overflow: hidden; }
-        .docs-sidebar { width: var(--sidebar-w); border-right: 1px solid var(--border); padding: 2rem; overflow-y: auto; background: var(--bg); }
-        .docs-content { flex: 1; padding: 4rem; overflow-y: auto; scroll-behavior: smooth; }
+        :root { 
+            --sidebar-w: 280px; 
+            --primary: #f59e0b; /* Amber */
+            --secondary: #ef4444; /* Red */
+            --bg-docs: #0b0f1a;
+            --border-docs: rgba(255, 255, 255, 0.08);
+        }
+        
+        body { 
+            background: var(--bg-docs); 
+            display: flex; 
+            height: 100vh; 
+            overflow: hidden; 
+            margin: 0;
+            font-family: 'Outfit', sans-serif;
+            color: #f8fafc;
+        }
+
+        /* Mobile Header (Hidden on Desktop) */
+        .docs-mobile-header {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: 60px;
+            background: rgba(11, 15, 26, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-docs);
+            z-index: 999;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 1.5rem;
+        }
+
+        .docs-mobile-header .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+            letter-spacing: -0.5px;
+        }
+
+        .mobile-menu-btn {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            padding: 0.25rem;
+        }
+
+        /* Sidebar */
+        .docs-sidebar { 
+            width: var(--sidebar-w); 
+            border-right: 1px solid var(--border-docs); 
+            padding: 2rem; 
+            overflow-y: auto; 
+            background: #050505; 
+            flex-shrink: 0;
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+        
+        /* Sidebar Overlay for Mobile */
+        .sidebar-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            z-index: 998;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .docs-content { 
+            flex: 1; 
+            padding: 4rem; 
+            overflow-y: auto; 
+            scroll-behavior: smooth; 
+        }
+
+        /* Typography & Components */
         .docs-nav-group { margin-bottom: 2rem; }
         .docs-nav-group h4 { font-size: 0.75rem; text-transform: uppercase; color: var(--primary); letter-spacing: 0.1rem; margin-bottom: 1rem; opacity: 0.8; }
-        .docs-nav-group a { display: block; color: var(--text-muted); text-decoration: none; padding: 0.5rem 0; font-size: 0.95rem; transition: 0.2s; }
+        .docs-nav-group a { display: block; color: #888888; text-decoration: none; padding: 0.5rem 0; font-size: 0.95rem; transition: 0.2s; }
         .docs-nav-group a:hover, .docs-nav-group a.active { color: white; transform: translateX(5px); }
         
-        .code-header { background: #1a1b26; border: 1px solid var(--border); border-bottom: none; border-radius: 0.5rem 0.5rem 0 0; padding: 0.5rem 1rem; display: flex; justify-content: space-between; align-items: center; margin-top: 2rem; }
-        .code-lang { font-size: 0.7rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase; }
-        .docs-content pre { margin-top: 0; border-radius: 0 0 0.5rem 0.5rem; background: #0d1117; border: 1px solid var(--border); padding: 1.5rem; font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; overflow-x: auto; color: #e6edf3; }
+        .code-header { background: #1a1b26; border: 1px solid var(--border-docs); border-bottom: none; border-radius: 0.5rem 0.5rem 0 0; padding: 0.5rem 1rem; display: flex; justify-content: space-between; align-items: center; margin-top: 2rem; }
+        .code-lang { font-size: 0.7rem; color: #888888; font-weight: 700; text-transform: uppercase; }
+        
+        .docs-content pre { margin-top: 0; border-radius: 0 0 0.5rem 0.5rem; background: #0d1117; border: 1px solid var(--border-docs); padding: 1.5rem; font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; overflow-x: auto; color: #e6edf3; }
+        
         h1 { font-size: 3rem; margin-bottom: 2rem; }
-        h2 { font-size: 2rem; margin: 3rem 0 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
-        p { margin-bottom: 1.5rem; color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; }
-        .alert { padding: 1rem 1.5rem; border-radius: 1rem; background: rgba(99, 102, 241, 0.1); border: 1px solid rgba(99, 102, 241, 0.2); color: var(--text); margin: 2rem 0; }
-        .sdk-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1rem; margin-top: 2rem; }
-        .sdk-card { background: rgba(255,255,255,0.03); border: 1px solid var(--border); padding: 1.5rem; border-radius: 1rem; text-align: center; color: white; text-decoration: none; transition: 0.3s; }
-        .sdk-card:hover { border-color: var(--primary); background: rgba(255,255,255,0.08); transform: translateY(-5px); }
+        h2 { font-size: 2rem; margin: 3rem 0 1rem; border-bottom: 1px solid var(--border-docs); padding-bottom: 0.5rem; }
+        p { margin-bottom: 1.5rem; color: #a1a1aa; font-size: 1.1rem; line-height: 1.8; }
+        ul { color: #a1a1aa; line-height: 1.8; margin-bottom: 1.5rem; padding-left: 1.5rem; }
+        li { margin-bottom: 0.5rem; }
+        b, strong { color: white; }
+        
+        .alert { padding: 1.5rem; border-radius: 1rem; margin: 2rem 0; }
+        
+        /* --- MOBILE RESPONSIVENESS --- */
+        @media (max-width: 900px) {
+            body { display: block; overflow: auto; height: auto; }
+            
+            .docs-mobile-header { display: flex; }
+            
+            .docs-sidebar {
+                position: fixed;
+                top: 0; 
+                left: 0; 
+                bottom: 0;
+                height: 100vh;
+                transform: translateX(-100%);
+            }
+            
+            .docs-sidebar.active { transform: translateX(0); }
+            
+            .sidebar-overlay.active { display: block; opacity: 1; }
+            
+            .docs-content { 
+                padding: 6rem 1.5rem 3rem; /* Extra top padding for mobile header */
+                height: auto;
+                overflow: visible;
+            }
+
+            h1 { font-size: 2.2rem; }
+            h2 { font-size: 1.6rem; }
+            p, ul { font-size: 1rem; }
+            
+            .docs-content > div:first-child { padding: 2rem !important; } /* Shrink the big hero box */
+        }
     </style>
 </head>
 <body>
-    <aside class="docs-sidebar">
-        <a href="index.html" class="logo" style="margin-bottom: 3rem;">
-            <img src="Webecon.png" alt="Webecon" style="height: 32px; width: auto;">
+
+    <!-- Mobile Header (Visible only on phones/tablets) -->
+    <div class="docs-mobile-header">
+        <a href="index.html" class="logo">
+            <img src="Webecon.png" alt="Webecon" style="height: 28px; width: auto; border-radius: 6px;">
+            <span>WEBECON</span>
+        </a>
+        <button id="mobile-sidebar-btn" class="mobile-menu-btn" aria-label="Toggle Menu">
+            <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Mobile Overlay -->
+    <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+    <aside class="docs-sidebar" id="docs-sidebar">
+        <!-- Desktop Logo (Hidden via CSS margin on mobile if needed, but fine to keep) -->
+        <a href="index.html" class="logo" style="display: block; margin-bottom: 3rem;">
+            <img src="Webecon.png" alt="Webecon" style="height: 32px; width: auto; border-radius: 8px;">
         </a>
         
         <div class="docs-nav-group">
@@ -39,7 +176,6 @@
             <a href="#introduction" class="active">Introduction</a>
             <a href="#sdk-flutter">Native Flutter SDK</a>
             <a href="#license">License & Legal</a>
-            <a href="#api-reference">Master Reference</a>
         </div>
 
         <div class="docs-nav-group">
@@ -49,22 +185,21 @@
             <a href="#sdk-python">Python</a>
             <a href="#sdk-java">Java / Kotlin</a>
             <a href="#sdk-go">Go (Native)</a>
-            <a href="#sdk-rust">Rust (Cargo)</a>
         </div>
     </aside>
 
     <main class="docs-content">
-        <div style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(236, 72, 153, 0.1)); padding: 4rem; border-radius: 2rem; border: 1px solid var(--border); margin-bottom: 4rem;">
-            <h1 style="margin: 0;">Documentation <span>Hub</span></h1>
-            <p style="margin-top: 1rem;">Official Engineering Guide for Webecon v17.2.8 PRO</p>
-            <div style="display: flex; gap: 1rem; margin-top: 2rem;">
-                <span style="background: var(--primary); color: white; padding: 0.5rem 1rem; border-radius: 2rem; font-size: 0.75rem; font-weight: 700;">v17.2.8 PRO</span>
-                <span style="background: rgba(255,255,255,0.05); color: var(--text-muted); padding: 0.5rem 1rem; border-radius: 2rem; font-size: 0.75rem;">Aditya Divte Production</span>
+        <div style="background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(239, 68, 68, 0.1)); padding: 4rem; border-radius: 2rem; border: 1px solid var(--border-docs); margin-bottom: 4rem;">
+            <h1 style="margin: 0;">Documentation <span style="background: linear-gradient(90deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Hub</span></h1>
+            <p style="margin-top: 1rem; color: #fff;">Official Engineering Guide for Webecon v17.2.8 PRO</p>
+            <div style="display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap;">
+                <span style="background: var(--primary); color: #000; padding: 0.5rem 1rem; border-radius: 2rem; font-size: 0.75rem; font-weight: 800;">v17.2.8 PRO</span>
+                <span style="background: rgba(255,255,255,0.05); color: #a1a1aa; padding: 0.5rem 1rem; border-radius: 2rem; font-size: 0.75rem; font-weight: 500; border: 1px solid var(--border-docs);">Aditya Divte Production</span>
             </div>
             
-            <div class="alert" style="background: rgba(236, 72, 153, 0.1); border-color: rgba(236, 72, 153, 0.2); margin-top: 2rem;">
-                <h4 style="margin: 0; color: #ec4899;">Public Beta</h4>
-                <p style="margin: 0.5rem 0 0; font-size: 0.95rem;">This is a Public Beta. Please report any bugs or issues to <a href="mailto:support@adityadivte.com" style="color: #ec4899;">support@adityadivte.com</a>.</p>
+            <div class="alert" style="background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.2); margin-top: 2rem;">
+                <h4 style="margin: 0; color: #ef4444;">Public Beta</h4>
+                <p style="margin: 0.5rem 0 0; font-size: 0.95rem; color: #f8fafc;">This is a Public Beta. Please report any bugs or issues to <a href="mailto:support@adityadivte.com" style="color: #ef4444;">support@adityadivte.com</a>.</p>
             </div>
         </div>
 
@@ -93,7 +228,7 @@
 Webecon(
   name: 'zap',
   size: 64,
-  color: Colors.indigoAccent,
+  color: Colors.amber,
   theme: 'shine',
 )</code></pre>
         </section>
@@ -116,7 +251,7 @@ print(icon) # Output: &lt;webecon-icon name="home" ...&gt;</code></pre>
 String tag = Webecon.icon("user")
     .size(64)
     .theme("duo")
-    .color("#6366f1")
+    .color("#f59e0b")
     .build();</code></pre>
         </section>
 
@@ -130,21 +265,21 @@ icon := webecon.Icon("rocket").SetSize(128).SetTheme("shine").Build()</code></pr
 
         <section id="license">
             <h2>License & Legal</h2>
-            <div class="alert" style="background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.2);">
+            <div class="alert" style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.2);">
                 <h4 style="margin: 0; color: #10b981;">Webecon Open-Brand License (v3.0)</h4>
-                <p style="margin: 0.5rem 0 0; font-size: 0.95rem;">100% Free for Commercial & Personal Use</p>
+                <p style="margin: 0.5rem 0 0; font-size: 0.95rem; color: #f8fafc;">100% Free for Commercial & Personal Use</p>
             </div>
             
             <p>Webecon is designed to be an open, professional-grade resource. Our licensing model is built on two simple principles: <b>Maximum Freedom for Users</b> and <b>Non-Negotiable Brand Integrity</b>.</p>
 
-            <h3>The Freedoms</h3>
+            <h3 style="margin-top: 2rem;">The Freedoms</h3>
             <ul>
                 <li><b>Commercial Projects:</b> You are fully permitted to use Webecon in apps, websites, games, and software that you sell or monetize.</li>
                 <li><b>No Attribution Required:</b> You are not required to provide public attribution on your website or app (though we appreciate it).</li>
                 <li><b>Unlimited Scale:</b> There are no limits on the number of projects or the volume of traffic/users.</li>
             </ul>
 
-            <h3>The Requirements</h3>
+            <h3 style="margin-top: 2rem;">The Requirements</h3>
             <p>While the assets are free, the following legal requirements must be strictly followed:</p>
             <ul>
                 <li><b>Metadata Preservation:</b> You may NOT remove or obscure the <code>&lt;!-- Webecon by Aditya Divte Production --&gt;</code> watermarks or author comments within the source files.</li>
@@ -152,18 +287,68 @@ icon := webecon.Icon("rocket").SetSize(128).SetTheme("shine").Build()</code></pr
                 <li><b>Brand Identity:</b> You may not claim ownership or authorship of the Webecon Engine or the icon designs.</li>
             </ul>
 
-            <div class="alert" style="background: rgba(239, 68, 68, 0.05); border-color: rgba(239, 68, 68, 0.1);">
+            <div class="alert" style="background: rgba(239, 68, 68, 0.05); border: 1px solid rgba(239, 68, 68, 0.1);">
                 <h4 style="margin: 0; color: #ef4444; text-transform: uppercase; font-size: 0.8rem;">Strict Legal Disclaimer</h4>
-                <p style="margin: 0.5rem 0 0; font-size: 0.85rem; line-height: 1.6; opacity: 0.8;">
-                    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND. ADITYA DIVTE PRODUCTION AND ADITYA DIWATE SHALL NOT BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY ARISING FROM THE USE OF THIS SOFTWARE. YOU USE THIS PRODUCT ENTIRELY AT YOUR OWN RISK.
+                <p style="margin: 0.5rem 0 0; font-size: 0.85rem; line-height: 1.6; color: #a1a1aa;">
+                    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND. ADITYA DIVTE PRODUCTION AND ADITYA DUTE SHALL NOT BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY ARISING FROM THE USE OF THIS SOFTWARE. YOU USE THIS PRODUCT ENTIRELY AT YOUR OWN RISK.
                 </p>
             </div>
 
-            <p style="font-size: 0.9rem; margin-top: 2rem;">For official legal inquiries or opt-out requests, please contact: <a href="mailto:support@adityadivte.com" style="color: var(--primary);">support@adityadivte.com</a></p>
-        </section>
-            <p>Produced by <b>Aditya Divte Production</b></p>
-            <p style="font-size: 0.8rem; opacity: 0.5;">GitHub: adityadivatee/Webecon | adityadivte.com</p>
+            <p style="font-size: 0.9rem; margin-top: 2rem; border-top: 1px solid var(--border-docs); padding-top: 2rem;">For official legal inquiries or opt-out requests, please contact: <a href="mailto:support@adityadivte.com" style="color: var(--primary); text-decoration: none;">support@adityadivte.com</a></p>
+            
+            <div style="margin-top: 3rem; opacity: 0.5; font-size: 0.85rem;">
+                <p style="margin-bottom: 0.2rem;">Produced by <b>Aditya Divte Production</b></p>
+                <p>GitHub: adityadivatee/Webecon | adityadivte.com</p>
+            </div>
         </section>
     </main>
+
+    <!-- Mobile Interaction Script -->
+    <script>
+        const sidebar = document.getElementById('docs-sidebar');
+        const overlay = document.getElementById('sidebar-overlay');
+        const menuBtn = document.getElementById('mobile-sidebar-btn');
+        const navLinks = document.querySelectorAll('.docs-nav-group a');
+
+        // Toggle Sidebar
+        function toggleMenu() {
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+            
+            // Switch icon state
+            if (sidebar.classList.contains('active')) {
+                menuBtn.innerHTML = `
+                    <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>`;
+                document.body.style.overflow = 'hidden'; // Prevent scrolling background
+            } else {
+                menuBtn.innerHTML = `
+                    <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>`;
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu);
+
+        // Close sidebar when a link is clicked
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 900) {
+                    toggleMenu();
+                }
+                
+                // Active state management
+                navLinks.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+            });
+        });
+    </script>
 </body>
 </html>
