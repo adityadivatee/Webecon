@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Not Found — Webecon</title>
+    <meta name="description" content="The page you are looking for does not exist.">
+    
+    <script src="dist/webicons.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css?v=3.0">
+</head>
+
+<body data-active-view="404">
+    <header class="app-header">
+        <div class="header-container">
+            <!-- Left: Logo -->
+            <a href="index.html" class="nav-logo">
+                <img src="Webecon.png" alt="Webecon">
+                <div class="nav-logo-text">WEBECON</div>
+            </a>
+
+            <!-- Center: Desktop Links -->
+            <div class="nav-links" id="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#library">Icon Library</a>
+                <a href="docs.html">Docs</a>
+                <a href="https://adityadivte.com" target="_blank" style="color: var(--primary);">adityadivte.com</a>
+            </div>
+
+            <!-- Right: Actions -->
+            <div class="nav-actions">
+                <a href="https://rzp.io/rzp/webecon" target="_blank" class="nav-donate-btn">
+                    <webecon-icon name="heart" size="18" theme="solid" color="#fff" animation="pulse"></webecon-icon>
+                    <span class="donate-text">Support</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="app-container">
+        <main class="fade-in" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 80vh; text-align: center; padding: 2rem;">
+            
+            <div style="position: relative; margin-bottom: 2rem;">
+                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 180px; height: 180px; background: rgba(99, 102, 241, 0.15); filter: blur(50px); border-radius: 50%;"></div>
+                <webecon-icon name="ghost" size="120" color="var(--primary)" theme="neon" animation="float"></webecon-icon>
+            </div>
+
+            <h1 style="font-size: clamp(5rem, 10vw, 8rem); font-weight: 800; line-height: 1; margin-bottom: 0.5rem; letter-spacing: -0.04em;">
+                <span class="shimmer-text">404</span>
+            </h1>
+            
+            <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 1.5rem; color: #fff;">Lost in the Void</h2>
+            
+            <p style="color: var(--text-muted); font-size: 1.15rem; max-width: 500px; margin: 0 auto 3rem; line-height: 1.7;">
+                The page you're looking for has vanished or never existed. Let's get you back to familiar territory.
+            </p>
+            
+            <a href="index.html" class="btn btn-primary" style="padding: 1rem 2.5rem; font-size: 1.05rem; gap: 0.5rem;">
+                <webecon-icon name="arrow-left" size="20" color="#fff"></webecon-icon>
+                Return to Homepage
+            </a>
+            
+        </main>
+    </div>
+</body>
+</html>
